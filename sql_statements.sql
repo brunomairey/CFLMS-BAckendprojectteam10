@@ -15,6 +15,12 @@ create Table events(
 eventID int(11) AUTO_INCREMENT PRIMARY KEY,
     eventName varchar(50),
     eventDate Datetime,
+    eventLocation varchar (300),
     eventDescription varchar(1000)  
 );
+
+
+
+//Some Data
+insert into events (eventName, eventDate, eventLocation, eventDescription) values ('Friday against Climate Change', '2020-10-10 14:00:00', 'Vienna','Strike: we meet at Westbahnhof and start through Mariahilferstraße until Rathausplatz')
 
