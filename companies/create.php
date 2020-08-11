@@ -1,7 +1,10 @@
 
+
+
+
 <?php 
 
-  include '../db_connect.php'; ?>
+  include 'db_connect.php'; ?>
 <!DOCTYPE html>
 
 <html>
@@ -16,6 +19,7 @@
     background-color: #f5f5f5 ;
     border-radius: 10px; 
     box-shadow: 5px 10px 18px #888888; 
+    background-color: #d7e1cc;
     /*width: 100vw;
     position: relative;
     left: 20vw;*/
@@ -38,6 +42,32 @@
 
 </head>
 <body>
+
+
+
+<nav class="navbar navbar-expand-lg text-white" style="background-color: #135887">
+  <a class="navbar-brand text-white" href="#">Navbar w/ text</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-white" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
+
   <div id="contactForm">
 <form class="mx-5" action="a_create.php" method= "post" enctype='multipart/form-data'>
   
