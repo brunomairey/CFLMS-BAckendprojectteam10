@@ -1,16 +1,23 @@
 <?php
-ob_start();
-session_start();
-require_once 'db_connect.php';
+// ob_start();
+// session_start();
+require_once '../db_connect.php';
+// echo "Test";
+// echo $_SESSION; 
 
 // if session is not set this will redirect to login page
+// if (!isset($_SESSION['admin'])) {
+//     header("Location: events.php");
+//     exit;
+// }
+
 // if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
 //     header("Location: events.php");
 //     exit;
 // }
 
 // select logged-in users details
-$res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
+$res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 ?>
@@ -27,14 +34,14 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 </head>
 
 <body>
-
+<?php require_once '../header.php'; ?>
    <!-- bootstrap version -->
    <nav class="navbar sticky-top navbar-dark bg-dark">
 
 <div class="mx-auto">
-    <p class="text-warning">Administratorpanel</p>
+    <!-- <a class="text-warning">Administratorpanel</a> -->
     <!-- <a class="btn btn-outline-success" href="index.php" role="button">Home</a> -->
-    <a class="btn btn-outline-success" href="create.php" role="button">Create New Event</a>
+    <a class="btn btn-outline-warning" href="create.php" role="button">Create New Event</a>
     <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
 </head>
 
@@ -43,8 +50,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 <div class="jumbotron jumbotron-fluid bg-dark text-white">
 <div class="container">
-    <h1 class="display-4 text-success">Our Events</h1>
-    <p class="lead">Mission: Business for Climate Protection</p>
+    <h1 class="display-4 text-warning">Hello <?php echo $userRow['userName']; ?> ! </h1>
+    <p class="lead">Welcome to Administratorpanel</p>
 </div>
 </div>
 

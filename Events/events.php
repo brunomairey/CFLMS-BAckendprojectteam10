@@ -1,4 +1,4 @@
-<?php require_once 'db_connect.php'; ?>
+<?php require_once '../db_connect.php'; ?>
 
 
 
@@ -7,21 +7,21 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Events</title>
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
 
 <body>
-
+<?php require_once '../header.php'; ?>
     <!-- bootstrap version -->
     <nav class="navbar sticky-top navbar-dark bg-dark">
 
         <div class="mx-auto">
             <!-- <a class="btn btn-outline-success" href="index.php" role="button">Home</a> -->
-            <a class="btn btn-outline-success" href="login.php" role="button">Login to Administrator Panel</a>
-            <a class="btn btn-outline-success" href="logout.php?logout" role="button">Logout</a>
+            <a class="btn btn-outline-success" href="../Login/login.php" role="button">Login to Administrator Panel</a>
+            <a class="btn btn-outline-success" href="../Login/logout.php?logout" role="button">Logout</a>
             <!-- <a class="btn btn-outline-success" href="register.php" role="button">Signup</a> -->
         </div>
     </nav>
