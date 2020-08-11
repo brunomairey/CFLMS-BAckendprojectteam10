@@ -16,42 +16,72 @@
 </head>
 <body>
 <?php
-   ob_start();
-session_start();
+require_once '../db_connect.php';
+//    ob_start();
+// session_start();
     
  ?>
 
 
 
 <?php 
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
-    $gender = $_POST['gender'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $number = $_POST['number'];
+   
 
-// this will avoid mysql_connect() deprecation error.
-error_reporting( ~E_DEPRECATED & ~E_NOTICE );
+// // this will avoid mysql_connect() deprecation error.
+// error_reporting( ~E_DEPRECATED & ~E_NOTICE );
 
-$localhost = "localhost";
-$username = "root";
-$password = "";
-$dbname = "backendproject_bemm";
+// $localhost = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "backendproject_bemm";
 
 
 
 // check connection
 if($conn->connect_error) {
     die("connection failed: " . $conn->connect_error);
-} else {
-$stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, password, number) values("$firstName", "$lastName", "$gender", "$email", "$passwort", $number)");
-        $stmt->bind_param("sssssi", $firstName, $lastName, $gender, $email, $password, $number);
-        $execval = $stmt->execute();
-        echo $execval;
-        echo "Registration successfully...";
-        $stmt->close();
-        $conn->close();
+} else { 
+
+ $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $number = $_POST['number'];
+
+//passwort und nicht password in database
+
+ echo $sql = "INSERT INTO `signthepetition` (`firstName`, `lastName`, `gender`, `email`, `passwort`,  `number`) VALUES ('$firstName', '$lastName', '$gender', '$email', '$password',  '$number')";
+    if($conn->query($sql) === TRUE) {
+       echo "<p class=\"text-success mx-5 my-3\">Sie sind erfolgreich registriert</p>" ;
+         echo "<a href='../index.php'><button type='button' class=\"btn btn-dark\">Home</button></a>";
+         // header("Refresh: 5; url= index.php");
+   } else  {
+       echo "Error " . $sql . ' ' . $conn->connect_error;
+   }
+
+   $conn->close();
+
+
+
+
+
+
+
+
+
+
+
+//Parse error: syntax error, unexpected '$firstName' (T_VARIABLE), expecting ')' in C:\xampp2\htdocs\01_codefactory\15_Backend\CFLMS-Backendprojectteam10\Fridaysforfuture\db_conn.php on line 78
+
+
+// $stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, passwort, number) values("$firstName", "$lastName", "$gender", "$email", "$passwort", $number))";
+//         $stmt->bind_param($firstName, $lastName, $gender, $email, $password, $number);
+//         $execval = $stmt->execute();
+//         echo $execval;
+//         echo "Registration successfully...";
+//         $stmt->close();
+//         $conn->close();
     
 }
 

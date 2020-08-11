@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   </head>
   <body>
+   <?php //  include '../db_connect.php'; ?> 
     <div class="container">
       <div class="row col-md-6 col-md-offset-3">
         <div class="panel panel-primary">

@@ -110,25 +110,25 @@
    <fieldset class="form-group required col-md-12">
        <legend class="col-form-label pt-0">Funktion</legend>
           <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios1" value="option1" checked>
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios1" value="Inhaberin" checked>
           <label class="form-check-label" for="gridRadios1">
             Inhaberin/Inhaber
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios2" value="option2">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios2" value="Gesellschafterin">
           <label class="form-check-label" for="gridRadios2">
            Gesellschafterin/Gesellschafter
           </label>
         </div>
           <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios3" value="option3">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios3" value="Geschäftsführerin">
           <label class="form-check-label" for="gridRadios3">
             Geschäftsführerin/Geschäftsführer
           </label>
         </div>
           <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios4" value="option4">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios4" value="Prokuristin">
           <label class="form-check-label" for="gridRadios4">
             Prokuristin/Prokurist
           </label>
