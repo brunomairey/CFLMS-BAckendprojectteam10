@@ -16,22 +16,22 @@
 <body>
 <?php require_once '../header.php'; ?>
     <!-- bootstrap version -->
-    <nav class="navbar sticky-top navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-light bg-light">
 
         <div class="mx-auto">
             <!-- <a class="btn btn-outline-success" href="index.php" role="button">Home</a> -->
             <a class="btn btn-outline-success" href="../Login/login.php" role="button">Login to Administrator Panel</a>
-            <a class="btn btn-outline-success" href="../Login/logout.php?logout" role="button">Logout</a>
+            <!-- <a class="btn btn-outline-success" href="../Login/logout.php?logout" role="button">Logout</a> -->
             <!-- <a class="btn btn-outline-success" href="register.php" role="button">Signup</a> -->
         </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid bg-dark text-white">
+    <!-- <div class="jumbotron jumbotron-fluid bg-dark text-white">
         <div class="container">
             <h1 class="display-4 text-success">Our Events</h1>
             <p class="lead">Mission: Business for Climate Protection</p>
         </div>
-    </div>
+    </div> -->
 
     <nav class="navbar navbar-dark bg-white">
 
@@ -63,12 +63,14 @@
             $eventDate = $row['eventDate'];
             $location = $row['eventLocation'];
             $description = $row['eventDescription'];
+            $image = $row['image'];
 
 
         ?>
 
-            <div class="col mb-3 ">
+<div class="col mb-3 ">
                 <div class="card px-1 py-1 bg-light">
+                
                     <h5 class="card-title text-secondary"><?= $eventID ?></h5>
 
                     <div class="card-body">
@@ -79,9 +81,9 @@
                         <h6 class='card-text'><span class='font-weight-bold'>WHAT: </span> <?= $description ?>
                         </h6>
                         <h7 class="card-text"><span class="font-weight-bold">WHERE:</span> <?= $location ?></h7>
-
+                        
                     </div>
-  
+                    <img src="<?= $row['image'] ?>" alt="Event image" width="100%" max-height="200" class="rounded">
                 </div>
             </div>
 

@@ -1,48 +1,51 @@
 <?php 
-ob_start();
-session_start();
-require_once 'db_connect.php';
+// ob_start();
+// session_start();
+require_once '../../db_connect.php';
 
-if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
-    header("Location: index.php");
-    exit;
- }
- if (isset($_SESSION["user"])) {
-    header("Location: home.php");
-    exit;
- }
+if (!isset($_SESSION['admin']) ) {
+   header("Location: ../events.php");
+   exit;
+}
  // select logged-in users details
  $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
  $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
  
+ if (isset($_POST['but_upload'])) {
 
-if ($_POST) {
-    //table animal
-   $animalID = $_POST['animalID'];
-   $name = $_POST['name'];
-   $hobbies = $_POST['hobbies'];
-   $image = $_POST['image'];
-   $description = $_POST['description'];
-   $type = $_POST['type'];
-   $age = $_POST['age'];
+    $name = $_FILES['file']['name'];
+    $target_dir = "upload/";
+    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+  
+    // Select file type
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+  
+    // Valid file extensions
+    $extensions_arr = array("jpg","jpeg","png","gif");
+  
+    // Check extension
+    if( in_array($imageFileType,$extensions_arr) ){
+       // Convert to base64 
+      $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
+      $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
+      
+  } 
+ 
 
-   //table address
-   $street = $_POST['street'];
-   $zipcode = $_POST['zipcode'];  
-   $city = $_POST['city'];
-   $addressID = $_POST['addressID'];
+// if ($_POST) {
+    $eventID = $_POST['eventID'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $date = $_POST['date'];
+    $location = $_POST['location'];
 
+   $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '$image', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID" ;
 
-
-   $sql = "UPDATE animals SET name = '$name', hobbies = '$hobbies', image = '$image', description = '$description', type = '$type', age = '$age' WHERE animalID = $animalID" ;
-
-   $sql2 = "UPDATE address SET street = '$street', zipcode = '$zipcode', city = '$city' WHERE addressID= $addressID";
-
-
-   if (mysqli_query($conn, $sql) && mysqli_query($conn,$sql2)  ){
-    echo "Successfully updated <br> <a href='../admin.php'>Back to Home</a><br>";
-    header ("refresh:2; url=../admin.php" ); 
-    echo "You will be redirected in 2 seconds.";
+  
+   if (mysqli_query($conn, $sql)  ){
+    echo "Event successfully updated <br> <a href='../eventsAdmin.php'>Back to Home</a><br>";
+    header ("refresh:2; url=../eventsAdmin.php" ); 
+    echo "Sie werden in 2 Sekunden weitergeleitet.";
 }else {
     echo "Error while updating record : ". $conn->error;
 }
@@ -60,5 +63,3 @@ if ($_POST) {
    $conn->close();
 
 }
-
-?>

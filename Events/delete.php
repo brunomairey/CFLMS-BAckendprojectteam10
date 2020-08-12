@@ -1,10 +1,10 @@
 <?php 
-ob_start();
-session_start();
-require_once 'actions/db_connect.php';
+// ob_start();
+// session_start();
+require_once '../db_connect.php';
 
 if (!isset($_SESSION['admin']) ) {
-   header("Location: index.php");
+   header("Location: events.php");
    exit;
 }
 
@@ -42,9 +42,9 @@ if ($_GET['id']) {
         <div class="mr-3 text-white">
             <?php echo $userRow['userEmail']; ?>
         </div>
-        <div class="image">
+        <!-- <div class="image">
             <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
-        </div>
+        </div> -->
     </nav>
 
 
@@ -53,9 +53,9 @@ if ($_GET['id']) {
 <h3>Do you really want to delete this card?</h3>
 <form action ="actions/a_delete.php" method="post">
 
-   <input type="hidden" name= "animalID" value="<?php echo $data['animalID'] ?>" />
+   <input type="hidden" name= "eventID" value="<?php echo $data['eventID'] ?>" />
    <button type="submit">Yes, delete it!</button >
-   <a href="admin.php"><button type="button">No, go back!</button ></a>
+   <a href="eventsAdmin.php"><button type="button">No, go back!</button ></a>
 </form>
 
 </body>
