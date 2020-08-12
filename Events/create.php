@@ -31,8 +31,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <head>
     <title>Add Event</title>
     <link rel="stylesheet" type="text/css" href="style1.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
-    <link href="jquery.datetimepicker.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="jquery.datetimepicker.min.css" > -->
 
 </head>
 
@@ -73,16 +73,16 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             <input type="file" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
             
             
-            <input type="text" class="form-control mt-3" name="date" placeholder="event Date" />
+            <input type="datetime-local" class="form-control mt-3" name="date" placeholder="event Date" />
+           
+          
+        <!-- <label for="datetime">Event Datum und Uhrzeit</label>
+        <input type="text" class="form-control" id="picker"> -->
+    
 
             <input type="text" class="form-control mt-3 mb-3" name="description" placeholder="event Description" rows="6" />
 
             <br>
-
-            <!-- <div>
-                <span>Thumbnails:</span>
-                <div id="thumbnail"></div>
-            </div> -->
 
             <input class="form-control btn btn-outline-success mt-3 mb-3" type="submit" name="but_upload" value="Create Event" />
 
@@ -124,14 +124,10 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             }
         }
 
-        //function for datetimepicker
-        // $('#picker').datetimepicker({
-        //     timepicker:false;
-        //     datepicker:true;
-        //     format:'Y-m-d', 
 
-        // })
     </script>
+
+
 
 
     <?php
@@ -141,6 +137,10 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     echo mysqli_close($conn);
     ?>
 
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="jquery.datetimepicker.full.min.js"></script> -->
 </body>
 
 </html>
