@@ -51,7 +51,7 @@ if($conn->connect_error) {
 
 //passwort und nicht password in database
 
- echo $sql = "INSERT INTO `signthepetition` (`firstName`, `lastName`, `gender`, `email`, `passwort`,  `number`) VALUES ('$firstName', '$lastName', '$gender', '$email', '$password',  '$number')";
+  $sql = "INSERT INTO `signthepetition` (`firstName`, `lastName`, `gender`, `email`, `passwort`,  `number`) VALUES ('$firstName', '$lastName', '$gender', '$email', '$password',  '$number')";
     if($conn->query($sql) === TRUE) {
        echo "<p class=\"text-success mx-5 my-3\">Sie sind erfolgreich registriert</p>" ;
          echo "<a href='../index.php'><button type='button' class=\"btn btn-dark\">Home</button></a>";
@@ -72,7 +72,7 @@ if($conn->connect_error) {
 
 
 
-//Parse error: syntax error, unexpected '$firstName' (T_VARIABLE), expecting ')' in C:\xampp2\htdocs\01_codefactory\15_Backend\CFLMS-Backendprojectteam10\Fridaysforfuture\db_conn.php on line 78
+// Parse error: syntax error, unexpected '$firstName' (T_VARIABLE), expecting ')' in C:\xampp2\htdocs\01_codefactory\15_Backend\CFLMS-Backendprojectteam10\Fridaysforfuture\db_conn.php on line 78
 
 
 // $stmt = $conn->prepare("insert into registration(firstName, lastName, gender, email, passwort, number) values("$firstName", "$lastName", "$gender", "$email", "$passwort", $number))";

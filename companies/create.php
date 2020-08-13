@@ -4,7 +4,7 @@
 
 <?php 
 
-  include 'db_connect.php'; ?>
+  include '../db_connect.php'; ?>
 <!DOCTYPE html>
 
 <html>
@@ -101,40 +101,17 @@
         <label for="firmenlogo">Firmenlogo</label>
       <div class="custom-file">
       <input type="file" accept="image/jpeg,image/png"  formControlName="image" (change)="convertImage($event)" class="form-control-file"  name="file">
-
-
-
       </div>
-</div>
-
-   <fieldset class="form-group required col-md-12">
-       <legend class="col-form-label pt-0">Funktion</legend>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios1" value="Inhaberin" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Inhaberin/Inhaber
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios2" value="Gesellschafterin">
-          <label class="form-check-label" for="gridRadios2">
-           Gesellschafterin/Gesellschafter
-          </label>
-        </div>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios3" value="Geschäftsführerin">
-          <label class="form-check-label" for="gridRadios3">
-            Geschäftsführerin/Geschäftsführer
-          </label>
-        </div>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios4" value="Prokuristin">
-          <label class="form-check-label" for="gridRadios4">
-            Prokuristin/Prokurist
-          </label>
-        </div>
-     
-  </fieldset>
+      </div>
+ <div class="form-group col-md-12">
+      <label for="publisher_size">Funktion</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="funktion">
+      <option selected>InhaberIn</option>
+      <option>GesellschafterIn</option>
+      <option>GeschäftsführerIn</option>
+      <option>ProkuristIn</option>
+    </select>
+  </div>
 
   <div class="form-group required col-md-12">
     <label for="img">Website/Facebook</label>
@@ -146,7 +123,7 @@
 <div class="form-row col-md-12">
       <div class="form-group col-md-2 mr-5">
       <label for="plz">Postleitzahl</label>
-      <input type="number" class="form-control" name="pzl" placeholder="1000" step="1">
+      <input type="number" class="form-control" name="plz" placeholder="1000" step="1">
     </div>
 
      <div class="form-group col-md-4 mr-5">
@@ -162,43 +139,30 @@
 
 
 
-   <div class="form-group col-md-12">
+ <div class="form-group col-md-12">
     <label for="description">Klimaschutz-Versprechen</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+</div>
+
+ <div class="form-group col-md-12">
+      <label for="publisher_size">KlimaVersprechen veröffentlichen?</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="public">
+      <option selected value="ja">ja</option>
+      <option value="nein">nein</option>
+    </select>
   </div>
 
- <fieldset class="form-group required col-md-12">
-       <legend class="col-form-label pt-0">KlimaVersprechen veröffentlichen?</legend>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="public" id="gridRadios1" value="ja" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Ja
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="public" id="gridRadios2" value="nein">
-          <label class="form-check-label" for="gridRadios2">
-           Nein
-          </label>
-        </div>
-  </fieldset>
 
- <fieldset class="form-group required col-md-12">
-       <legend class="col-form-label pt-0">Kein weiterer Kontakt? </legend>
-       Möchten Sie weiterhin von uns hören?
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="contact" id="gridRadios1" value="nein" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Ich möchte nur unterschreiben und anschließend nicht mehr kontaktiert werden.
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="contact" id="gridRadios2" value="ja">
-          <label class="form-check-label" for="gridRadios2">
-           Halten Sie mich weiterhin auf dem Laufenden über die Initiative.
-          </label>
-        </div>
-  </fieldset>
+ <div class="form-group col-md-12">
+      <label for="publisher_size">Kein weiterer Kontakt?  <br> <i>    Möchten Sie weiterhin von uns hören?</i></label>
+        
+    <select class="form-control" id="exampleFormControlSelect1" name="contact">
+      <option selected value="ja">Ich möchte nur unterschreiben und anschließend nicht mehr kontaktiert werden.</option>
+      <option value="nein">Halten Sie mich weiterhin auf dem Laufenden über die Initiative.</option>
+    </select>
+  </div>
+
+
 
 
   <div class="col-md-12">
