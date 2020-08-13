@@ -1,6 +1,6 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-​
+
 <head>
     <title>Simple Google Map</title>
     <meta name="viewport" content="initial-scale=1.0">
@@ -11,7 +11,7 @@
         #map {
             height: 90%;
         }
-​
+
         /* Optional: Makes the sample page fill the window. */
         html,
         body {
@@ -22,12 +22,12 @@
         }
     </style>
 </head>
-​
+
 <body>
     <div id="map"></div>
     <input type="text" id="address">
     <input type="button" value="Encode" onclick="getLocation()"/>
-​
+
     <script>
         var geocoder;
         var pinpoints = [{ lt: 48.20849, lg: 16.37208 }, { lt: 48.147608, lg: 17.106294 }, { lt: 48.45455, lg: 14.37208 }];
@@ -69,7 +69,7 @@
                         console.table(results);
                         alert('It was not possible to perform your request due to ' + status);
                     }
-​
+
                 })
             };
             /*var pinpoint = new google.maps.Marker({
@@ -85,5 +85,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap"
         async defer></script>
 </body>
-​
+
 </html>
