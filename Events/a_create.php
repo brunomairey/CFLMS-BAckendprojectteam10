@@ -1,10 +1,10 @@
 <?php 
 // ob_start();
 // session_start();
-require_once '../../db_connect.php';
+require_once '../db_connect.php';
 
 if (!isset($_SESSION['admin']) ) {
-   header("Location: ../events.php");
+   header("Location: events.php");
    exit;
 }
  // select logged-in users details
@@ -44,15 +44,15 @@ $sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocatio
 
 
     if($conn->query($sql) === TRUE) {
-      echo "<div class= 'bg-secondary text-light'>";
-       echo "<p><center>Neues Event wurde erstellt</center></p>" ;
+       echo "<div class= 'bg-secondary text-light pt-2 pb-2'>";
+       echo "<p><center>Neuer Beitrag wurde erstellt</center></p>" ;
        echo "<div class= 'd-flex justify-content-center'>";
-       echo "<a href='../create.php'><button type='button' class= 'btn btn-outline-info'>Back</button></a>";
+       echo "<a href='create.php'><button type='button' class= 'btn btn-outline-info'>Back</button></a>";
        echo "</div>";
-      header ("refresh:2; url=../eventsAdmin.php"); 
-       echo "<center>In 2 Sekunden erfolgt eine Weiterleitung.</center>";
+       header ("refresh:2; url=eventsAdmin.php"); 
+       echo "<center>Weiterleitung erfolgt in 2 Sekunden.</center>";
        echo "</div>";
-      //   echo "<a href='../admin.php'><button type='button'>Home</button></a>";
+
    } else  {
        echo "Error " . $sql . ' ' . $conn->connect_error;
    }
