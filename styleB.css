@@ -5,6 +5,12 @@
   box-sizing: border-box;
   font-size: 1vw; }
 
+.colorbutton {
+	background-color: #40B2C3;
+	border: solid red;
+
+}
+
 .main-header
 {
 	background-image: url("Images/header.jpg");
@@ -35,22 +41,21 @@
 footer
 {
 	width: 100%;
-	height: 30vw;
+	display: flex;
 	flex-direction: column;
-	border: solid blue;
+	
+
 }
 
-.main-footer .row
+footer #socialbuttons
 {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 
-.main-footer .row p
-{
-	margin-top: 5%;
-}
-
-
+footer #footertext {
+display: flex;
+flex-direction: column;
+text-align: center;}
 

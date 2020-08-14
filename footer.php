@@ -1,5 +1,6 @@
-	<footer class="main-footer bg-dark text-light d-flex justify-content-center">
-		<div class="row">
+	<footer class="colorbutton">
+	<div class="main-footer text-light justify-content-center p-5 ">
+		<div class="row" id="socialbuttons">
 			<div class="icon m-2">
 				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
 					<img style="width:5vw; height:5vw;" src="Images/facebook.png">
@@ -26,8 +27,9 @@
 				</a>
 			</div>
 		</div>
-		<div class="row">
-			<p>&copy; 2020 Entrepeneurs For Future - All rights reserved</p>
+		<div class="row pt-4" id="footertext">
+			<h5>&copy; 2020 Entrepeneurs For Future </h5><br>
+			 <p>ALLE INHALTE UNTERLIEGEN ÖSTERREICHISCHEM URHEBERRECHT. | IMPRESUM | AGB | DATENSCHUTZ</p>
 		</div>
 	</footer>
 	

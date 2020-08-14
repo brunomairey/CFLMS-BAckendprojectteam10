@@ -18,11 +18,11 @@ $urladmin="events/login.php";
 ?>
 
 	<main>
-		<section class="showcase">
+		<!-- <section class="showcase">
 			<div class="container">
 				<a class="btn btn-primary btn-lg" href="#">Read More</a>
 			</div>
-		</section>
+		</section> -->
 	</main>
 
 <?php  
