@@ -1,7 +1,15 @@
 	<footer class="main-footer bg-dark text-light d-flex justify-content-center">
 		<div class="row">
-			<a href="#" class="fa fa-facebook"> Facebook</a>
-			<a href="#" class="fa fa-twitter"> Twitter</a>
+			<div class="icon m-2">
+				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
+					<img style="width:5vw; height:5vw;" src="Images/facebook.png">
+				</a>
+			</div>
+			<div class="icon m-2">
+				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
+					<img style="width:5vw; height:5vw;" src="Images/insta.png">
+				</a>
+			</div>
 		</div>
 		<div class="row">
 			<p>&copy; 2020 Entrepeneurs For Future - All rights reserved</p>

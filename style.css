@@ -37,17 +37,14 @@
 .main-footer .row
 {
 	display: flex;
-	flex-direction: column;
-	text-align: center;
-}
-
-.main-footer .row .fa 
-{
-	font-size: 2.5vw;
-	margin-top: 5%;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .main-footer .row p
 {
 	margin-top: 5%;
 }
+
+
+
