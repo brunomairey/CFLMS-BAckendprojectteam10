@@ -30,6 +30,7 @@ include '../db_connect.php'; ?>
 
 <div class="container">
   <div id="map" class="mb-5"></div>
+
 	<table class="table table-info table-striped">
   <thead>
     <tr>
@@ -42,7 +43,7 @@ include '../db_connect.php'; ?>
   <tbody>
     
 <?php
-           $sql = "SELECT * FROM companies";
+           $sql = "SELECT * FROM companies WHERE `public`= 'ja' ";
            $result = $conn->query($sql);
 
 if($result->num_rows > 0) {
@@ -119,7 +120,6 @@ if($result->num_rows > 0) {
                    ?>
                    <script type="text/javascript">
   $(document).ready (function getLocation() {
-                console.log("la tete a toto");
                 var address = "<?php echo $row['ort'] ." ". $row['land'] ?>";
                 console.log(address);
                 geocoder.geocode({ 'address': address }, function(results, status) {
@@ -148,13 +148,6 @@ if($result->num_rows > 0) {
 
  ?>
 
- <script>
-      
-     
-  </script>
-
-
-
-
+ 
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap"
         async defer></script>
