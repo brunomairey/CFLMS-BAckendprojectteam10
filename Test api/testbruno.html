@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+function initAutocomplete() {
+	
+	var markers = [];
+
+	autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')),{
+		types: ['geocode']
+	});
+	
+	var myLatLng = {
+		lat			:	52.520008,
+		lng			:	13.404954
+	};
+		
+	var map		=	new google.maps.Map(document.getElementById('map'), {
+		zoom		:	2,
+		center		:	myLatLng
+	});
+	
+	// START BY CLICK
+	jQuery('div#find').on('click', function() {
+		LatLngSearch();			
+	});
+	
+	// START BY PRESS ENTER
+	jQuery('#address').bind("enterKey",function(e){
+		LatLngSearch();	
+	});
+	jQuery('#address').keyup(function(e){
+		if(e.keyCode == 13) {
+			LatLngSearch();
+		}
+	});
+			
+	// SHOW LAT LNG		
+	function LatLngSearch(  ) {
+		
+		var value			=	jQuery('input#address').val();
+		
+		if ( value ) {
+			var request		=	$.ajax({
+				url			:	"/ajax.php",
+				method		:	"POST",
+				data		:	{ 
+									address		:	value
+								},
+				dataType	:	'json',
+				success		:	function(result) {
+					console.log(result);
+					
+					var searchLatLng = {
+						lat			:	result['lat'],
+						lng			:	result['lng']
+					};
+					
+					// NEW POSITION
+					var map		=	new google.maps.Map(document.getElementById('map'), {
+						zoom		:	14,
+						center		:	searchLatLng
+					});
+					
+					var marker = new google.maps.Marker({
+						map			:	map,
+						position	:	searchLatLng,
+						animation	:	google.maps.Animation.DROP
+		            });
+		            
+		            var infowindow	=	new google.maps.InfoWindow({
+						content: '<strong>Lat:</strong> ' + result['lat'] + '<br><strong>Lng:</strong> ' + result['lng']
+					});
+					infowindow.open(map,marker);
+					
+					// ADD MARKER TO ARRAY
+					markers.push(marker);
+				},
+				error		:	function (xhr, ajaxOptions, thrownError) {
+					alert(xhr.status);
+					alert(thrownError);
+				}
+			});
+		}
+	}
+}
+</script>
