@@ -48,7 +48,7 @@
 </nav>
 
     <!-- <div class="container autos row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
-    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto">
+    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-2 mx-auto">
 
         <?php
         $sql = "SELECT * FROM events";
@@ -70,20 +70,24 @@
 
 <div class="col mb-3 ">
                 <div class="card px-1 py-1 bg-light">
-                
-                    <h5 class="card-title text-secondary"><?= $eventID ?></h5>
+                <img class="card-img-top pt-2" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" class="rounded">
+                    <!-- <h5 class="card-title text-secondary"><?= $eventID ?></h5> -->
 
                     <div class="card-body">
-                        <h3 class="card-text text-success font-weight-bold"><?= $eventName ?> <span></span></h3>
-                        
-                        <h6 class='card-text'><span class='font-weight-bold'>WHEN: </span> <?= $eventDate ?>
+                        <h3 class="card-text text-info font-weight-bold"><?= $eventName ?> <span></span> </h3>
+
+                        <h6 class='card-text'><span class='font-weight-bold'>WHEN: </span> <?= $eventDate ?><span class="font-weight-bold">     WHERE:</span> <?= $location ?>
                         </h6>
                         <h6 class='card-text'><span class='font-weight-bold'>WHAT: </span> <?= $description ?>
                         </h6>
-                        <h7 class="card-text"><span class="font-weight-bold">WHERE:</span> <?= $location ?></h7>
-                        
+
+
                     </div>
-                    <img src="<?= $row['image'] ?>" alt="Event image" width="100%" max-height="200" class="rounded">
+                    <!-- <img src="<?= $row['image'] ?>" alt="" width="100%" max-height="200" class="rounded"> -->
+
+
+
+
                 </div>
             </div>
 

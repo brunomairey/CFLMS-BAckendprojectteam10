@@ -40,14 +40,18 @@ if (!isset($_SESSION['admin']) ) {
    $location = $_POST['location'];
 
    
-echo $sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocation, `image`) values('$name', '$date', '$description', '$location','$image')";
+$sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocation, `image`) values('$name', '$date', '$description', '$location','$image')";
 
 
     if($conn->query($sql) === TRUE) {
-       echo "<p>New Record Successfully Created</p>" ;
-       echo "<a href='../create.php'><button type='button'>Back</button></a>";
-      //  header ("refresh:2; url=../eventsAdmin.php" ); 
-       echo "You will be redirected in 2 seconds.";
+      echo "<div class= 'bg-secondary text-light'>";
+       echo "<p><center>Neues Event wurde erstellt</center></p>" ;
+       echo "<div class= 'd-flex justify-content-center'>";
+       echo "<a href='../create.php'><button type='button' class= 'btn btn-outline-info'>Back</button></a>";
+       echo "</div>";
+      header ("refresh:2; url=../eventsAdmin.php"); 
+       echo "<center>In 2 Sekunden erfolgt eine Weiterleitung.</center>";
+       echo "</div>";
       //   echo "<a href='../admin.php'><button type='button'>Home</button></a>";
    } else  {
        echo "Error " . $sql . ' ' . $conn->connect_error;

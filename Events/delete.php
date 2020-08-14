@@ -50,12 +50,14 @@ if ($_GET['id']) {
 
 <hr>
 
-<h3>Do you really want to delete this card?</h3>
+<h3><center>Do you really want to delete this card?</center></h3>
 <form action ="actions/a_delete.php" method="post">
 
    <input type="hidden" name= "eventID" value="<?php echo $data['eventID'] ?>" />
-   <button type="submit">Yes, delete it!</button >
-   <a href="eventsAdmin.php"><button type="button">No, go back!</button ></a>
+   <div class= "d-flex justify-content-center">
+   <button type="submit" class="btn btn-outline-info">Yes, delete it!</button >
+   <a href="eventsAdmin.php"><button type="button" class="btn btn-outline-info">No, go back!</button ></a>
+   </div>
 </form>
 
 </body>

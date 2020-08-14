@@ -13,9 +13,9 @@ if (!isset($_SESSION['admin']) ) {
  
  if (isset($_POST['but_upload'])) {
 
-    $name = $_FILES['file']['name'];
+    $name = $_FILES['fileInput']['name'];
     $target_dir = "upload/";
-    $target_file = $target_dir . basename($_FILES["file"]["name"]);
+    $target_file = $target_dir . basename($_FILES["fileInput"]["name"]);
   
     // Select file type
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin']) ) {
     // Check extension
     if( in_array($imageFileType,$extensions_arr) ){
        // Convert to base64 
-      $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
+      $image_base64 = base64_encode(file_get_contents($_FILES['fileInput']['tmp_name']) );
       $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
       
   } 
@@ -39,7 +39,16 @@ if (!isset($_SESSION['admin']) ) {
     $date = $_POST['date'];
     $location = $_POST['location'];
 
-   $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '$image', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID" ;
+
+   if($image == ""){
+      $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID" ;
+      echo "sql update ohne image";
+   }else {
+      $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '$image', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID" ;
+      echo "sql update mit image";
+   }
+
+  
 
   
    if (mysqli_query($conn, $sql)  ){

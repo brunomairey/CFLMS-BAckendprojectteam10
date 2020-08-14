@@ -18,8 +18,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="events.css">
     <title>Events</title>
     <!-- <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
@@ -37,7 +37,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             <!-- <a class="text-warning">Administratorpanel</a> -->
             <!-- <a class="btn btn-outline-success" href="index.php" role="button">Home</a> -->
             <a class="btn btn-outline-warning" href="create.php" role="button">Create New Event</a>
-            <a class="btn btn-outline-success" href="../Login/logout.php?logout" role="button">Logout</a>
+            <a class="btn btn-outline-info" href="../Login/logout.php?logout" role="button">Logout</a>
 
         </div>
         <div class="mr-3 text-white">
@@ -69,7 +69,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     </nav>
 
     <!-- <div class="container autos row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto"> -->
-    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-auto">
+    <div class="container row row-cols-1 row-cols-md-2 row-cols-lg-2 mx-auto">
 
         <?php
         $sql = "SELECT * FROM events";
@@ -89,24 +89,25 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         ?>
 
             <div class="col mb-3 ">
-                <div class="card px-1 py-1 bg-light">
-                    <h5 class="card-title text-secondary"><?= $eventID ?></h5>
+                <div class="card bg-light">
+                <img class="card-img-top pt-2" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" >
+                    <!-- <h5 class="card-title text-secondary"><?= $eventID ?></h5> -->
 
                     <div class="card-body">
-                        <h3 class="card-text text-success font-weight-bold"><?= $eventName ?> <span></span></h3>
+                        <h3 class="card-text text-info font-weight-bold"><?= $eventName ?> <span></span> </h3>
 
-                        <h6 class='card-text'><span class='font-weight-bold'>WHEN: </span> <?= $eventDate ?>
+                        <h6 class='card-text'><span class='font-weight-bold'>WHEN: </span> <?= $eventDate ?><span class="font-weight-bold">     WHERE:</span> <?= $location ?>
                         </h6>
                         <h6 class='card-text'><span class='font-weight-bold'>WHAT: </span> <?= $description ?>
                         </h6>
-                        <h7 class="card-text"><span class="font-weight-bold">WHERE:</span> <?= $location ?></h7>
+
 
                     </div>
-                    <img src="<?= $row['image'] ?>" alt="" width="100%" max-height="200" class="rounded">
+                    <!-- <img src="<?= $row['image'] ?>" alt="" width="100%" max-height="200" class="rounded"> -->
 
                     <div class="card-footer text-center">
                         <a href="delete.php?id=<?= $eventID ?>" class="btn btn-outline-danger  mx-auto">Delete </a>
-                        <a href="update.php?id=<?= $eventID ?>" class="btn btn-outline-success mx-auto">Update </a>
+                        <a href="update.php?id=<?= $eventID ?>" class="btn btn-outline-info mx-auto">Update </a>
                     </div>
 
 

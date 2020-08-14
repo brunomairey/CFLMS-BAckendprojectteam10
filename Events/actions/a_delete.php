@@ -17,15 +17,16 @@ if ($_POST) {
 
  $sql = "DELETE FROM events WHERE eventID = $eventID";
     if($conn->query($sql) === TRUE) {
-       echo "<p>Successfully deleted!!</p>" ;
+       echo "<div class='bg-secondary'>";
+       echo "<p><center>Event wurde gelöscht!!</center></p>" ;
        header ("refresh:2; url=../eventsAdmin.php" ); 
-       echo "You will be redirected in 2 seconds.";
-       echo "<a href='../index.php'><button type='button'>Back</button></a>";
-       
+       echo "<center>You will be redirected in 2 seconds.</center>";
+       echo "<center><a href='../eventsAdmin.php'><button type='button' class='btn btn-outline-info mb-2'>Back</button></a></center>";
+       echo "</div>";
 
 
    } else {
-       echo "Error updating record : " . $conn->error;
+       echo "Fehler beim Löschen : " . $conn->error;
    }
 
    $conn->close();
