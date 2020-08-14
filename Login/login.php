@@ -54,10 +54,10 @@ if (isset($_POST['btn-login'])) {
       if ($row["status"] == 'admin') {
         $_SESSION["admin"] = $row["userID"];
         header("Location: ../Events/eventsAdmin.php");
-      // } elseif ($row["status"] == 'superadmin'){
-      //   $_SESSION['superadmin'] = $row['userID'];
-      //   header("Location: superadmin.php");
-      }else{
+        // } elseif ($row["status"] == 'superadmin'){
+        //   $_SESSION['superadmin'] = $row['userID'];
+        //   header("Location: superadmin.php");
+      } else {
         $_SESSION['user'] = $row['userID'];
         header("Location: ../Events/events.php");
       }
@@ -74,31 +74,34 @@ if (isset($_POST['btn-login'])) {
 <head>
   <title>Login & Registration System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style1.css">
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../style_MANUELA.css">
+
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+
 </head>
 
 <body>
-<?php require_once '../header.php'; ?>
-<nav class="navbar sticky-top navbar-light bg-light">
+  <?php require_once '../header.php'; ?>
+  <nav class="navbar sticky-top navbar-light bg-light">
 
-<div class="mx-auto">
-    <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-    <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-    <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
+    <div class="mx-auto">
+      <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
+      <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
+      <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
 
 
-</div>
-</nav>
+    </div>
+  </nav>
 
 
   <div class="container-fluid">
 
-
-
-
     <?php
-    //$text =  $_GET['text'];
+
     ?>
 
 
@@ -109,19 +112,20 @@ if (isset($_POST['btn-login'])) {
     </div>
     <!--END PARALLAX-->
 
-    
+
     <div class="parallax_section2 parallax_image">
 
-      <div class="row">
+      <div class="row row_parallax">
 
 
-        <!--CARS-->
 
-        <div class='card border-light rounded'>
+
+        <div class='card card_parallax border-light rounded'>
 
 
 
           <div class='card-body bg-light'>
+
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
@@ -185,7 +189,7 @@ if (isset($_POST['btn-login'])) {
     <nav class="navbar navbar-light bg-dark">
 
       <div class="mx-auto">
-      <h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
+        <h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
 
       </div>
     </nav>
@@ -197,7 +201,7 @@ if (isset($_POST['btn-login'])) {
   <!--END CONTAINER-->
 
 
- 
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

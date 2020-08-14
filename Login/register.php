@@ -1,15 +1,12 @@
 <?php
-// ob_start();
-// session_start(); // start a new session or continues the previous
+
 if (isset($_SESSION['user']) != "") {
    header("Location: index.php"); // redirects to index.php
 }
 if (isset($_SESSION['admin']) != "") {
    header("Location: ../Events/eventsAdmin.php"); // redirects to home.php
 }
-// if (isset($_SESSION['superadmin']) != "") {
-//    header("Location: superadmin.php"); // redirects to home.php
-// }
+
 include_once '../db_connect.php';
 $error = false;
 if (isset($_POST['btn-signup'])) {
@@ -97,12 +94,16 @@ if (isset($_POST['btn-signup'])) {
    <title>Login & Registration System</title>
    <meta http-equiv="Content-Type" charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="style1.css" />
+   <link rel="stylesheet" href="../style_MANUELA.css">
    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-
+   <style>
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
 </head>
 
 <body>
@@ -128,66 +129,81 @@ if (isset($_POST['btn-signup'])) {
 
       <div class="parallax_section2 parallax_image">
 
-         <div class="row ">
+         <div class="row row_parallax">
 
             <!-- register start -->
-
-            <form class="mx-auto mt-4 formular" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-
-
-               <h2 class="text-success">Sign Up.</h2>
-               <hr />
-
-               <?php
-               if (isset($errMSG)) {
-
-               ?>
-                  <div class="alert alert-<?php echo $errTyp ?>">
-                     <?php echo  $errMSG; ?>
-                  </div>
-
-               <?php
-               }
-               ?>
+            <div class='card card_parallax border-light rounded'>
 
 
 
+               <div class='card-body bg-light'>
 
-               <input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
-
-               <span class="text-danger"> <?php echo  $nameError; ?> </span>
-
+ <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
-               <input type="email" name="email" class="form-control mt-2 mb-2" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+<h2 class="text-success">Sign Up.</h2>
+<hr />
 
-               <span class="text-danger"> <?php echo  $emailError; ?> </span>
+<?php
+if (isset($errMSG)) {
+
+?>
+   <div class="alert alert-<?php echo $errTyp ?>">
+      <?php echo  $errMSG; ?>
+   </div>
+
+<?php
+}
+?>
 
 
 
 
+<input type="text" name="name" class="form-control" placeholder="Enter Name" maxlength="50" value="<?php echo $name ?>" />
 
-               <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
-
-               <span class="text-danger"> <?php echo  $passError; ?> </span>
-
-               <hr />
+<span class="text-danger"> <?php echo  $nameError; ?> </span>
 
 
-               <button type="submit" class="btn btn-block btn-success" name="btn-signup">Sign Up</button>
-               <hr />
 
-               <a href="login.php">Sign in Here...</a>
+<input type="email" name="email" class="form-control mt-2 mb-2" placeholder="Enter Your Email" maxlength="40" value="<?php echo $email ?>" />
+
+<span class="text-danger"> <?php echo  $emailError; ?> </span>
 
 
-            </form>
+
+
+
+<input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
+
+<span class="text-danger"> <?php echo  $passError; ?> </span>
+
+<hr />
+
+
+<button type="submit" class="btn btn-block btn-success" name="btn-signup">Sign Up</button>
+<hr />
+
+<a href="login.php">Sign in Here...</a>
+
+
+</form>
+
+
+
+
+
+
+
+               </div>   <!-- card body end -->
+
+            </div>  <!-- card end -->
 
             <!-- register end -->
 
-         </div>
+            </div> <!--  row end -->
 
 
-      </div>
+      </div> 
       <!--END PARALLAX -->
 
       <div class="parallax_section1 parallax_image">
@@ -196,11 +212,11 @@ if (isset($_POST['btn-signup'])) {
 
       <nav class="navbar navbar-light bg-dark">
 
-<div class="mx-auto">
-<h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
+         <div class="mx-auto">
+            <h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
 
-</div>
-</nav>
+         </div>
+      </nav>
 
    </div>
 

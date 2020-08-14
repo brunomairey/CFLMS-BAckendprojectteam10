@@ -27,8 +27,8 @@ if ($_GET['id']) {
 <!DOCTYPE html>
 <html>
 <head>
-   <title >Delete </title>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> 
+   <title >Löschen </title>
+
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -36,7 +36,7 @@ if ($_GET['id']) {
         <div><p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p></div>
 
         <div class="mx-auto">
-            <a class="btn btn-outline-warning" href="create.php" role="button">Add Event</a>
+            <a class="btn btn-outline-warning" href="create.php" role="button">Beitrag erstellen</a>
         </div>
 
         <div class="mr-3 text-white">
@@ -50,13 +50,13 @@ if ($_GET['id']) {
 
 <hr>
 
-<h3><center>Do you really want to delete this card?</center></h3>
-<form action ="actions/a_delete.php" method="post">
+<h3><center>Beitrag wirklich löschen?</center></h3>
+<form action ="a_delete.php" method="post">
 
    <input type="hidden" name= "eventID" value="<?php echo $data['eventID'] ?>" />
    <div class= "d-flex justify-content-center">
-   <button type="submit" class="btn btn-outline-info">Yes, delete it!</button >
-   <a href="eventsAdmin.php"><button type="button" class="btn btn-outline-info">No, go back!</button ></a>
+   <button type="submit" class="btn btn-outline-info">Löschen</button >
+   <a href="eventsAdmin.php"><button type="button" class="btn btn-outline-info">Zurück</button ></a>
    </div>
 </form>
 

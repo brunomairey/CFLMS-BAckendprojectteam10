@@ -6,11 +6,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style_MANUELA.css">
     <title>Events</title>
-    <!-- <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+
 </head>
 
 <body>
@@ -19,19 +17,13 @@
     <nav class="navbar sticky-top navbar-light bg-light">
 
         <div class="mx-auto">
-            <!-- <a class="btn btn-outline-success" href="index.php" role="button">Home</a> -->
-            <a class="btn btn-outline-success" href="../Login/login.php" role="button">Login to Administrator Panel</a>
-            <!-- <a class="btn btn-outline-success" href="../Login/logout.php?logout" role="button">Logout</a> -->
-            <!-- <a class="btn btn-outline-success" href="register.php" role="button">Signup</a> -->
+
+            <a class="btn btn-outline-info" href="../Login/login.php" role="button">Admin</a>
+
         </div>
     </nav>
 
-    <!-- <div class="jumbotron jumbotron-fluid bg-dark text-white">
-        <div class="container">
-            <h1 class="display-4 text-success">Our Events</h1>
-            <p class="lead">Mission: Business for Climate Protection</p>
-        </div>
-    </div> -->
+
 
     <nav class="navbar navbar-dark bg-white">
 
@@ -69,7 +61,7 @@
         ?>
 
 <div class="col mb-3 ">
-                <div class="card px-1 py-1 bg-light">
+                <div class="card card_event px-1 py-1 bg-light">
                 <img class="card-img-top pt-2" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" class="rounded">
                     <!-- <h5 class="card-title text-secondary"><?= $eventID ?></h5> -->
 
@@ -81,17 +73,11 @@
                         <h6 class='card-text'><span class='font-weight-bold'>WHAT: </span> <?= $description ?>
                         </h6>
 
-
                     </div>
-                    <!-- <img src="<?= $row['image'] ?>" alt="" width="100%" max-height="200" class="rounded"> -->
-
-
-
+                    
 
                 </div>
             </div>
-
-
 
 
         <?php

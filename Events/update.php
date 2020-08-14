@@ -26,9 +26,8 @@ if ($_GET['id']) {
     <html>
 
     <head>
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">      -->
         <title>Edit Event</title>
-        <link rel="stylesheet" href="events.css">
+        <link rel="stylesheet" href="../style_MANUELA.css">
 
     </head>
 
@@ -41,7 +40,7 @@ if ($_GET['id']) {
 
             <div class="mx-auto">
                 <a class="btn btn-outline-info" href="eventsAdmin.php" role="button">Home</a>
-                <a class="btn btn-outline-warning" href="create.php" role="button">Event hinzufügen</a>
+                <a class="btn btn-outline-warning" href="create.php" role="button">Beitrag hinzufügen</a>
                 <a class="btn btn-outline-info" href="logout.php?logout" role="button">Logout</a>
             </div>
 
@@ -54,12 +53,12 @@ if ($_GET['id']) {
         </nav>
 
         <div class="d-flex justify-content-center">
-            <h1 class="text-info">Event aktualisieren </h1>
+            <h1 class="text-info">Beitrag aktualisieren </h1>
         </div>
 
         <div class="d-flex justify-content-center">
             <div class="contactForm">
-                <form action="actions/a_update.php" method="post" enctype='multipart/form-data'>
+                <form action="a_update.php" method="post" enctype='multipart/form-data'>
                     <div class="container font-weight-bold">
 
 
@@ -93,7 +92,7 @@ if ($_GET['id']) {
                                 // }
 
                                 ?>
-                                <img src='<?= $data['image'] ?>' alt='Event image' width='100px' class='rounded'>
+                                <img src='<?= $data['image'] ?>' alt='Event image' width='100' class="rounded mb-2">
                                 <p>neues Bild</p>
                                 <div id="thumbnail"></div>
                                 <input type="file" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
@@ -105,7 +104,7 @@ if ($_GET['id']) {
 
                             <div class="d-flex justify-content-center">
                                 <div>
-                                    <input class="btn btn-outline-info" type="submit" name="but_upload" value="Event erstellen" />
+                                    <input class="btn btn-outline-info" type="submit" name="but_upload" value="Beitrag aktualisieren" />
                                 </div>
                                 <div>
                                     <a href="eventsAdmin.php" class="btn btn-block btn-outline-info">Zurück</a>
