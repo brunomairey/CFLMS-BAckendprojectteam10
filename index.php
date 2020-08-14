@@ -13,7 +13,7 @@ $urlvideos="stories.php";
 
 $urladmin="events/login.php";
 	include('navbar.php');
-	include('header.php');
+	
 	
 
 ?>
@@ -29,7 +29,11 @@ $urladmin="events/login.php";
 	</main>
 
 <?php  
-
+$facebookfooter="Images/facebook.png";
+  $instafooter="Images/insta.png";
+   $twitterfooter="Images/twitter.png";
+    $youtubefooter="Images/youtube.png";
+    $linkedinfooter="Images/linkedin.png";
 	include('footer.php');
 
 ?> 

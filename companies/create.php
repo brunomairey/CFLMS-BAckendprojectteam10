@@ -3,8 +3,21 @@
 
 
 <?php 
+$urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+$urlabout="../aboutus.php";
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
 
-  include '../db_connect.php'; ?>
+
+
+$urladmin="events/login.php";
+  include '../db_connect.php';
+  include '../navbar.php' ?>
 <!DOCTYPE html>
 
 <html>
@@ -34,7 +47,25 @@
   color:red;
 }
 
-</form>
+footer
+{
+  width: 100% !important; 
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+footer #socialbuttons
+{   display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer #footertext {
+display: flex;
+flex-direction: column;
+text-align: center;}
 
 
 
@@ -43,33 +74,46 @@
 </head>
 <body style="background-color: #DEEAE3">
 
+<div class="container">
+<h2 class="fl-heading">
+<span class="fl-heading-text">Stellungnahme von Unternehmerinnen & Unternehmern aus Österreich zu den Protesten für mehr Klimaschutz (#EntrepreneursForFuture):</span>
+</h2>
 
 
-<nav class="navbar navbar-expand-lg text-white" style="background-color: #135887">
-  <a class="navbar-brand text-white" href="#">Navbar w/ text</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse text-white" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-    <span class="navbar-text">
-      Navbar text with an inline element
-    </span>
-  </div>
-</nav>
+<h3><span style="font-size: 32px;"><strong>#FridaysForFuture sind dringender Weckruf </strong><strong>– Wirtschaft will endlich mehr Klimaschutz umsetzen</strong></span></h3>
+
+
+<p>Inzwischen streiken und demonstrieren weltweit junge Menschen für ambitionierten Klimaschutz, für das Benennen der Klimakrise als echte Krise und für die Rettung unseres Planeten. Die historische Mobilisierungskraft der Bewegung zeigt die Dringlichkeit des Anliegens. Auch die Wissenschaft hat mit tausenden Unterzeichnenden der Initiative #Scientists4Future.org erklärt, dass die derzeitigen Maßnahmen zum Klima-, Arten-, Wald-, Boden- und Meeresschutz bei weitem nicht ausreichen. Als Unternehmerinnen und Unternehmer erklären wir uns mit den Streikenden solidarisch.</p>
+<p>Aus unserem eigenen tagtäglichen unternehmerischen Handeln wissen wir: <strong>Klimaschonendes Wirtschaften funktioniert heute schon. Viele innovative Technologien, Produkte, Dienstleistungen und Geschäftsmodelle für einen besseren Klimaschutz gibt es bereits. Aber weitergehende politische Rahmenbedingungen sind endlich nötig, damit faire Wettbewerbsbedingungen für klimaschonende Technologien und Geschäftsmodelle hergestellt werden und die Wirtschaft insgesamt umsteuert.</strong></p>
+<p>Die Staaten der Weltgemeinschaft haben sich mit dem Pariser Klimaschutzabkommen von 2015 völkerrechtlich verbindlich dazu verpflichtet, die globale Erwärmung deutlich unter 2°C zu halten. Alle Länder haben außerdem Anstrengungen versprochen, die Erwärmung auf 1,5°C zu begrenzen.</p>
+<p>Als unterzeichnende Unternehmerinnen und Unternehmer stehen wir hinter dem Pariser Klima­schutz­abkommen und unterstützen diese Forderungen:</p>
+<ol>
+    <li><strong>Eine wirksame und planbar steigende CO<sub>2</sub>-Bepreisung für alle Sektoren. </strong>Investitionen werden so in eine kohlenstoffarme Infrastruktur, Technologien und Produkte gelenkt.</li>
+    <li><strong>Energiewende beschleunigen.</strong> Schneller, gesetzlich verankerter Ausstieg aus den fossilen Energien. Österreich, Europa und die Welt können technisch zu 100% aus erneuerbaren Energien versorgt werden. Eine umfassende Energieeffizienzstrategie zur Verankerung von Efficiency First in allen Bereichen, insbesondere Förderungen für Gebäudesanierungen sowie ambitionierte gesetzliche Vorgaben mit Vorbildrolle der öffentlichen Hand.</li>
+    <li><strong>Divestment und Abschaffung klimaschädlicher Subventionen </strong>bis zum Jahr 2025, wie z.B. von den G7-Staaten beschlossen.</li>
+    <li><strong>Eine Mobilitätswende</strong>, die auf Verkehrsvermeidung, öffentlichen Verkehr, umweltfreundliche und geteilte Verkehrsmittel sowie C02-freie Antriebssysteme setzt. Wir brauchen die Besteuerung des Flugverkehrs (Kerosinsteuer) und reduzierte Umsatzsteuern auf Produkte und Dienstleistungen des Radverkehrs.</li>
+    <li><strong>Eine Agrar- und Ernährungswende</strong>. Die Subventionspolitik in der Landwirtschaft und die Rahmenbedingungen für die Ernährungswirtschaft müssen in Einklang mit den Klimaschutzzielen stehen – und mit wirksamen Maßnahmen wie der Ausdehnung einer ökologischen und klimaschonenden Landwirtschaft und der Förderung entsprechender Ernährungs- und Konsumstile unterstützt werden.</li>
+    <li><strong>Kreislaufwirtschaft forcieren. </strong>In der Regel ist die Nutzung von Sekundärrohstoffen der Nutzung von Primärrohstoffen ökologisch überlegen, da sie mit weniger Energieaufwand hergestellt werden können und auf geringere Transportwege angewiesen sind. Rücknahme-, Recycling-, und insbesondere die Wiederverwertungsquoten müssen nicht nur gesetzt, sondern auch durchgesetzt werden.</li>
+    <li><strong>Aufbau eines Klima-Innovationsfonds für etablierte Unternehmen und Startups, </strong>die innovative Lösungen für die Steuerung/ Bewältigung der Klimakrise realisieren.</li>
+    <li><strong>Ein ambitioniertes Klimaschutzgesetz, </strong>das eine dekarbonisierte Wirtschaft im Einklang mit dem in Paris vereinbarten 1,5°C Ziel erreicht.</li>
+    <li><strong>Ein nachhaltiges Finanzsystem. </strong>Die von der EU-Kommission für Europa geschätzten Kosten von 180 Mrd. Euro jährlich zur Erreichung der Klima- und Energieziele können aufgebracht werden. Dazu bedarf es auch eines nachvollziehbaren Labels für nachhaltige Investitionen sowie gesetzlicher Regelungen – sei es durch steuerliche Anreize oder Vorschriften über die Mittelverwendung -, um privaten und institutionellen Investoren einen Rahmen zu bieten, ihren Beitrag bei der Mittelaufbringung zu leisten.</li>
+</ol>
+<p>Wir setzen voller Überzeugung auf Klimaschutz!</p>
+<p>Als Profis aus der Wirtschaft wissen wir um die Kraft innovativer Geschäftsmodelle und Technologien, die das Klima schützen und profitabel sind. Die konsequente und schnelle Einführung erneuerbarer Energien, einer ökologischen Landwirtschaft, einer Kreislauf­wirtschaft und einer neuen Mobilität schaffen und sichern zukunftsfähige Arbeitsplätze. Klimaschützende Technologien und Geschäftsmodelle scheitern häufig an politischen Rahmenbedingungen, die Geschäftsmodelle und Technologien der Vergangenheit schützen. Die vergangenen 20 Jahre haben gezeigt, dass die technologische Entwicklung und Möglichkeiten für den Klimaschutz rasant gestiegen und die Kosten immens gesunken sind.</p>
+<p>Um die gesamte Wirtschaft zu transformieren, benötigen wir dringend andere politische Rahmenbedingungen.</p>
+<p>Wenn wir jetzt handeln, ist eine geregelte Dekarbonisierung der Wirtschaft möglich. Nur dann schaffen wir eine enkeltaugliche Wirtschaft. Nur dann können wir die Klimakrise noch steuern und unsere natürlichen Lebensgrundlagen erhalten. <strong>Dafür streiken die Kinder und Jugendlichen von „Fridays for Future“; ihnen gebührt unsere Achtung und unsere volle Unterstützung.</strong></p>
+<p>&nbsp;</p>
+<p><em><strong>#EntrepreneursForFuture</strong></em></p>
+<p><a href="/wp-content/uploads/Entrepreneurs4Future-Oesterreich.pdf" target="_blank" rel="noopener noreferrer">Laden Sie unsere Stellungnahme Österreich hier als PDF-Datei (237 kb) herunter. </a></p>
+
+
+
+
+
+<!----------------- -------------------->
 
   <div id="contactForm">
-<form class="mx-5" action="a_create.php" method= "post" enctype='multipart/form-data'>
+<form  action="a_create.php" method= "post" enctype='multipart/form-data'>
   
 
   
@@ -173,8 +217,19 @@
 </div>
 </form>
 </div>
+</div>
 <?php $conn->close(); ?>
 </body>
 
 </html>
 
+<?php  
+ 
+ $facebookfooter="../Images/facebook.png";
+  $instafooter="../Images/insta.png";
+   $twitterfooter="../Images/twitter.png";
+    $youtubefooter="../Images/youtube.png";
+    $linkedinfooter="../Images/linkedin.png";
+  include('../footer.php');
+
+?> 
