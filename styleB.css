@@ -3,13 +3,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1vw; }
+/*  font-size: 1vw;*/ }
 
 .colorbutton {
-	background-color: #40B2C3;
-	border: solid red;
-
+	background-color: #135887;
+	color: white;
+	
 }
+
+.colorbutton li a {
+	color:white;
+	
+}
+
+
 
 .main-header
 {

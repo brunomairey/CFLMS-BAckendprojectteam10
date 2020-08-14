@@ -1,4 +1,5 @@
 <?php  
+$urlimage="images/logo_entre.png";
 $urlindex="index.php";
 $urlsign="companies/create.php";
 $urlcompanies="companies/index.php";
@@ -16,7 +17,9 @@ $urladmin="events/login.php";
 	
 
 ?>
-
+<header class="main-header">
+		
+	</header>
 	<main>
 		<!-- <section class="showcase">
 			<div class="container">
