@@ -6,8 +6,23 @@
 				</a>
 			</div>
 			<div class="icon m-2">
-				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
+				<a href="https://www.instagram.com/entrepeneursforfuture/" title="instagram-icon">
 					<img style="width:5vw; height:5vw;" src="Images/insta.png">
+				</a>
+			</div>
+			<div class="icon m-2">
+				<a href="https://www.twitter.com/eff_future" title="twitter-icon">
+					<img style="width:5vw; height:5vw;" src="Images/twitter.png">
+				</a>
+			</div>
+			<div class="icon m-2">
+				<a href="https://www.youtube.com/channel/UCg9d_0n7Kt16JbBPZKvMacQ" title="youtube-icon">
+					<img style="width:5vw; height:5vw;" src="Images/youtube.png">
+				</a>
+			</div>
+			<div class="icon m-2">
+				<a href="https://www.linkedin.com/company/entrepeneurs-for-future/" title="linkedin-icon">
+					<img style="width:5vw; height:5vw;" src="Images/linkedin.png">
 				</a>
 			</div>
 		</div>
