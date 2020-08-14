@@ -1,7 +1,19 @@
 <?php  
+$urlindex="index.php";
+$urlsign="companies/create.php";
+$urlcompanies="companies/index.php";
+$urlevents ="events/events.php";
+$urlabout="aboutus.php";
+$urlfriends="friends.php";
+$urlcontact="contact.php";
+$urlvideos="stories.php";
 
-	include('header.php');
+
+
+$urladmin="events/login.php";
 	include('navbar.php');
+	include('header.php');
+	
 
 ?>
 
@@ -17,4 +29,4 @@
 
 	include('footer.php');
 
-?>
+?> 

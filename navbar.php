@@ -5,35 +5,40 @@
   		<div class="collapse navbar-collapse" id="navbarNav">
 		    <ul class="navbar-nav">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="<?php echo $urlindex ?>">Home<span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Sign The Petition</a>
+		        <a class="nav-link" href="<?php echo $urlsign ?>">Stellungnahme</a>
+		      </li>
+		      <!-- Hier kommen wir zu Unterschrift von companies - seite create
+		      https://entrepreneurs4future.de/stellungnahme/stellungnahme-at/ -->
+		      <li class="nav-item">
+		        <a class="nav-link" href="<?php echo $urlcompanies ?>">Entrepreneur</a>
+		      </li>
+		      <!-- Hier kommen wir zu Unterschrift von companies - seite index 
+		      https://entrepreneurs4future.de/entrepreneure/-->
+		     <li class="nav-item">
+		        <a class="nav-link" href="<?php echo $urlevents ?>">Aktivität und Termine</a>
+		           <!-- Hier kommen wir zu Unterschrift von companies - seite index 
+		      https://entrepreneurs4future.de/entrepreneure/-->
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Events</a>
+		        <a class="nav-link" href="<?php echo $urlabout ?>">Über uns</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Entrepeneurs</a>
+		        <a class="nav-link" href="<?php echo $urlfriends ?>">Freund:Innen</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Sustainable Business</a>
+		        <a class="nav-link" href="<?php echo $urlvideos ?>">Erfolgsgeschichten</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Stories</a>
+		        <a class="nav-link" href="<?php echo $urlcontact ?>">Kontakt</a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Friends</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Forum</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">About Us</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Contact</a>
-		      </li>
+
+		      <span>
+		      	Jetzt unterschreiben
+		      </span>
+		     
 		    </ul>
 	  	</div>
 	</nav>
