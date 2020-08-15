@@ -74,12 +74,50 @@ if (isset($_POST['btn-login'])) {
 <head>
   <title>Login & Registration System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../style_MANUELA.css">
+  <!-- <link rel="stylesheet" href="../style_MANUELA.css"> -->
 
   <style>
     body {
       font-family: "Roboto", sans-serif;
     }
+    /* STYLECODE FOR PARALLAX */
+.parallax_section1 {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative; }
+  
+  .parallax_section2 {
+    height: 700px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative; }
+  
+  .parallax_image {
+    background-image: url(../Images/parallax.jpg);
+  }
+  
+  .row_parallax {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  
+  .card_parallax:hover {
+    transform: scale(1.05); }
+  
+  .card_parallax {
+    margin: 20px 10px 20px 10px;
+    padding: 20px 20px 20px 20px;
+    transition: all 0.5s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
+    max-width: 30vw;
+    min-width: 30vw; 
+  
+  }
   </style>
 
 </head>
@@ -115,7 +153,7 @@ if (isset($_POST['btn-login'])) {
 
     <div class="parallax_section2 parallax_image">
 
-      <div class="row row_parallax">
+      <div class="row">
 
 
 
