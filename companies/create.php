@@ -29,10 +29,10 @@ $urladmin="events/login.php";
     #contactForm {
     margin: 2vw; 
     padding: 2vw; 
-    background-color: #f5f5f5 ;
+     background-color: #d7e1cc;
     border-radius: 10px; 
     box-shadow: 5px 10px 18px #888888; 
-    background-color: #d7e1cc;
+
     /*width: 100vw;
     position: relative;
     left: 20vw;*/
@@ -49,7 +49,7 @@ $urladmin="events/login.php";
 
 footer
 {
-  width: 100% !important; 
+  width: 100%; 
   display: flex;
   flex-direction: column;
   

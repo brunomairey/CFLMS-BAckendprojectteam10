@@ -44,8 +44,8 @@ E: <a href="mailto:eff@dwr-eco.com">eff@dwr-eco.com</a></p>
 <p>&nbsp;</p>
 <p><strong>Social Entrepreneurship Netzwerk Deutschland e. V.</strong><br />
 <strong>c/o Bundesverband Deutsche Startups e. V.</strong></p>
-<p>im Haus der Bundespressekonferenz<br />
-Schiffbauerdamm 40<br />
+<p>im Haus der Bundespressekonferenz<br>
+Schiffbauerdamm 40<br>
 10117 Berlin</p>
 <p>T: +49 30 644 776 58<br />
 E: <a href="mailto:info@send-ev.de">info@send-ev.de</a></p>
@@ -57,11 +57,11 @@ UnternehmensGrün e.V.</strong><br />
 T: +49 30 343 955 51</p>
 <p>E: <a href="mailto:mail@entrepreneursforfuture.org">mail@entrepreneursforfuture.org</a></p>
 <p>&nbsp;</p>
-<p><strong>AöL e.V.<br />
+<p><strong>AöL e.V.<br>
 Assoziation ökologischer Lebensmittelhersteller e.V.</strong></p>
-<p>Untere Badersgasse 8<br />
+<p>Untere Badersgasse 8<br>
 97769 Bad Brückenau</p>
-<p>Tel: +49 9741 938 733-0<br />
+<p>Tel: +49 9741 938 733-0<br>
 <a href="http://www.aoel.org/">www.aoel.org</a></p>
 <p>AöL wird vertreten durch:<br />
 Dr. Alexander Beck (geschäftsführender Vorstand);<br>
