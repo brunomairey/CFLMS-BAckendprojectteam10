@@ -1,70 +1,80 @@
 <?php
-//already defined in db_connect.php
-// ob_start();
-// session_start();
-require_once '../db_connect.php';
+
+$urlimage = "../images/logo_entre.png";
+$urlindex = "../index.php";
+$urlsign = "../companies/create.php";
+$urlcompanies = "../companies/index.php";
+$urlevents = "../events/events.php";
+$urlabout = "../aboutus.php";
+$urlfriends = "../friends.php";
+$urlcontact = "../contact.php";
+$urlvideos = "../stories.php";
+
+
+include '../db_connect.php';
+include '../navbar.php';
 
 // it will never let you open index(login) page if session is set
 if (isset($_SESSION['user']) != "") {
-  header("Location: events.php");
-  exit;
+header("Location: events.php");
+exit;
 }
 
 $error = false;
 
 if (isset($_POST['btn-login'])) {
 
-  // prevent sql injections/ clear user invalid inputs
-  $email = trim($_POST['email']);
-  $email = strip_tags($email);
-  $email = htmlspecialchars($email);
+// prevent sql injections/ clear user invalid inputs
+$email = trim($_POST['email']);
+$email = strip_tags($email);
+$email = htmlspecialchars($email);
 
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
-  // prevent sql injections / clear user invalid inputs
+$pass = trim($_POST['pass']);
+$pass = strip_tags($pass);
+$pass = htmlspecialchars($pass);
+// prevent sql injections / clear user invalid inputs
 
-  if (empty($email)) {
-    $error = true;
-    $emailError = "Please enter your email address.";
-  } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $error = true;
-    $emailError = "Please enter valid email address.";
-  }
+if (empty($email)) {
+$error = true;
+$emailError = "Please enter your email address.";
+} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+$error = true;
+$emailError = "Please enter valid email address.";
+}
 
-  if (empty($pass)) {
-    $error = true;
-    $passError = "Please enter your password.";
-  }
+if (empty($pass)) {
+$error = true;
+$passError = "Please enter your password.";
+}
 
-  // if there's no error, continue to login
-  if (!$error) {
+// if there's no error, continue to login
+if (!$error) {
 
-    $password = hash('sha256', $pass); // password hashing
+$password = hash('sha256', $pass); // password hashing
 
-    //old
-    $res = mysqli_query($conn, "SELECT * FROM users WHERE userEmail='$email'");
-    //$obj->read('users',array('useremail'=>$email));
+//old
+$res = mysqli_query($conn, "SELECT * FROM users WHERE userEmail='$email'");
+//$obj->read('users',array('useremail'=>$email));
 
 
-    $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
-    $count = mysqli_num_rows($res); // if uname/pass is correct it returns must be 1 row
+$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+$count = mysqli_num_rows($res); // if uname/pass is correct it returns must be 1 row
 
-    if ($count == 1 && $row['userPass'] == $password) {
-      if ($row["status"] == 'admin') {
-        $_SESSION["admin"] = $row["userID"];
-        header("Location: ../Events/eventsAdmin.php");
-        // } elseif ($row["status"] == 'superadmin'){
-        //   $_SESSION['superadmin'] = $row['userID'];
-        //   header("Location: superadmin.php");
-      } else {
-        $_SESSION['user'] = $row['userID'];
-        header("Location: ../Events/events.php");
-      }
-    } else {
-      $errMSG = "Incorrect Credentials, Try again...";
-    }
-  }
+if ($count == 1 && $row['userPass'] == $password) {
+if ($row["status"] == 'admin') {
+$_SESSION["admin"] = $row["userID"];
+header("Location: ../Events/eventsAdmin.php");
+// } elseif ($row["status"] == 'superadmin'){
+// $_SESSION['superadmin'] = $row['userID'];
+// header("Location: superadmin.php");
+} else {
+$_SESSION['user'] = $row['userID'];
+header("Location: ../Events/events.php");
+}
+} else {
+$errMSG = "Incorrect Credentials, Try again...";
+}
+}
 }
 ?>
 
@@ -80,51 +90,66 @@ if (isset($_POST['btn-login'])) {
     body {
       font-family: "Roboto", sans-serif;
     }
+
     /* STYLECODE FOR PARALLAX */
-.parallax_section1 {
-    height: 300px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative; }
-  
-  .parallax_section2 {
-    height: 700px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative; }
-  
-  .parallax_image {
-    background-image: url(../Images/parallax.jpg);
-  }
-  
-  .row_parallax {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-  
-  .card_parallax:hover {
-    transform: scale(1.05); }
-  
-  .card_parallax {
-    margin: 20px 10px 20px 10px;
-    padding: 20px 20px 20px 20px;
-    transition: all 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
-    max-width: 30vw;
-    min-width: 30vw; 
-  
-  }
+    .parallax_section1 {
+      height: 300px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .parallax_section2 {
+      height: 700px;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .parallax_image {
+      background-image: url(../Images/parallax.jpg);
+    }
+
+    .row{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .card_parallax:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      margin: 20px 10px 20px 10px;
+      padding: 20px 20px 20px 20px;
+      transition: all 0.5s;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+      max-width: 30vw;
+      min-width: 30vw;
+
+    }
+
+    .card-body{
+      background-color: #D7E1CC;
+    }
+
+    /* .button{
+      background-color: #135887; 
+      border: #135887;
+    } */
+
   </style>
 
 </head>
 
 <body>
-  <?php require_once '../header.php'; ?>
-  <nav class="navbar sticky-top navbar-light bg-light">
+  <!-- <#?php require_once '../header.php'; ?> -->
+  <!-- <nav class="navbar sticky-top navbar-light bg-light">
 
     <div class="mx-auto">
       <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
@@ -133,7 +158,7 @@ if (isset($_POST['btn-login'])) {
 
 
     </div>
-  </nav>
+  </nav> -->
 
 
   <div class="container-fluid">
@@ -158,16 +183,16 @@ if (isset($_POST['btn-login'])) {
 
 
 
-        <div class='card card_parallax border-light rounded'>
+        <div class='card border-light rounded'>
 
 
 
-          <div class='card-body bg-light'>
+          <div class='card-body rounded'>
 
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
-              <h2 class="text-success">Sign In.</h2>
+              <h2 >Sign In.</h2>
               <hr />
 
               <?php
@@ -180,7 +205,7 @@ if (isset($_POST['btn-login'])) {
 
 
 
-              <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+              <input type="email" name="email" class="form-control mb-2" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
 
               <span class="text-danger"><?php echo $emailError; ?></span>
 
@@ -189,7 +214,7 @@ if (isset($_POST['btn-login'])) {
 
               <span class="text-danger"><?php echo $passError; ?></span>
               <hr />
-              <button type="submit" name="btn-login">Sign In</button>
+              <button class="btn btn-info btn-lg  mr-5 my-2 button" type="submit" name="btn-login">Sign In</button>
 
 
               <hr />
@@ -224,13 +249,13 @@ if (isset($_POST['btn-login'])) {
 
 
 
-    <nav class="navbar navbar-light bg-dark">
+    <!-- <nav class="navbar navbar-light bg-dark">
 
       <div class="mx-auto">
         <h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
 
       </div>
-    </nav>
+    </nav> -->
     <!--END FOOTER-->
 
 
@@ -238,7 +263,19 @@ if (isset($_POST['btn-login'])) {
   </div>
   <!--END CONTAINER-->
 
+  <?php
 
+  $facebookfooter = "../Images/facebook.png";
+  $instafooter = "../Images/insta.png";
+  $twitterfooter = "../Images/twitter.png";
+  $youtubefooter = "../Images/youtube.png";
+  $linkedinfooter = "../Images/linkedin.png";
+  $impressum = "../impressum.php";
+  $datenschutz = "../datenschutz.php";
+  $loginadmin = "../login/login.php";
+  include('../footer.php');
+
+  ?>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
