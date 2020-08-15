@@ -14,7 +14,7 @@
 	
 
 	
-<nav class="navbar navbar navbar-expand-xl navbar-dark" style="background-color: #135887; ">
+<nav class="navbar navbar navbar-expand-lg navbar-dark" style="background-color: #135887; ">
 	  <a class="navbar-brand mx-5" href="<?php echo $urlindex ?>">
     <img src="<?php echo $urlimage ?>" width="100" height="85" alt="" loading="lazy">  </a>
   		 <button class="navbar-toggler navbar-toggler-left btn-lg" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +56,9 @@
 				     
 		    </ul>
 	  	</div>
-	  	 <form class="form-inline mr-5">
+	  <!-- 	 <form class="form-inline mr-5">
     		
    			 <button class="btn my-5 btn-outline-light my-sm-0" href="<?php echo $urlsign ?>">Jetzt unterschreiben</button>
-  			</form>
+  			</form> -->
 	</nav>
 

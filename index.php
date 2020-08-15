@@ -17,9 +17,11 @@ $urladmin="events/login.php";
 	
 
 ?>
+
 <header class="main-header">
 		
 	</header>
+
 	<main>
 		<!-- <section class="showcase">
 			<div class="container">
@@ -34,6 +36,9 @@ $facebookfooter="Images/facebook.png";
    $twitterfooter="Images/twitter.png";
     $youtubefooter="Images/youtube.png";
     $linkedinfooter="Images/linkedin.png";
+      $impressum="impressum.php";
+    $datenschutz="datenschutz.php";
+    $loginadmin="login/login.php";
 	include('footer.php');
 
 ?> 

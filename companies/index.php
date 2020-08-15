@@ -1,7 +1,19 @@
 <?php 
-  //  $url = "index.php";
-  // $url2 = "create.php";
-include '../db_connect.php'; ?>
+$urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+$urlabout="../aboutus.php";
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
+
+
+  include '../db_connect.php';
+  include '../navbar.php' ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +26,6 @@ include '../db_connect.php'; ?>
        * element that contains the map. */
         #map {
             height: 60vh;
-            border: solid red;
             margin: auto;
             padding: 0;
         }
@@ -24,7 +35,7 @@ include '../db_connect.php'; ?>
     </style>
    
 </head>
-<body>
+<body style="background-color: #DEEAE3">
 
 
 
@@ -147,7 +158,19 @@ if($result->num_rows > 0) {
            } 
 
  ?>
+<?php  
+ 
+ $facebookfooter="../Images/facebook.png";
+  $instafooter="../Images/insta.png";
+   $twitterfooter="../Images/twitter.png";
+    $youtubefooter="../Images/youtube.png";
+    $linkedinfooter="../Images/linkedin.png";
+    $impressum="../impressum.php";
+    $datenschutz="../datenschutz.php";
+    $loginadmin="../login/login.php";
+  include('../footer.php');
 
+?> 
  
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap"
         async defer></script>

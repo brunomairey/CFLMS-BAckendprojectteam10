@@ -104,7 +104,7 @@ text-align: center;}
 <p>Wenn wir jetzt handeln, ist eine geregelte Dekarbonisierung der Wirtschaft möglich. Nur dann schaffen wir eine enkeltaugliche Wirtschaft. Nur dann können wir die Klimakrise noch steuern und unsere natürlichen Lebensgrundlagen erhalten. <strong>Dafür streiken die Kinder und Jugendlichen von „Fridays for Future“; ihnen gebührt unsere Achtung und unsere volle Unterstützung.</strong></p>
 <p>&nbsp;</p>
 <p><em><strong>#EntrepreneursForFuture</strong></em></p>
-<p><a href="/wp-content/uploads/Entrepreneurs4Future-Oesterreich.pdf" target="_blank" rel="noopener noreferrer">Laden Sie unsere Stellungnahme Österreich hier als PDF-Datei (237 kb) herunter. </a></p>
+<p><a href="../images/Entrepreneurs4Future-Oesterreich.pdf" target="_blank" rel="noopener noreferrer">Laden Sie unsere Stellungnahme Österreich hier als PDF-Datei (237 kb) herunter. </a></p>
 
 
 
@@ -210,9 +210,9 @@ text-align: center;}
 
 
   <div class="col-md-12">
-  <button type="submit" class="btn btn-info btn-lg mx-5" name="but_upload">Unterzeichnen!</button>
-   <a class="btn btn-info btn-lg" href="index.php" type="button" role="button">
-    Züruck
+  <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="but_upload" style="background-color: #135887; border: #135887;">Unterzeichnen!</button>
+   <a class="btn btn-info btn-lg" href="../index.php" type="button" role="button" style="background-color: #135887; border: #135887;">
+    Zurück
   </a>
 </div>
 </form>
@@ -230,6 +230,9 @@ text-align: center;}
    $twitterfooter="../Images/twitter.png";
     $youtubefooter="../Images/youtube.png";
     $linkedinfooter="../Images/linkedin.png";
+      $impressum="../impressum.php";
+    $datenschutz="../datenschutz.php";
+    $loginadmin="../login/login.php";
   include('../footer.php');
 
 ?> 

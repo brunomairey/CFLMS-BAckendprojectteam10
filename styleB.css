@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: solid blue;
 /*  font-size: 1vw;*/ }
 
 .colorbutton {
@@ -46,7 +45,7 @@ body {
 	font-size: 3.5vw;
 }
 */
-footer
+/*footer
 {
 	width: 100%;
 	display: flex;
@@ -60,10 +59,10 @@ footer #socialbuttons
 {	display: flex;
 	flex-direction: row;
 	justify-content: center;
-}
-
+}*/
+/*
 footer #footertext {
 display: flex;
 flex-direction: column;
 text-align: center;}
-
+*/
