@@ -30,6 +30,13 @@ $urlvideos="../stories.php";
             padding: 0;
         }
 
+h1 {
+    background-color: #135887;
+    color: white; 
+    width: 100%;
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 10px; }
         /* Optional: Makes the sample page fill the window. */
 
     </style>
@@ -40,9 +47,31 @@ $urlvideos="../stories.php";
 
 
 <div class="container">
-  <div id="map" class="mb-5"></div>
+ 
+ <h1 class="text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h1>
+  <div class="row mb-3">
+      <div class="col-3 pt-2">
+  <h2 class="text-center" style="color: #40B2C3"> <strong> 
+<?php
+           $sql = "SELECT * FROM companies";
+           $result = $conn->query($sql);
+  $row_cnt = $result->num_rows;
+echo $row_cnt;
+// WHILE($row = mysql_fetch_array($result, MYSQL_NUM)) { echo $row; }
+?>
+       </strong>
+</h2>
+</div>
+    <div class="col-9">
 
-	<table class="table table-info table-striped">
+  
+  <h3>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h3>
+</div></div>
+  <div id="map"></div>
+
+<h3 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h3>
+
+	<table class="table table-info table-striped" style="background-color: #CAf0F8">
   <thead>
     <tr>
       <th scope="col">Unterzeichner</th>
@@ -64,7 +93,7 @@ if($result->num_rows > 0) {
                    ?>
       <tr>
       <th scope="row"><?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></th>
-      <td><img src="<?= $row['firmenlogo'] ?>" alt="whatever" style="max-width:5vw"><?= $row['unternehmen'] ?></td>
+      <td><a href="<?= $row['firmenlogo'] ?>"><?= $row['unternehmen'] ?></a></td>
       <td><?= $row['ort'] ?></td>
       <td><?= $row['land'] ?></td>
     </tr>

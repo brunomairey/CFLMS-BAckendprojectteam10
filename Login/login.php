@@ -150,13 +150,10 @@ $errMSG = "Incorrect Credentials, Try again...";
 <body>
   <!-- <#?php require_once '../header.php'; ?> -->
   <!-- <nav class="navbar sticky-top navbar-light bg-light">
-
     <div class="mx-auto">
       <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
       <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
       <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
-
-
     </div>
   </nav> -->
 
@@ -250,10 +247,8 @@ $errMSG = "Incorrect Credentials, Try again...";
 
 
     <!-- <nav class="navbar navbar-light bg-dark">
-
       <div class="mx-auto">
         <h2 class="text-success">(c) TEAM 10: BEMM 2020 </h2>
-
       </div>
     </nav> -->
     <!--END FOOTER-->
