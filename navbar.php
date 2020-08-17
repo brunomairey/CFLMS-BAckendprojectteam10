@@ -45,7 +45,7 @@
 		        <a class="nav-link" href="<?php echo $urlabout ?>">Über uns</a>
 		      </li>
 		      <li class="nav-item active">
-		        <a class="nav-link" href="<?php echo $urlfriends ?>">Unsere Freunden</a>
+		        <a class="nav-link" href="<?php echo $urlfriends ?>">Unsere Freund*innen</a>
 		      </li>
 		      <li class="nav-item active">
 		        <a class="nav-link" href="<?php echo $urlvideos ?>">Erfolgsgeschichten</a>

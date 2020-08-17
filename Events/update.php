@@ -60,17 +60,32 @@ if ($_GET['id']) {
             <div class="contactForm">
                 <form action="a_update.php" method="post" enctype='multipart/form-data'>
                     <div class="container font-weight-bold">
-
+                        
 
 
                         <div class="form-group">
 
-                        <input type="radio" id="event" name="category" value="event" >  
-                        <label for="event" class="mr-5">Event </label>
-                        <input type="radio" id="blog" name="category" value="blog">
-                        <label for="blog"> Artikel/Blog</label>   
+
+                        <?php 
+                        $category =  $data['category'];
+
+                         if ($category == 'event'){
+                           echo  "<input type='radio' id='event' name='category' value='event' checked >";
+                           echo " <label for='event' class='mr-5'>Event </label>";
+                           echo " <input type='radio' id='blog' name='category' value='blog'>";
+                           echo " <label for='blog'> Artikel/Blog</label> ";
+                         }
+                         else{
+                            echo  "<input type='radio' id='event' name='category' value='event' >";
+                            echo " <label for='event' class='mr-5'>Event </label>";
+                            echo " <input type='radio' id='blog' name='category' value='blog' checked>";
+                            echo " <label for='blog'> Artikel/Blog</label> ";
+                         }
+
+                        ?>
 
 
+                            <br>
                             <label for="firstname">Name Beitrag: </label>
                             <input type="text" class="form-control" name="name" value="<?php echo $data['eventName'] ?>" />
 

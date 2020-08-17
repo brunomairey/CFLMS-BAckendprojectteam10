@@ -28,7 +28,7 @@ include '../navbar.php' ?>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <title>Events</title>
+    <title>Veranstaltungen und News</title>
 
     <style>
       
@@ -52,7 +52,7 @@ include '../navbar.php' ?>
 
 
         <div class="container_blog row row-cols-1  mx-auto">
-            <h1 class="bg-secondary">BLOG SECTION</h1>
+        <h1 class="header_blog">Beiträge</h1>
             <?php
             $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
 
@@ -110,7 +110,7 @@ include '../navbar.php' ?>
 
         <!-- START SECTION EVENT -->
         <div class="container_event">
-        <h1 class="bg-warning">EVENTS SECTION</h1>
+        <h1 class="header_events">Veranstaltungen</h1>
             <div class="row rounded">
                 <div class="[ row-cols-1  ]">
                     <ul class="event-list ">
@@ -151,64 +151,14 @@ include '../navbar.php' ?>
 <img src="<?= $row['image'] ?>">
 <div class="info">
     <h3 class="title"><?= $eventName ?></h3>
-    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
-
+    <!-- <h7 class="desc"> <span class="text-info">Ort:</span> <#?= $location ?> <span class="text-info">Uhrzeit:</span> <#?= date("H:i", $zeit) ?> Uhr</h7> -->
+    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
+    <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
 </div>
 
 </li>
 
-                        <!-- <li class="pb-2">
-
-                            <#?php
-                            $eventDate = "2020-10-15 1600";
-                            $zeit = strtotime($eventDate);
-                            $monate = array("empty", "JAN", "FEB", "MAR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ");
-                            $wochentage = array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
-                            ?>
-                        <details>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </details>
-                            <time datetime="2020-10-15 1600" >
-                                <span class="day"><#?= date("j", $zeit) ?></span>
-                                <span class="month"><#?= $monate[date("n", $zeit)] ?></span>
-                                <span class="year"><#?= date('y', $zeit) ?></span>
-                                <span class="time"><#?= date("H:i", $zeit) ?></span>
-                            </time>
-                            <img src="../images/hero.jpg" />
-                            <div class="info">
-                                <h2 class="title">Spaziergang mit Sebastian Kurz</h2>
-                                <p class="desc"> <span class="text-info">Ort:</span> Wien, Rathausplatz <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</p>
-
-                            </div>
-
-                        </li> -->
-
-
-                        <!-- <li>
-						<time datetime="2014-07-20">
-							<span class="day">4</span>
-							<span class="month">Jul</span>
-							<span class="year">2014</span>
-							<span class="time">ALL DAY</span>
-						</time>
-						<img alt="Independence Day" src="https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg" />
-						<div class="info">
-							<h2 class="title">Independence Day</h2>
-							<p class="desc">United States Holiday</p>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
-								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
-							</ul>
-						</div>
-                    </li> -->
+    
                     <?php
             }
 
@@ -228,7 +178,7 @@ include '../navbar.php' ?>
 
         <!-- START RSS -->
         <div class="container_rss">
-        <h1 class="bg-secondary">RSS SECTION</h1>
+        <h1 class="header_news">News</h1>
             <div class="content">
 
                 <!-- <form method="post" action="">

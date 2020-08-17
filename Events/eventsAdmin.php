@@ -69,7 +69,6 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     </nav>
 
 
-
     <div id="wrapper1" class="mt-2">
 
 
@@ -78,7 +77,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 
         <div class="container_blog row row-cols-1  mx-auto">
-            <h1 class="bg-secondary">Beiträge</h1>
+            <h1 class="header_blog">Beiträge</h1>
             <?php
             $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
 
@@ -139,7 +138,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
         <!-- START SECTION EVENT -->
         <div class="container_event">
-        <h1 class="bg-warning">Veranstaltungen</h1>
+        <div class="header_news"><h1>Veranstaltungen</h1></div>
             <div class="row rounded">
                 <div class="[ row-cols-1  ]">
                     <ul class="event-list ">
@@ -166,9 +165,9 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
             ?>
 
-<!-- <div class="card card_blog"> -->
-<li class="pb-2">
 
+<li class="pb-2">
+<!-- <div class="card card_blog"> -->
 <details>
 <h7><?= $description ?></h7>
 </details>
@@ -181,15 +180,18 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <img class="blog_img" src="<?= $row['image'] ?>">
 <div class="info">
     <h3 class="title"><?= $eventName ?></h3>
-    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
-
+    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
+    <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
 </div>
-<div class="card-footer text-center">
-                        <a href="delete.php?id=<?= $eventID ?>" class="btn btn-outline-danger  mx-auto">Delete </a>
+<div class="event_panel">
+                        <a href="delete.php?id=<?= $eventID ?>" class="btn btn-outline-danger mx-auto">Delete </a>
                         <a href="update.php?id=<?= $eventID ?>" class="btn btn-outline-info mx-auto">Update </a>
+   
+   
+                    <!-- </div> -->
                     </div>
 </li>
-            <!-- </div> -->
+            
             <!-- END CARD -->
 
                     <?php
@@ -211,7 +213,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
         <!-- START RSS -->
         <div class="container_rss">
-        <h1 class="bg-secondary">News</h1>
+        <h1 class="header_news">News</h1>
             <div class="content">
 
                 <form method="post" action="">

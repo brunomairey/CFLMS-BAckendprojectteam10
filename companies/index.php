@@ -49,8 +49,7 @@ h1 {
 }
 @media screen and (min-width: 601px) {
   #small_screen{
-    border: 10px solid blue;
-      display: none;
+         display: none;
   }
 }
     </style>
