@@ -64,10 +64,17 @@ if ($_GET['id']) {
 
 
                         <div class="form-group">
-                            <label for="firstname">Name Event: </label>
+
+                        <input type="radio" id="event" name="category" value="event" >  
+                        <label for="event" class="mr-5">Event </label>
+                        <input type="radio" id="blog" name="category" value="blog">
+                        <label for="blog"> Artikel/Blog</label>   
+
+
+                            <label for="firstname">Name Beitrag: </label>
                             <input type="text" class="form-control" name="name" value="<?php echo $data['eventName'] ?>" />
 
-                            <label for="title">Location: </label>
+                            <label for="title">Ort: </label>
                             <input type="text" class="form-control" name="location" rows="2" value="<?php echo $data['eventLocation'] ?>" />
 
                             <label for="image">Datum: </label>

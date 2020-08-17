@@ -38,16 +38,18 @@ if (!isset($_SESSION['admin']) ) {
    $description = $_POST['description'];
    $date = $_POST['date'];
    $location = $_POST['location'];
+   $category = $_POST['category'];
+   $userID =  $_POST['userID'];
 
    
-$sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocation, `image`) values('$name', '$date', '$description', '$location','$image')";
+$sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocation, `image`, category, userID) values('$name', '$date', '$description', '$location','$image','$category','$userID')";
 
 
     if($conn->query($sql) === TRUE) {
-       echo "<div class= 'bg-secondary text-light pt-2 pb-2'>";
+       echo "<div class= 'bg-info text-light pt-2 pb-2'>";
        echo "<p><center>Neuer Beitrag wurde erstellt</center></p>" ;
        echo "<div class= 'd-flex justify-content-center'>";
-       echo "<a href='create.php'><button type='button' class= 'btn btn-outline-info'>Back</button></a>";
+       echo "<a href='create.php'><button type='button' class= 'btn btn-outline-light'>Back</button></a>";
        echo "</div>";
        header ("refresh:2; url=eventsAdmin.php"); 
        echo "<center>Weiterleitung erfolgt in 2 Sekunden.</center>";

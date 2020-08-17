@@ -49,17 +49,17 @@ if ($_GET['id']) {
 
 
 <hr>
-
+<div class= 'bg-info text-dark pt-2 pb-2'>
 <h3><center>Beitrag wirklich löschen?</center></h3>
 <form action ="a_delete.php" method="post">
 
    <input type="hidden" name= "eventID" value="<?php echo $data['eventID'] ?>" />
    <div class= "d-flex justify-content-center">
-   <button type="submit" class="btn btn-outline-info">Löschen</button >
-   <a href="eventsAdmin.php"><button type="button" class="btn btn-outline-info">Zurück</button ></a>
+   <button type="submit" class="btn btn-outline-dark">Löschen</button >
+   <a href="eventsAdmin.php"><button type="button" class="btn btn-outline-dark">Zurück</button ></a>
    </div>
 </form>
-
+</div>
 </body>
 </html>
 

@@ -16,11 +16,11 @@ if ($_POST) {
 
  $sql = "DELETE FROM events WHERE eventID = $eventID";
     if($conn->query($sql) === TRUE) {
-       echo "<div class='bg-secondary pt-2 pb-2'>";
+       echo "<div class='bg-info pt-2 pb-2'>";
        echo "<p><center>Beitrag wurde gelöscht!!</center></p>" ;
        header ("refresh:2; url=eventsAdmin.php" ); 
        echo "<center>Weiterleitung erfolgt in 2 Sekunden</center>";
-       echo "<center><a href='eventsAdmin.php'><button type='button' class='btn btn-outline-info mb-2'>Zurück</button></a></center>";
+       echo "<center><a href='eventsAdmin.php'><button type='button' class='btn btn-outline-dark mb-2'>Zurück</button></a></center>";
        echo "</div>";
 
 
