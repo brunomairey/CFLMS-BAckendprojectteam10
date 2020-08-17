@@ -1,5 +1,5 @@
 
-
+/* HALLO BRUNO */
 .main-header
 {
 	background-image: url("Images/header.jpg");
@@ -126,6 +126,8 @@
 }
 
 
+/* STYLE EVENTS */
+
 body {
     font-family: "Roboto", sans-serif;
 }
@@ -153,6 +155,35 @@ body {
     max-width: 30vw;
 }
 
+.header_news{
+    background-color: #40B2C3;
+    padding-top: 1vw;
+    padding-bottom: 1.5vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.header_events{
+    background-color: #CAF0F8;
+    padding-top: 1vw;
+    padding-bottom: 1.5vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.header_blog{
+    background-color: #A1C490;
+    padding-top: 1vw;
+    padding-bottom: 1.5vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.event_panel{
+    background-color: #CAf0F8;
+    text-align:center;
+}
+
 details{
     background-color: #CAf0F8;
     /* background-color: #D7E1CC; */
@@ -160,6 +191,10 @@ details{
 
 .navbar_admin{
    background-color: #135887;
+}
+
+.blog_img{
+    max-width: 20vw;
 }
 
 
@@ -177,6 +212,7 @@ details{
     padding: 0px;
     margin: 0px 0px 20px;
 }
+
 .event-list > li > time {
     display: inline-block;
     width: 100%;
@@ -213,17 +249,16 @@ details{
     text-align: center;
 }
 .event-list > li > .info > .title {
-    font-size: 17pt;
+    font-size: 15pt;
     font-weight: 700;
     margin: 0px;
 }
 .event-list > li > .info > .desc {
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: 300;
     margin: 0px;
 }
-.event-list > li > .info > ul,
-.event-list > li > .social > ul {
+.event-list > li > .info > ul {
     display: table;
     list-style: none;
     margin: 10px 0px 0px;
@@ -231,11 +266,8 @@ details{
     width: 100%;
     text-align: center;
 }
-.event-list > li > .social > ul {
-    margin: 0px;
-}
-.event-list > li > .info > ul > li,
-.event-list > li > .social > ul > li {
+
+.event-list > li > .info > ul > li {
     display: table-cell;
     cursor: pointer;
     color: rgb(30, 30, 30);
@@ -249,44 +281,26 @@ details{
     color: rgb(30, 30, 30);
     text-decoration: none;
 } 
-.event-list > li > .social > ul > li {    
-    padding: 0px;
-}
-.event-list > li > .social > ul > li > a {
-    padding: 3px 0px;
-} 
-.event-list > li > .info > ul > li:hover,
-.event-list > li > .social > ul > li:hover {
-    color: rgb(30, 30, 30);
-    background-color: rgb(200, 200, 200);
-}
-.facebook a,
-.twitter a,
-.google-plus a {
-    display: block;
-    width: 100%;
-    color: rgb(75, 110, 168) !important;
-}
-.twitter a {
-    color: rgb(79, 213, 248) !important;
-}
-.google-plus a {
-    color: rgb(221, 75, 57) !important;
-}
-.facebook:hover a {
-    color: rgb(255, 255, 255) !important;
-    background-color: rgb(75, 110, 168) !important;
-}
-.twitter:hover a {
-    color: rgb(255, 255, 255) !important;
-    background-color: rgb(79, 213, 248) !important;
-}
-.google-plus:hover a {
-    color: rgb(255, 255, 255) !important;
-    background-color: rgb(221, 75, 57) !important;
+
+
+.event-list > li > .info {
+    background-color: #DEEAD3;
+    overflow: hidden;
 }
 
-/* @media (min-width: 768px) { */
+/* MEDIAQUERY TABLETS */
+@media (min-width: 768px) { 
+
+    .event-list > li > .info > .title {
+        font-size: 13pt;
+        font-weight: bold;
+        margin: 0px;
+    }
+    .event-list > li > .info > .desc {
+        font-size: 10pt;
+        font-weight: 300;
+        margin: 0px;
+    }
 
     .event-list > li {
         /* position: relative; */
@@ -301,51 +315,55 @@ details{
         height: 120px;
     }
     .event-list > li > time{
-        width: 100px;
+        width: 120px;
+        height: 120px;
         float: left;
     }
 
     .event-list > li > img {
+        display: inline-block;
+        /* height: 120px; */
         width: 120px;
         float: left;
     }
-    .event-list > li > .info {
-        background-color: rgb(245, 245, 245);
-        overflow: hidden;
-    }
+
  
     .event-list > li > .info {
         position: relative;
         height: 120px;
         text-align: left;
-        padding-right: 40px;
+        /* padding-right: 40px; */
     }	
     .event-list > li > .info > .title, 
     .event-list > li > .info > .desc {
         padding: 0px 10px;
     }
-    /* .event-list > li > .info > ul {
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
+   
+}
+
+
+
+/* MEDIAQUERY SMARTPHONE */
+/* @media (min-width: 320px) and (max-width: 767px) {  */
+    @media (max-width: 767px) { 
+    #wrapper1 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
-    .event-list > li > .social {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        display: block;
-        width: 40px;
+
+    .container_rss {
+        width: 100%;
     }
-    .event-list > li > .social > ul {
-        border-left: 1px solid rgb(230, 230, 230);
+    
+    .container_blog {
+        width: 100%;
     }
-    .event-list > li > .social > ul > li {			
-        display: block;
-        padding: 0px;
+    .container_event {
+        width: 100%;
+        padding: 0 2vw 0 2vw;
+        /* margin: 0 2vw 0 2vw; */
     }
-    .event-list > li > .social > ul > li > a {
-        display: block;
-        width: 40px;
-        padding: 10px 0px 9px;
-    } */
-/* } */
+
+}
