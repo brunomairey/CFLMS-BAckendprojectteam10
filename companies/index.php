@@ -41,6 +41,18 @@ h1 {
     border-radius: 10px; }
         /* Optional: Makes the sample page fill the window. */
 
+
+@media screen and (max-width: 600px) {
+  #big_screen{
+  display: none;
+}
+}
+@media screen and (min-width: 601px) {
+  #small_screen{
+    border: 10px solid blue;
+      display: none;
+  }
+}
     </style>
    
 </head>
@@ -82,6 +94,40 @@ $sql = "SELECT * FROM companies WHERE `public`= 'ja' ORDER BY id ASC LIMIT $star
 $rs_result = $conn->query($sql);
 // var_dump($rs_result); 
 ?> 
+<div id="small_screen">
+<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+
+
+
+<?php 
+ while($row = $rs_result->fetch_assoc()) {
+?> 
+
+
+
+<div class="card-deck m-1">
+  <ul class="list-group list-group-flush" >
+    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Unterzeichner: </b> <?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></li>
+    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Unternehmen: </b> <a href="<?= $row['website_facebook'] ?>"><?= $row['unternehmen'] ?></a></li>
+    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Stadt/Ort: </b><?= $row['ort'] ?></li>
+      <li class="list-group-item" style="background-color: #CAf0F8;"><b>Land: </b><?= $row['land'] ?></li>
+  </ul>
+</div>
+<?php 
+}; 
+?> 
+</div>
+</div>
+
+<?php
+if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
+$start_from = ($page-1) * $results_per_page;
+$sql = "SELECT * FROM companies WHERE `public`= 'ja' ORDER BY id ASC LIMIT $start_from, ".$results_per_page;
+$rs_result = $conn->query($sql);
+// var_dump($rs_result); 
+?> 
+
+<div id="big_screen">
 <table class="table table-info table-striped" style="background-color: #CAf0F8">
   <thead>
     <tr>
@@ -107,9 +153,11 @@ $rs_result = $conn->query($sql);
  </tbody>
 </table>
 
- 
+ </div>
 
- 
+
+
+
 <?php 
 $sql = "SELECT COUNT(id) AS total FROM companies";
 $result = $conn->query($sql);

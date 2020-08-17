@@ -91,9 +91,12 @@ ENTREPRENEURS FOR FUTURE?</h1>
      
      <div class="col-md-12">
   <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="Submit" value="Senden" style="background-color: #135887; border: #135887;">Senden!</button>
-   <button type="reset" class="btn btn-info btn-lg" value="Reset" style="background-color: #135887; border: #135887;">
+   <button type="reset" class="btn btn-info btn-lg mr-5 my-2" value="Reset" style="background-color: #135887; border: #135887;">
     Reset
   </button>
+   <a class="btn btn-info btn-lg"  href="index.php" type="button" role="button" style="background-color: #135887; border: #135887;">
+    Zurück
+  </a>
 </div>
        <!--  <div class="col-md-12 my-5">
           <input type="submit" class="btn btn-info" value="Senden" style="background-color: #135887; border: solid #135887">
