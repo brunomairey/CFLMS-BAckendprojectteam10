@@ -61,42 +61,53 @@ input {
 
 
   <div class="container">
-  <form [formGroup]="info" (ngSubmit)="onSubmit()" class="contactForm">
+  <form class="contactForm" action="a_contact.php" method="post">
       <h1 class="text-center">SIE HABEN FRAGEN ZU <br>
 ENTREPRENEURS FOR FUTURE?</h1>
       <div class="form-group">
 <h2>Wir freuen uns auf Ihre Anregungen </h2>        
           <label>
               Vorname:
-              <input type="text" class="form-control" formControlName="firstName" autofocus>
+              <input type="text" class="form-control" name="vorname" autofocus>
           </label>
       </div>
      <div class="form-group">
           <label>
               Nachname:
-              <input type="text" class="form-control" formControlName="lastName">
+              <input type="text" class="form-control" name="nachname">
           </label>
       </div>
       <div class="form-group">
           <label>
               Email:
-              <input type="email" class="form-control" formControlName="email">
+              <input type="email" class="form-control" name="email">
           </label>
       </div>
       <label>
           Ihre Nachricht:
-          <textarea class="form-control" rows="5" formControlName="message"></textarea>
+          <textarea class="form-control" rows="5" name="comment"></textarea>
       </label>
       <br>
-     <div class="my-5">
-          <input type="submit" class="btn btn-dark" value="Senden" style="background-color: #135887; border: solid #135887">
-      </div>
+     
+     <div class="col-md-12">
+  <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="Submit" value="Senden" style="background-color: #135887; border: #135887;">Senden!</button>
+   <button type="reset" class="btn btn-info btn-lg" value="Reset" style="background-color: #135887; border: #135887;">
+    Reset
+  </button>
+</div>
+       <!--  <div class="col-md-12 my-5">
+          <input type="submit" class="btn btn-info" value="Senden" style="background-color: #135887; border: solid #135887">
+          <input type="Reset" class="btn btn-info" value="Reset" style="background-color: #135887; border: solid #135887">
+      </div> -->
     </form>
 </div>
 
 </main>
 </body>
 </html>
+
+
+
 <?php  
 $facebookfooter="Images/facebook.png";
   $instafooter="Images/insta.png";

@@ -1,3 +1,22 @@
+<?php  
+$urlimage="images/logo_entre.png";
+$urlindex="index.php";
+$urlsign="companies/create.php";
+$urlcompanies="companies/index.php";
+$urlevents ="events/events.php";
+$urlabout="aboutus.php";
+$urlfriends="friends.php";
+$urlcontact="contact.php";
+$urlvideos="stories.php";
+
+
+
+$urladmin="events/login.php";
+  include('navbar.php');
+  
+  
+
+?>
 
 
 <!DOCTYPE html>
@@ -7,19 +26,19 @@
 </head>
 <style>
     .media:hover {
-          box-shadow: 0 0 0.5vw 0.5vw #D7E1CC;
+          box-shadow: 0 0 0.5vw 0.5vw #135887;
           transition: 0.3s;
       }
   </style>
-<body>
+<body style="background-color: #DEEAE3">
   <?php 
 
 include 'db_connect.php'; ?>
-<div class="container" style="background-color: #DEEAE3">
+<div class="jumbotron" style="background-color: #DEEAE3">
 
 <ul class="list-unstyled">
  <a href="https://fridaysforfuture.at/" style="text-decoration: none; color:black">
-  <li class="media" style="border: solid #D7E1CC 2.5px">
+  <li class="media" style="border: solid #135887 2.5px">
     <img src="images/logo_fffuture.png" class="mr-3 rounded-circle" width="10%" alt="fridays for future">
     <div class="media-body">
       <h5 class="mt-0 mb-1">Fridays for future</h5>
@@ -29,7 +48,7 @@ include 'db_connect.php'; ?>
   </li></a>
   
   <a href="https://www.gruenewirtschaft.at/" style="text-decoration: none; color:black">
-  <li class="media my-4" style="border: solid #D7E1CC 2.5px">
+  <li class="media my-4" style="border: solid #135887 2.5px">
        <img src="images/greeneco.png" class="mr-3" width="10%"  alt="Die Grüne Wirtschaft">
     <div class="media-body">
       <h5 class="mt-0 mb-1">grüne Wirtschaft.at</h5>
@@ -39,7 +58,7 @@ include 'db_connect.php'; ?>
   </li></a>
     
   <a href="https://www.lebensart.at/" style="text-decoration: none; color:black">
-    <div style="border: solid #D7E1CC 2.5px">
+    <div style="border: solid #135887 2.5px">
     <li class="media my-2">
     <img src="images/lebensart.png" class="mr-3" width="10%" alt="lebensart">
     <div class="media-body">
@@ -68,3 +87,15 @@ nachhaltig.gut.leben. Das ist unsere Vision. Alle Menschen sollen heute und in Z
 </body>
 </html>
  <?php  $conn->close(); ?>
+ <?php  
+$facebookfooter="Images/facebook.png";
+  $instafooter="Images/insta.png";
+   $twitterfooter="Images/twitter.png";
+    $youtubefooter="Images/youtube.png";
+    $linkedinfooter="Images/linkedin.png";
+      $impressum="impressum.php";
+    $datenschutz="datenschutz.php";
+    $loginadmin="login/login.php";
+  include('footer.php');
+
+?> 
