@@ -54,128 +54,13 @@
 
 
 
-/* STYLECODE FOR EVENTS */
-.contactForm {
-    margin: 2vw;
-    padding: 2vw;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    box-shadow: 5px 10px 18px #888888;
-    background-color: #d7e1cc;
-    width: 70%;
-}
-
-.card_event {
-    min-height: 40vh;
-    padding: 20px 20px;
-    /* border-radius: 5px; */
-}
-
-/* .col_event{
-    min-height: 40vh;
-} */
-
-.card_event img {
-    border-radius: 10px;
-}
-
-#thumbnail img{
-    border-radius: 10px;
-    margin-bottom: 4px;
-}
-
-.test{
-    border: 1pt solid red;
-    color: red;
-}
-
-
-/* STYLECODE FOR PARALLAX */
-.parallax_section1 {
-    height: 300px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative; }
-  
-  .parallax_section2 {
-    height: 700px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    position: relative; }
-  
-  .parallax_image {
-    background-image: url(Images/parallax.jpg);
-  }
-  
-  .row_parallax {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; }
-  
-  .card_parallax:hover {
-    transform: scale(1.05); }
-  
-  .card_parallax {
-    margin: 20px 10px 20px 10px;
-    padding: 20px 20px 20px 20px;
-    transition: all 0.5s;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); 
-    max-width: 30vw;
-    min-width: 30vw; 
-  
-  }
-
-
-/* STYLING RSS */
-
-#wrapper1{
-    display: flex;
-    justify-content: center;
-}
-
-.container_rss{
-    width: 30%;
-}
-
-
-.content_rss{
+/* STYLING RSS  */
+.content_rss {
     width: 60%;
     margin: 0 auto;
 }
 
-/* input[type=text]{
-    padding: 5px 10px;
-    width: 60%;
-    letter-spacing: 1px;
-}
-
-input[type=submit]{
-    padding: 5px 15px;
-    letter-spacing: 1px;
-    border: 0;
-    background: gold;
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
-} */
-
-/* h1{
-    border-bottom: 1px solid gray;
-}
-
-h2{
-    color: black;
-}
-h2 a{
-    color: black;
-    text-decoration: none;
-} */
-
-.color2{
+.color2 {
     background-color: #40b2c3;
     color: white;
     /* border: 1pt solid black; */
@@ -185,7 +70,7 @@ h2 a{
 }
 
 
- .post{
+.post {
     border: 1px solid gray;
     padding: 5px;
     border-radius: 3px;
@@ -194,36 +79,89 @@ h2 a{
 
 
 
-.post-head span{
+.post-head span {
     /* font-size: 14px; */
     color: gray;
-    letter-spacing: 1px; 
+    letter-spacing: 1px;
     font-size: 11px;
-  
+
 }
 
-.post-head{
-    /* background-color: blueviolet; */
-}
-
-.post-content{
+.post-content {
     font-size: 14px;
-} 
+}
 
 .post-content a {
-    color:  #40b2c3;
+    color: #40b2c3;
 }
 
 
+/* STYLING Blog */
+/* .contactForm {
+    margin: 2vw;
+    padding: 2vw;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #888888;
+    background-color: #d7e1cc;
+    width: 70%;
+} */
 
-/* EVENTLIST */
 
-    @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
-    @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+.card_event {
+    min-height: 40vh;
+    padding: 20px 20px;
+    /* border-radius: 5px; */
+}
+
+
+.card_event img {
+    border-radius: 10px;
+}
+
+#thumbnail img {
+    border-radius: 10px;
+    margin-bottom: 4px;
+}
+
+
 body {
-    padding: 60px 0px;
-    background-color: rgb(220, 220, 220);
+    font-family: "Roboto", sans-serif;
 }
+
+
+#wrapper1 {
+    display: flex;
+    justify-content: center;
+}
+
+.container_rss {
+    width: 25%;
+}
+
+.container_blog {
+    width: 30%;
+}
+.container_event {
+    width: 45%;
+    padding: 0 2vw 0 2vw;
+    /* margin: 0 2vw 0 2vw; */
+}
+
+.card_blog{
+    max-width: 30vw;
+}
+
+details{
+    background-color: #CAf0F8;
+    /* background-color: #D7E1CC; */
+}
+
+.navbar_admin{
+   background-color: #135887;
+}
+
 
 .event-list {
     list-style: none;
@@ -231,6 +169,7 @@ body {
     margin: 0px;
     padding: 0px;
 }
+
 .event-list > li {
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 5px rgb(51, 51, 51);
@@ -242,13 +181,13 @@ body {
     display: inline-block;
     width: 100%;
     color: rgb(255, 255, 255);
-    background-color: rgb(197, 44, 102);
+    background-color: #135887;
     padding: 5px;
     text-align: center;
     text-transform: uppercase;
 }
 .event-list > li:nth-child(even) > time {
-    background-color: rgb(165, 82, 167);
+    background-color: #8ED3BB;
 }
 .event-list > li > time > span {
     display: none;
@@ -265,7 +204,8 @@ body {
     font-weight: 900;
     line-height: 1;
 }
-.event-list > li > img {
+
+.event-list > li img {
     width: 100%;
 }
 .event-list > li > .info {
@@ -346,19 +286,25 @@ body {
     background-color: rgb(221, 75, 57) !important;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) { */
+
     .event-list > li {
-        position: relative;
+        /* position: relative; */
         display: block;
-        width: 100%;
-        height: 120px;
+   
         padding: 0px;
     }
-    .event-list > li > time,
+    
     .event-list > li > img  {
         display: inline-block;
+        width: 100%;
+        height: 120px;
     }
-    .event-list > li > time,
+    .event-list > li > time{
+        width: 100px;
+        float: left;
+    }
+
     .event-list > li > img {
         width: 120px;
         float: left;
@@ -367,24 +313,18 @@ body {
         background-color: rgb(245, 245, 245);
         overflow: hidden;
     }
-    .event-list > li > time,
-    .event-list > li > img {
-        width: 120px;
-        height: 120px;
-        padding: 0px;
-        margin: 0px;
-    }
+ 
     .event-list > li > .info {
         position: relative;
         height: 120px;
         text-align: left;
         padding-right: 40px;
-    }   
+    }	
     .event-list > li > .info > .title, 
     .event-list > li > .info > .desc {
         padding: 0px 10px;
     }
-    .event-list > li > .info > ul {
+    /* .event-list > li > .info > ul {
         position: absolute;
         left: 0px;
         bottom: 0px;
@@ -399,7 +339,7 @@ body {
     .event-list > li > .social > ul {
         border-left: 1px solid rgb(230, 230, 230);
     }
-    .event-list > li > .social > ul > li {          
+    .event-list > li > .social > ul > li {			
         display: block;
         padding: 0px;
     }
@@ -407,5 +347,5 @@ body {
         display: block;
         width: 40px;
         padding: 10px 0px 9px;
-    }
-}
+    } */
+/* } */
