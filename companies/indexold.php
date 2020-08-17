@@ -1,4 +1,3 @@
-
 <?php 
 $urlimage="../images/logo_entre.png";
 $urlindex="../index.php";
@@ -14,7 +13,6 @@ $urlvideos="../stories.php";
   include '../db_connect.php';
   include '../navbar.php' ?>
 
- 
 
 
 <!DOCTYPE html>
@@ -73,16 +71,8 @@ echo $row_cnt;
 
 <h3 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h3>
 
-<!-- pagination -->
-
-<?php
-if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-$start_from = ($page-1) * $results_per_page;
-$sql = "SELECT * FROM companies WHERE `public`= 'ja' ORDER BY id ASC LIMIT $start_from, ".$results_per_page;
-$rs_result = $conn->query($sql);
-// var_dump($rs_result); 
-?> 
-<table class="table table-info table-striped" style="background-color: #CAf0F8">
+<!-- -->
+	<table class="table table-info table-striped" style="background-color: #CAf0F8">
   <thead>
     <tr>
       <th scope="col">Unterzeichner</th>
@@ -92,44 +82,41 @@ $rs_result = $conn->query($sql);
     </tr>
   </thead>
   <tbody>
-<?php 
- while($row = $rs_result->fetch_assoc()) {
-?> 
-             <tr>
+    
+<?php
+           $sql = "SELECT * FROM companies WHERE `public`= 'ja' ";
+           $result = $conn->query($sql);
+
+if($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+
+
+                   ?>
+      <tr>
       <th scope="row"><?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></th>
-      <td><a href="<?= $row['website_facebook'] ?>"><?= $row['unternehmen'] ?></a></td>
+      <td><a href="<?= $row['firmenlogo'] ?>"><?= $row['unternehmen'] ?></a></td>
       <td><?= $row['ort'] ?></td>
       <td><?= $row['land'] ?></td>
     </tr>
-<?php 
-}; 
-?> 
+                 
+  
+
+
+
+                   <?php ;
+               }
+           } else  {
+               echo  "No result";
+           } 
+
+           ?>
+
+
  </tbody>
 </table>
+<!--- --->
 
- 
-
- 
-<?php 
-$sql = "SELECT COUNT(id) AS total FROM companies";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$total_pages = ceil($row["total"] / $results_per_page); // calculate total pages with results
-  
-for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
-            echo "<a href='index.php?page=".$i."'";
-            if ($i==$page)  echo " class='curPage'";
-            echo ">".$i."</a> "; 
-}; 
-?>
-
-<!-- end of pagination -->
-
-
-
- 
 </div>
-
 
 
 <script>
@@ -184,11 +171,10 @@ if($result->num_rows > 0) {
                             position: results[0].geometry.location
                         });
                         console.log(results);
-                    } 
-                    // else {
-                    //     console.table(results);
-                    //     alert('It was not possible to perform your request due to ' + status);
-                    // }
+                    } else {
+                        console.table(results);
+                        alert('It was not possible to perform your request due to ' + status);
+                    }
 
                 })
             });

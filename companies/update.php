@@ -1,4 +1,18 @@
 <?php 
+  $urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+$urlabout="../aboutus.php";
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
+include '../db_connect.php';
+ include '../navbar.php' ?>
+
+
+<?php 
 // $url = "index.php";
 //   $url2 = "create.php";
 require_once '../db_connect.php';
@@ -25,7 +39,7 @@ if (isset($_GET['id'])) {
           #contactForm {
     margin: 2vw; 
     padding: 2vw; 
-    background-color: #f5f5f5 ;
+    background-color: #d7e1cc ;
     border-radius: 10px; 
     box-shadow: 5px 10px 18px #888888; 
     width: 60vw;
@@ -35,7 +49,7 @@ if (isset($_GET['id'])) {
    </style>
 
 </head>
-<body>
+<body style="background-color: #DEEAE3">
 
 <div id="contactForm">
 <form class="mx-5" action="a_update.php" method= "post" enctype='multipart/form-data'>
@@ -186,11 +200,11 @@ if (isset($_GET['id'])) {
   </div>
 
 
-  <div class="col-md-6">
+  <div class="col-md-12">
      <input type= "hidden" name= "id" value= "<?php echo $data['id']?>" />
-  <button type="submit" class="btn btn-dark mr-5" name="but_update">Unterhnehmen Daten aktualisieren</button>
-   <a class="btn btn-dark" href="admin.php" type="button" role="button">
-   Züruck zum Menu
+  <button type="submit" class="btn btn-dark mr-5 my-2" name="but_update" style="background-color: #135887; border: #135887;">Unternehmen Daten aktualisieren</button>
+   <a class="btn btn-dark" href="admin.php" type="button" role="button" style="background-color: #135887; border: #135887;">
+   Zurück zum Menu
   </a>
 </div>
 
@@ -209,3 +223,16 @@ if (isset($_GET['id'])) {
 <?php echo $footer; ?>
 </html>
 
+<?php  
+ 
+ $facebookfooter="../Images/facebook.png";
+  $instafooter="../Images/insta.png";
+   $twitterfooter="../Images/twitter.png";
+    $youtubefooter="../Images/youtube.png";
+    $linkedinfooter="../Images/linkedin.png";
+    $impressum="../impressum.php";
+    $datenschutz="../datenschutz.php";
+    $loginadmin="../login/login.php";
+  include('../footer.php');
+
+?> 

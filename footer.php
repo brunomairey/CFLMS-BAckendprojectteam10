@@ -33,7 +33,7 @@
 		</div>
 		<div class="pt-4" id="footertext" style="display: flex; flex-direction: column; text-align: center;">
 			<h5>&copy; 2020 Entrepeneurs For Future </h5><br>
-			 <p>ALLE INHALTE UNTERLIEGEN ÖSTERREICHISCHEM URHEBERRECHT.</p><p><strong> <a href="<?php echo $impressum ?>" style="color:white;"> IMPRESUM |</a> <a href="<?php echo $datenschutz ?>" style="color:white;"> DATENSCHUTZ</a> | <a href="<?php echo $loginadmin ?>" style="color:white;">ADMIN ACCESS</a></strong></p>
+			 <p>ALLE INHALTE UNTERLIEGEN ÖSTERREICHISCHEM URHEBERRECHT.</p><p><strong> <a href="<?php echo $impressum ?>" style="color:white;"> IMPRESSUM |</a> <a href="<?php echo $datenschutz ?>" style="color:white;"> DATENSCHUTZ</a> | <a href="<?php echo $loginadmin ?>" style="color:white;">ADMIN ACCESS</a></strong></p>
 			
 		</div>
 		
