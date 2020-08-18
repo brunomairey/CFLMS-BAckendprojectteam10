@@ -55,8 +55,8 @@
 
 
 /* STYLING RSS  */
-.content_rss {
-    width: 60%;
+.content {
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -67,6 +67,7 @@
     border-radius: 2%;
     text-align: center;
     padding: 2pt 2pt;
+    margin-top: 2pt;
 }
 
 

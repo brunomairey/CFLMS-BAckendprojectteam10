@@ -14,32 +14,27 @@ include '../db_connect.php';
 include '../navbar.php' ?>
 
 
-<!-- require_once '../db_connect.php'; ?> -->
-
-
 
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../style_MANUELA.css">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
     <title>Veranstaltungen und News</title>
 
     <style>
-      
-
         /* Styling Events  */
     </style>
 
 </head>
 
 <body>
-    <?php require_once '../header.php'; ?>
+
 
 
 
@@ -52,12 +47,11 @@ include '../navbar.php' ?>
 
 
         <div class="container_blog row row-cols-1  mx-auto">
-        <h1 class="header_blog">Beiträge</h1>
+            <h1 class="header_blog">Beiträge</h1>
             <?php
             $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
 
 
-            //nicer version
             $result = mysqli_query($conn, $sql);
             // fetch the next row (as long as there are any) into $row
             while ($row = mysqli_fetch_assoc($result)) {
@@ -76,13 +70,13 @@ include '../navbar.php' ?>
 
                 <div class="col col_event mb-3 ">
                     <div class="card card_event px-1 py-1 bg-light">
-                    <h4 class="card-text text-info font-weight-bold"><?= $eventName ?> <span></span> </h4>
-                    <h7>gepostet am <?= $eventDate ?> </h7> von <?= $author ?>
+                        <h4 class="card-text text-info font-weight-bold"><?= $eventName ?> <span></span> </h4>
+                        <h7>gepostet am <?= $eventDate ?> </h7> von <?= $author ?>
                         <img class="card-img-top pt-2" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" class="rounded">
                         <!-- <h5 class="card-title text-secondary"><?= $eventID ?></h5> -->
 
                         <div class="card-body">
- 
+
                             <h6 class='card-text'><span class='font-weight-bold'> </span> <?= $description ?>
                             </h6>
 
@@ -92,7 +86,7 @@ include '../navbar.php' ?>
                     </div>
                 </div>
 
-                <?php
+            <?php
             }
 
             // Free result set
@@ -110,64 +104,64 @@ include '../navbar.php' ?>
 
         <!-- START SECTION EVENT -->
         <div class="container_event">
-        <h1 class="header_events">Veranstaltungen</h1>
+            <h1 class="header_events">Veranstaltungen</h1>
             <div class="row rounded">
                 <div class="[ row-cols-1  ]">
                     <ul class="event-list ">
 
 
-                    <?php
-                    include '../db_connect.php';
-            $sql = "SELECT * FROM events where category = 'event' order by eventDate";
+                        <?php
+                        include '../db_connect.php';
+                        $sql = "SELECT * FROM events where category = 'event' and eventDate >= DATE(NOW()) order by eventDate";
 
 
-            //nicer version
-            $result = mysqli_query($conn, $sql);
-            // fetch the next row (as long as there are any) into $row
-            while ($row = mysqli_fetch_assoc($result)) {
-                $eventID = $row['eventID'];
-                $eventName = $row['eventName'];
-                $eventDate = $row['eventDate'];
-                $location = $row['eventLocation'];
-                $description = $row['eventDescription'];
-                $image = $row['image'];
-                $zeit = strtotime($eventDate);
-                $monate = array("empty", "JAN", "FEB", "MAR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ");
-                $wochentage = array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
+                        //nicer version
+                        $result = mysqli_query($conn, $sql);
+                        // fetch the next row (as long as there are any) into $row
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $eventID = $row['eventID'];
+                            $eventName = $row['eventName'];
+                            $eventDate = $row['eventDate'];
+                            $location = $row['eventLocation'];
+                            $description = $row['eventDescription'];
+                            $image = $row['image'];
+                            $zeit = strtotime($eventDate);
+                            $monate = array("empty", "JAN", "FEB", "MAR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ");
+                            $wochentage = array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
 
-            ?>
+                        ?>
 
-<li class="pb-2">
+                            <li class="pb-2">
 
-<details>
-<h7><?= $description ?></h7>
-</details>
-<time datetime=$eventDate>
-    <span class="day"><?= date("j", $zeit) ?></span>
-    <span class="month"><?= $monate[date("n", $zeit)] ?></span>
-    <span class="year"><?= date('y', $zeit) ?></span>
-    <span class="time"><?= date("H:i", $zeit) ?></span>
-</time>
-<img src="<?= $row['image'] ?>">
-<div class="info">
-    <h3 class="title"><?= $eventName ?></h3>
-    <!-- <h7 class="desc"> <span class="text-info">Ort:</span> <#?= $location ?> <span class="text-info">Uhrzeit:</span> <#?= date("H:i", $zeit) ?> Uhr</h7> -->
-    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
-    <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
-</div>
+                                <details>
+                                    <h7><?= $description ?></h7>
+                                </details>
+                                <time datetime=$eventDate>
+                                    <span class="day"><?= date("j", $zeit) ?></span>
+                                    <span class="month"><?= $monate[date("n", $zeit)] ?></span>
+                                    <span class="year"><?= date('y', $zeit) ?></span>
+                                    <span class="time"><?= date("H:i", $zeit) ?></span>
+                                </time>
+                                <img src="<?= $row['image'] ?>">
+                                <div class="info">
+                                    <h3 class="title"><?= $eventName ?></h3>
+                                    <!-- <h7 class="desc"> <span class="text-info">Ort:</span> <#?= $location ?> <span class="text-info">Uhrzeit:</span> <#?= date("H:i", $zeit) ?> Uhr</h7> -->
+                                    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
+                                    <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
+                                </div>
 
-</li>
+                            </li>
 
-    
-                    <?php
-            }
 
-            // Free result set
-            mysqli_free_result($result);
-            // Close connection
-            mysqli_close($conn);
-            ?>
-                    
+                        <?php
+                        }
+
+                        // Free result set
+                        mysqli_free_result($result);
+                        // Close connection
+                        mysqli_close($conn);
+                        ?>
+
                     </ul>
                 </div>
             </div>
@@ -178,68 +172,90 @@ include '../navbar.php' ?>
 
         <!-- START RSS -->
         <div class="container_rss">
-        <h1 class="header_news">News</h1>
-            <div class="content">
 
-                <!-- <form method="post" action="">
-                    <input type="text" name="feedurl" placeholder="Enter website feed URL">&nbsp;<input type="submit" value="Submit" name="submit">
-                </form> -->
-                <?php
+            <h1 class="header_news">News</h1>
 
-                $url = "https://fridaysforfuture.de/feed/";
-                if (isset($_POST['submit'])) {
-                    if ($_POST['feedurl'] != '') {
-                        $url = $_POST['feedurl'];
+            <?php
+            $sql = "SELECT * FROM feeds";
+
+            $result = mysqli_query($conn, $sql);
+            // fetch the next row (as long as there are any) into $row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $feedID = $row['feedID'];
+                $url = $row['url'];
+            ?>
+
+
+                <div class="content">
+
+
+                    <?php
+
+                    $url = $url;
+                    if (isset($_POST['submit'])) {
+                        if ($_POST['feedurl'] != '') {
+                            $url = $_POST['feedurl'];
+                        }
                     }
-                }
 
-                $invalidurl = false;
-                if (@simplexml_load_file($url)) {
-                    $feeds = simplexml_load_file($url);
-                } else {
-                    $invalidurl = true;
-                    echo "<h2>Invalid RSS feed URL.</h2>";
-                }
-
-
-                $i = 0;
-                if (!empty($feeds)) {
-
-                    $site = $feeds->channel->title;
-                    $sitelink = $feeds->channel->link;
-
-                    echo "<div class='color2'><h2>" . $site . "</h2></div>";
-                    foreach ($feeds->channel->item as $item) {
-
-                        $title = $item->title;
-                        $link = $item->link;
-                        $description = $item->description;
-                        $postDate = $item->pubDate;
-                        $pubDate = date('D, d M Y', strtotime($postDate));
+                    $invalidurl = false;
+                    if (@simplexml_load_file($url)) {
+                        $feeds = simplexml_load_file($url);
+                    } else {
+                        $invalidurl = true;
+                        echo "<h2>Invalid RSS feed URL.</h2>";
+                    }
 
 
-                        if ($i >= 5) break;
-                ?>
-                        <div class="post">
-                            <div class="post-head bg-light">
-                                <h6><a class="feed_title text-info" href="<?php echo $link; ?>"><?php echo $title; ?></a></h6>
-                                <span><?php echo $pubDate; ?></span>
+                    $i = 0;
+                    if (!empty($feeds)) {
+
+                        $site = $feeds->channel->title;
+                        $sitelink = $feeds->channel->link;
+
+                        echo "<div class='color2'><h2>" . $site . "</h2></div>";
+ 
+
+                        foreach ($feeds->channel->item as $item) {
+
+                            $title = $item->title;
+                            $link = $item->link;
+                            $description = $item->description;
+                            $postDate = $item->pubDate;
+                            $pubDate = date('D, d M Y', strtotime($postDate));
+
+
+                            if ($i >= 5) break;
+                    ?>
+                            <div class="post">
+                                <div class="post-head bg-light">
+                                    <h6><a class="feed_title text-info" href="<?php echo $link; ?>"><?php echo $title; ?></a></h6>
+                                    <span><?php echo $pubDate; ?></span>
+                                </div>
+                                <div class="post-content">
+                                    <?php echo implode(' ', array_slice(explode(' ', $description), 0, 20)) . "..."; ?> <a href="<?php echo $link; ?>">Read more</a>
+                                </div>
                             </div>
-                            <div class="post-content">
-                                <?php echo implode(' ', array_slice(explode(' ', $description), 0, 20)) . "..."; ?> <a href="<?php echo $link; ?>">Read more</a>
-                            </div>
-                        </div>
 
-                <?php
-                        $i++;
+                    <?php
+                            $i++;
+                        }
+                    } else {
+                        if (!$invalidurl) {
+                            echo "<h2>No item found</h2>";
+                        }
                     }
-                } else {
-                    if (!$invalidurl) {
-                        echo "<h2>No item found</h2>";
-                    }
-                }
-                ?>
-            </div>
+                    ?>
+                </div>
+            <?php
+            }
+
+            // Free result set
+            mysqli_free_result($result);
+            // Close connection
+            mysqli_close($conn);
+            ?>
+
         </div>
 
         <!-- END RSS -->
