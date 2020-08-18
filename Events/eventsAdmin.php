@@ -1,17 +1,26 @@
 <?php
-$urlimage = "../images/logo_entre.png";
-$urlindex = "../index.php";
-$urlsign = "../companies/create.php";
-$urlcompanies = "../companies/index.php";
-$urlevents = "../events/events.php";
-$urlabout = "../aboutus.php";
-$urlfriends = "../friends.php";
-$urlcontact = "../contact.php";
-$urlvideos = "../stories.php";
+$urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
 
 
-include '../db_connect.php';
-include '../navbar.php';
+
+$urladmin="../login/login.php";
+
+$admincompanies="../companies/admin.php";
+$adminevents="../events/eventsAdmin.php";
+$admincreateevents="../events/create.php";
+$adminRSSfeeds="../events/createRss.php";
+$logout="../Login/logout.php?logout";
+  include '../db_connect.php';
+  include('../navbar.php');
+    
 
 // ob_start();
 // session_start();
@@ -23,8 +32,8 @@ if (!isset($_SESSION['admin'])) {
 
 
 // select logged-in users details
-// $res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
-// $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+$res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 ?>
 
@@ -48,9 +57,10 @@ if (!isset($_SESSION['admin'])) {
 
 <body>
     <!-- <#?php require_once '../header.php'; ?> -->
-  <!--   <nav class="navbar navbar_admin sticky-top">
+    
+    <!-- <nav class="navbar navbar_admin sticky-top">
         <div class="mr-3 text-white">
-            Hallo <?php echo $userRow['userName'] . "!"; ?>
+            Hallo <#?php echo $userRow['userName'] . "!"; ?>
         </div>
 
         <div class="mx-auto">
@@ -61,7 +71,7 @@ if (!isset($_SESSION['admin'])) {
 
         </div>
         <div class="mr-3 text-white">
-            <?php echo $userRow['userEmail']; ?>
+            <#?php echo $userRow['userEmail']; ?>
         </div>
 
 
@@ -125,7 +135,7 @@ if (!isset($_SESSION['admin'])) {
             // Free result set
             mysqli_free_result($result);
             // Close connection
-   
+            mysqli_close($conn);
             ?>
 
 
@@ -137,9 +147,7 @@ if (!isset($_SESSION['admin'])) {
 
         <!-- START SECTION EVENT -->
         <div class="container_event">
-            <div class="header_news">
-                <h1>Veranstaltungen</h1>
-            </div>
+        <h1 class="header_events">Veranstaltungen</h1>
             <div class="row rounded">
                 <div class="[ row-cols-1  ]">
                     <ul class="event-list ">
@@ -182,7 +190,7 @@ if (!isset($_SESSION['admin'])) {
                                 <img class="blog_img" src="<?= $row['image'] ?>">
                                 <div class="info">
                                     <h3 class="title"><?= $eventName ?></h3>
-                                    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
+                                    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?><br></h7>
                                     <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
                                 </div>
                                 <div class="event_panel">
@@ -202,7 +210,7 @@ if (!isset($_SESSION['admin'])) {
                         // Free result set
                         mysqli_free_result($result);
                         // Close connection
-                 
+                        // mysqli_close($conn);
                         ?>
 
                     </ul>
@@ -258,8 +266,7 @@ if (!isset($_SESSION['admin'])) {
 
                         echo "<div class='color2'><h2>" . $site . "</h2></div>";
                         echo "<div class='text-center mt-2'>";
-                        echo "<a href='deleteRss.php?id=<?= $rssID ?>' class='btn btn-outline-danger mx-auto'>Delete </a>";
-                        echo "<a href='updateRss.php?id=<?= $rssID ?>' class='btn btn-outline-info mx-auto'>Update </a>";
+                        echo "<a href='deleteRss.php?id=$feedID' class='btn btn-outline-danger mx-auto'>Delete </a>";
                         echo "</div>";
 
 
@@ -293,6 +300,7 @@ if (!isset($_SESSION['admin'])) {
                             echo "<h2>No item found</h2>";
                         }
                     }
+                    echo "<br>";
                     ?>
                 </div>
             <?php
@@ -302,6 +310,7 @@ if (!isset($_SESSION['admin'])) {
             mysqli_free_result($result);
             // Close connection
             mysqli_close($conn);
+          
             ?>
 
         </div>

@@ -1,3 +1,36 @@
+
+<?php  
+$urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
+
+
+
+$urladmin="../login/login.php";
+
+$admincompanies="../companies/admin.php";
+$adminevents="../events/eventsAdmin.php";
+$admincreateevents="../events/create.php";
+$adminRSSfeeds="../events/createRss.php";
+$logout="../Login/logout.php?logout";
+  include '../db_connect.php';
+  include('../navbar.php');
+    
+  
+
+?>
+
+
+<body style="background-color: #DEEAE3">
+  <div style="height: 65vh">
+    
+
 <?php 
 // ob_start();
 // session_start();
@@ -46,13 +79,13 @@ $sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocatio
 
 
     if($conn->query($sql) === TRUE) {
-       echo "<div class= 'bg-info text-light pt-2 pb-2'>";
-       echo "<p><center>Neuer Beitrag wurde erstellt</center></p>" ;
+       echo "<div class= 'text-dark pt-2 pb-2'>";
+       echo "<p><center><b>Neuer Beitrag wurde erstellt</b></center></p>" ;
        echo "<div class= 'd-flex justify-content-center'>";
-       echo "<a href='create.php'><button type='button' class= 'btn btn-outline-light'>Back</button></a>";
+       echo "<a href='create.php'><button type='button' class= 'btn btn-info'>Back</button></a>";
        echo "</div>";
        header ("refresh:2; url=eventsAdmin.php"); 
-       echo "<center>Weiterleitung erfolgt in 2 Sekunden.</center>";
+       echo "<center><b>Weiterleitung erfolgt in 2 Sekunden.</b></center>";
        echo "</div>";
 
    } else  {
@@ -63,3 +96,18 @@ $sql = "INSERT INTO events (eventName, eventDate, eventDescription, eventLocatio
 }
 
 ?>
+</div>
+</body>
+<?php  
+ 
+ $facebookfooter="../Images/facebook.png";
+  $instafooter="../Images/insta.png";
+   $twitterfooter="../Images/twitter.png";
+    $youtubefooter="../Images/youtube.png";
+    $linkedinfooter="../Images/linkedin.png";
+    $impressum="../impressum.php";
+    $datenschutz="../datenschutz.php";
+    $loginadmin="../login/login.php";
+  include('../footer.php');
+
+?> 

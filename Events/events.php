@@ -47,7 +47,7 @@ include '../navbar.php' ?>
 
 
         <div class="container_blog row row-cols-1  mx-auto">
-            <h1 class="header_blog">Beiträge</h1>
+            <h2 class="header_blog">Beiträge</h2>
             <?php
             $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
 
@@ -72,7 +72,7 @@ include '../navbar.php' ?>
                     <div class="card card_event px-1 py-1 bg-light">
                         <h4 class="card-text text-info font-weight-bold"><?= $eventName ?> <span></span> </h4>
                         <h7>gepostet am <?= $eventDate ?> </h7> von <?= $author ?>
-                        <img class="card-img-top pt-2" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" class="rounded">
+                        <img class="card-img-top pt-2 blogImg" src="<?= $row['image'] ?>" alt="" width="100%" height="250vw" class="rounded">
                         <!-- <h5 class="card-title text-secondary"><?= $eventID ?></h5> -->
 
                         <div class="card-body">
@@ -92,7 +92,7 @@ include '../navbar.php' ?>
             // Free result set
             mysqli_free_result($result);
             // Close connection
-            // mysqli_close($conn);
+            mysqli_close($conn);
             ?>
 
 
@@ -104,8 +104,10 @@ include '../navbar.php' ?>
 
         <!-- START SECTION EVENT -->
         <div class="container_event">
-            <h1 class="header_events">Veranstaltungen</h1>
+        <h2 class="header_events">Veranstaltungen</h2>
+            
             <div class="row rounded">
+           
                 <div class="[ row-cols-1  ]">
                     <ul class="event-list ">
 
@@ -131,7 +133,7 @@ include '../navbar.php' ?>
 
                         ?>
 
-                            <li class="pb-2">
+                            <li class="pb-2 eventblock">
 
                                 <details>
                                     <h7><?= $description ?></h7>
@@ -145,11 +147,14 @@ include '../navbar.php' ?>
                                 <img src="<?= $row['image'] ?>">
                                 <div class="info">
                                     <h3 class="title"><?= $eventName ?></h3>
-                                    <!-- <h7 class="desc"> <span class="text-info">Ort:</span> <#?= $location ?> <span class="text-info">Uhrzeit:</span> <#?= date("H:i", $zeit) ?> Uhr</h7> -->
-                                    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?></h7>
-                                    <h7 class="desc"> <span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
+                                    
+                                    <h7 class="desc"> <span class="text-info">Ort:</span> <?= $location ?> <br> </h7>
+                                    <h7 class="desc"><span class="text-info">Uhrzeit:</span> <?= date("H:i", $zeit) ?> Uhr</h7>
                                 </div>
+                                <div class="event_panel">
+                                    
 
+                                </div>
                             </li>
 
 
@@ -173,7 +178,7 @@ include '../navbar.php' ?>
         <!-- START RSS -->
         <div class="container_rss">
 
-            <h1 class="header_news">News</h1>
+            <h2 class="header_news">News</h2>
 
             <?php
             $sql = "SELECT * FROM feeds";

@@ -1,6 +1,32 @@
 <?php
+$urlimage = "../images/logo_entre.png";
+$urlindex = "../index.php";
+$urlsign = "../companies/create.php";
+$urlcompanies = "../companies/index.php";
+$urlevents = "../events/events.php";
+
+$urlfriends = "../friends.php";
+$urlcontact = "../contact.php";
+$urlvideos = "../stories.php";
 
 
+
+$urladmin = "../login/login.php";
+
+$admincompanies = "../companies/admin.php";
+$adminevents = "../events/eventsAdmin.php";
+$admincreateevents = "../events/create.php";
+$adminRSSfeeds = "../events/createRss.php";
+$logout = "../Login/logout.php?logout";
+include '../db_connect.php';
+include('../navbar.php');
+
+
+
+?>
+
+
+<?php
 include '../db_connect.php';
 
 if (!isset($_SESSION['admin'])) {
@@ -24,24 +50,16 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <title>Add Event</title>
     <link rel="stylesheet" href="../style_MANUELA.css">
 
+    <style>
+        body {
+            background-color: #DEEAE3;
+        }
+    </style>
+
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-dark bg-dark">
-        <div>
-            <p class="text-white"> Hi <?php echo $userRow['userName']; ?> !</p>
-        </div>
 
-        <div class="mx-auto">
-            <a class="btn btn-outline-info" href="eventsAdmin.php" role="button">Home</a>
-            <!-- <a class="btn btn-outline-warning" href="create.php" role="button">Add Event</a> -->
-            <a class="btn btn-outline-info" href="logout.php?logout" role="button">Logout</a>
-        </div>
-
-        <div class="mr-3 text-white">
-            <?php echo $userRow['userEmail']; ?>
-        </div>
-    </nav>
 
     <div class='d-flex justify-content-center'>
         <h1 class="text-info mt-2 mb-2">Beitrag erstellen</h1>
@@ -53,11 +71,11 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             <form action="a_create.php" method="POST" enctype='multipart/form-data'>
                 <div class="container font-weight-bold">
 
-                    <input type="radio" id="event" name="category" value="event"  onclick="toggleOptions();" >  
+                    <input type="radio" id="event" name="category" value="event" onclick="toggleOptions();">
                     <label for="event" class="mr-5">Event </label>
                     <input type="radio" id="blog" name="category" value="blog" onclick="toggleOptions();">
-                    <label for="blog"> Artikel/Blog</label>   
-                    <br>   
+                    <label for="blog"> Artikel/Blog</label>
+                    <br>
 
                     <label for="name"> Name</label>
                     <input type="text" class="form-control mb-3" name="name" placeholder="Name Beitrag" />
@@ -72,7 +90,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
                     <br>
                     <label for="date" class="mt-3" id="lab_time">Datum und Uhrzeit:</label>
-                    <input type="datetime-local" id="time" class="form-control" value="<?php echo date('Y-m-d h:i');?>"" name="date" placeholder="event Date" />
+                    <input type="datetime-local" id="time" class="form-control" value="<?php echo date('Y-m-d h:i'); ?>"" name=" date" placeholder="event Date" />
 
                     <label for="description" class="mt-3"> Beschreibung bzw. Blogtext</label>
                     <input type="text" class="form-control mb-3 " name="description" placeholder="event Description" rows="6" />
@@ -126,19 +144,18 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
         //display location, time in case of Blogarticle
         function toggleOptions() {
-        if ( document.getElementById('event').checked ) {
-        document.getElementById('loc').style.display = '';
-        document.getElementById('time').style.display = '';
-        document.getElementById('lab_loc').style.display = '';
-        document.getElementById('lab_time').style.display = '';
-        } else {
-        document.getElementById('loc').style.display = 'none';
-        document.getElementById('time').style.display = 'none';
-        document.getElementById('lab_loc').style.display = 'none';
-        document.getElementById('lab_time').style.display = 'none';
+            if (document.getElementById('event').checked) {
+                document.getElementById('loc').style.display = '';
+                document.getElementById('time').style.display = '';
+                document.getElementById('lab_loc').style.display = '';
+                document.getElementById('lab_time').style.display = '';
+            } else {
+                document.getElementById('loc').style.display = 'none';
+                document.getElementById('time').style.display = 'none';
+                document.getElementById('lab_loc').style.display = 'none';
+                document.getElementById('lab_time').style.display = 'none';
+            }
         }
-    }
-
     </script>
 
 
@@ -154,3 +171,17 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 </body>
 
 </html>
+
+<?php
+
+$facebookfooter = "../Images/facebook.png";
+$instafooter = "../Images/insta.png";
+$twitterfooter = "../Images/twitter.png";
+$youtubefooter = "../Images/youtube.png";
+$linkedinfooter = "../Images/linkedin.png";
+$impressum = "../impressum.php";
+$datenschutz = "../datenschutz.php";
+$loginadmin = "../login/login.php";
+include('../footer.php');
+
+?>
