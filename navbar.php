@@ -13,8 +13,30 @@
 <body>
 	
 
+<?php
+   ob_start();
+session_start();
+    
+  if ( isset($_SESSION['user'])!="" || isset($_SESSION['admin'])!="" || isset($_SESSION['superadmin'])!="") {
+ $logoutlink= "<form class=\"form-inline m-2 my-lg-0\">
+           <a href=\"".$url6."\"><button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"button\">Search</button></a>
+        <a href=\"actions/logout.php?logout\"><button class=\"btn btn-outline-light m-2 my-sm-0\" type=\"button\">Logout</button></a>
+    </form>";
+
+}
+
+
+else {$logoutlink="<form class=\"form-inline my-2 my-lg-0\">
+      <a href=\"index.php\"><button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"button\">Login</button></a>
+          </form>";
+
+
+} ?>
+
+
+
 	
-<nav class="navbar navbar navbar-expand-lg navbar-dark" style="background-color: #135887; ">
+<nav class="navbar navbar navbar-expand-lg navbar-dark" style="background-color: #135887">
 	  <a class="navbar-brand mx-5" href="<?php echo $urlindex ?>">
     <img src="<?php echo $urlimage ?>" width="100" height="85" alt="" loading="lazy">  </a>
   		 <button class="navbar-toggler navbar-toggler-left btn-lg" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +78,31 @@
 				     
 		    </ul>
 	  	</div>
+	  	 <?php echo $logoutlink ?>
 	  <!-- 	 <form class="form-inline mr-5">
     		
    			 <button class="btn my-5 btn-outline-light my-sm-0" href="<?php echo $urlsign ?>">Jetzt unterschreiben</button>
   			</form> -->
 	</nav>
 
+<?php if ( isset($_SESSION['admin'])!="" || isset($_SESSION['superadmin'])!="" ) { ?>
+<br><br>
+      <nav class="navbar navbar_admin sticky-top">
+        <div class="mr-3 text-white">
+            Hallo <?php echo $userRow['userName'] . "!"; ?>
+        </div>
+
+        <div class="mx-auto">
+        <a class="btn btn-outline-warning" href="../companies/admin.php" role="button">Unternehmen bearbeiten</a>
+            <a class="btn btn-outline-warning" href="create.php" role="button">Neuen Beitrag erstellen</a>
+            <a class="btn btn-outline-info" href="../Login/logout.php?logout" role="button">Logout</a>
+
+        </div>
+        <div class="mr-3 text-white">
+            <?php echo $userRow['userEmail']; ?>
+        </div>
+
+
+    </nav>
+
+      <?php ;} else {"";} ?>
