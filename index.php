@@ -4,14 +4,20 @@ $urlindex="index.php";
 $urlsign="companies/create.php";
 $urlcompanies="companies/index.php";
 $urlevents ="events/events.php";
-$urlabout="aboutus.php";
+
 $urlfriends="friends.php";
 $urlcontact="contact.php";
 $urlvideos="stories.php";
 
 
 
-$urladmin="events/login.php";
+$urladmin="login/login.php";
+
+$admincompanies="companies/admin.php";
+$adminevents="events/eventsAdmin.php";
+$admincreateevents="events/create.php";
+$adminRSSfeeds="events/createRss.php";
+$logout="Login/logout.php?logout";
 	include 'db_connect.php';
 	include('navbar.php');
 	  
@@ -101,7 +107,7 @@ echo $row_cnt;
 </div>
 </div>
 <div style="display: flex; flex-flow: row wrap; justify-content: center;">
-  <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="but_upload" style="background-color: #40B2C3; border: #135887;">Alle Entrepreneure ansehen</button>
+  <a href="<?php echo $urlcompanies ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Alle Entrepreneure ansehen</button></a>
 </div>
 	</div> <!--close of container -->
 
@@ -112,7 +118,7 @@ echo $row_cnt;
 	   	<h3 style="color: white">Werden auch Sie Teil der Initiative #EntrepreneursForFuture und unterzeichnen Sie die Stellungnahme:</h3>
 	   </div>
       <div class="col-3 py-2">	
- 	<button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="but_upload" style="background-color: #40B2C3; border: #135887;">Jetzt Unterzeichnen !</button>
+ 	<a href="<?php echo $urlsign ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Jetzt Unterzeichnen !</button></a>
  </div>
 </div>
 </div><!--close of container -->
@@ -165,7 +171,7 @@ $facebookfooter="Images/facebook.png";
 		</div>
 
 
-  <div class="container" style="background-color: #D7E1CC">
+ <!--  <div class="container" style="background-color: #D7E1CC"> -->
   <form class="contactForm" action="a_contact.php" method="post">
       <h1 class="text-center">SIE HABEN FRAGEN ZU <br>
 ENTREPRENEURS FOR FUTURE?</h1>
@@ -208,7 +214,7 @@ ENTREPRENEURS FOR FUTURE?</h1>
           <input type="Reset" class="btn btn-info" value="Reset" style="background-color: #135887; border: solid #135887">
       </div> -->
     </form>
-</div>
+<!-- </div> -->
 	<!-- <section class="showcase">
 			<div class="container">
 				<a class="btn btn-primary btn-lg" href="#">Read More</a>

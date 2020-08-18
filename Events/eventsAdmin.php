@@ -23,8 +23,8 @@ if (!isset($_SESSION['admin'])) {
 
 
 // select logged-in users details
-$res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
-$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+// $res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
+// $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 ?>
 
@@ -48,7 +48,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 <body>
     <!-- <#?php require_once '../header.php'; ?> -->
-    <nav class="navbar navbar_admin sticky-top">
+  <!--   <nav class="navbar navbar_admin sticky-top">
         <div class="mr-3 text-white">
             Hallo <?php echo $userRow['userName'] . "!"; ?>
         </div>
@@ -65,7 +65,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         </div>
 
 
-    </nav>
+    </nav> -->
 
 
     <div id="wrapper1" class="mt-2">
@@ -125,7 +125,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
             // Free result set
             mysqli_free_result($result);
             // Close connection
-            mysqli_close($conn);
+   
             ?>
 
 
@@ -202,7 +202,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                         // Free result set
                         mysqli_free_result($result);
                         // Close connection
-                        mysqli_close($conn);
+                 
                         ?>
 
                     </ul>

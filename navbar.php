@@ -13,28 +13,6 @@
 <body>
 	
 
-<?php
-   ob_start();
-session_start();
-    
-  if ( isset($_SESSION['user'])!="" || isset($_SESSION['admin'])!="" || isset($_SESSION['superadmin'])!="") {
- $logoutlink= "<form class=\"form-inline m-2 my-lg-0\">
-           <a href=\"".$url6."\"><button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"button\">Search</button></a>
-        <a href=\"actions/logout.php?logout\"><button class=\"btn btn-outline-light m-2 my-sm-0\" type=\"button\">Logout</button></a>
-    </form>";
-
-}
-
-
-else {$logoutlink="<form class=\"form-inline my-2 my-lg-0\">
-      <a href=\"index.php\"><button class=\"btn btn-outline-light my-2 my-sm-0\" type=\"button\">Login</button></a>
-          </form>";
-
-
-} ?>
-
-
-
 	
 <nav class="navbar navbar navbar-expand-lg navbar-dark" style="background-color: #135887">
 	  <a class="navbar-brand mx-5" href="<?php echo $urlindex ?>">
@@ -64,9 +42,6 @@ else {$logoutlink="<form class=\"form-inline my-2 my-lg-0\">
 		      https://entrepreneurs4future.de/entrepreneure/-->
 		      </li>
 		      <li class="nav-item active">
-		        <a class="nav-link" href="<?php echo $urlabout ?>">Über uns</a>
-		      </li>
-		      <li class="nav-item active">
 		        <a class="nav-link" href="<?php echo $urlfriends ?>">Unsere Freund*innen</a>
 		      </li>
 		      <li class="nav-item active">
@@ -78,27 +53,40 @@ else {$logoutlink="<form class=\"form-inline my-2 my-lg-0\">
 				     
 		    </ul>
 	  	</div>
-	  	 <?php echo $logoutlink ?>
+	
 	  <!-- 	 <form class="form-inline mr-5">
     		
    			 <button class="btn my-5 btn-outline-light my-sm-0" href="<?php echo $urlsign ?>">Jetzt unterschreiben</button>
   			</form> -->
 	</nav>
 
-<?php if ( isset($_SESSION['admin'])!="" || isset($_SESSION['superadmin'])!="" ) { ?>
+<?php 
+
+   ob_start();
+session_start();
+
+if ( isset($_SESSION['admin'])!="" || isset($_SESSION['superadmin'])!="" ) { 
+
+$res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admin']);
+$userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+	?>
 <br><br>
-      <nav class="navbar navbar_admin sticky-top">
+      <nav class="navbar navbar_admin sticky-top" style="background-color: #135887;">
         <div class="mr-3 text-white">
             Hallo <?php echo $userRow['userName'] . "!"; ?>
         </div>
 
         <div class="mx-auto">
-        <a class="btn btn-outline-warning" href="../companies/admin.php" role="button">Unternehmen bearbeiten</a>
-            <a class="btn btn-outline-warning" href="create.php" role="button">Neuen Beitrag erstellen</a>
-            <a class="btn btn-outline-info" href="../Login/logout.php?logout" role="button">Logout</a>
-
+        
+              <a class="btn btn-outline-light" href="<?php echo $adminevents ?>" role="button">Beiträge verwalten</a>
+            <a class="btn btn-outline-light" href="<?php echo $admincreateevents ?>" role="button">Neuen Beitrag erstellen</a>
+           
+			<a class="btn btn-outline-light" href="<?php echo $adminRSSfeeds ?>" role="button">RSS-Feeds verwalten</a>
+			<a class="btn btn-outline-light" href="<?php echo $admincompanies ?>" role="button">Unternehmen bearbeiten</a>
         </div>
         <div class="mr-3 text-white">
+        	 <a class="btn btn-outline-light" href="<?php echo $logout ?>" role="button">Logout</a>
             <?php echo $userRow['userEmail']; ?>
         </div>
 
