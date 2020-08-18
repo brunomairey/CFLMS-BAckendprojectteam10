@@ -71,7 +71,7 @@ $res = mysqli_query($conn, "SELECT * FROM users WHERE userID=" . $_SESSION['admi
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 	?>
-<br><br>
+<div class="container-fluid" style="background-color: #DEEAE3"><br><br></div>
       <nav class="navbar navbar_admin sticky-top" style="background-color: #135887;">
         <div class="mr-3 text-white">
             Hallo <?php echo $userRow['userName'] . "!"; ?>

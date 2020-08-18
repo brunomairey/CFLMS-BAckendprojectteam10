@@ -34,13 +34,13 @@ $logout="Login/logout.php?logout";
 </head>
 <body>
 <main class="p-3" style="background-color: #DEEAE3">
-   <div class="jumbotron jumbotron-fluid mb-0">
+ <!--   <div class="jumbotron jumbotron-fluid mb-0"> -->
   
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 m-4 justify-content-around" id="typescriptimport"> 
           
             </div>
       
-</div>
+<!-- </div> -->
 
 </main>
 

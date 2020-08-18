@@ -33,7 +33,7 @@ $localhost = "localhost";
 $username = "root";
 $password = "";
 $dbname = "backendproject_bemm";
-$results_per_page = 5;
+$results_per_page = 50;
 
 // create connection
 $conn = new  mysqli($localhost, $username, $password, $dbname);
