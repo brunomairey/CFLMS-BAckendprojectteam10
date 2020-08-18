@@ -1,7 +1,7 @@
 
-<footer  class="mt-0" style="width:100%; display: flex; flex-direction: column; color:white;">
+<footer  class="mt-0 p-4" style="width:100%; display: flex; flex-direction: column; color:white;background-color: #135887;">
 
-	<div class="main-footer justify-content-center pt-4" style="background-color: #135887;">
+	<div class="main-footer justify-content-center m-4" style="background-color: #135887;">
 
 		<div id="socialbuttons" style="display: flex; flex-direction: row; justify-content: center;">
 			<div class="icon m-2">
@@ -29,12 +29,10 @@
 					<img style="width:3.25vw; height:3.25vw;" src="<?= $linkedinfooter ?>">
 				</a>
 			</div>
-			
 		</div>
 		<div class="pt-4" id="footertext" style="display: flex; flex-direction: column; text-align: center;">
 			<h5>&copy; 2020 Entrepeneurs For Future </h5><br>
 			 <p>ALLE INHALTE UNTERLIEGEN ÖSTERREICHISCHEM URHEBERRECHT.</p><p><strong> <a href="<?php echo $impressum ?>" style="color:white;"> IMPRESSUM |</a> <a href="<?php echo $datenschutz ?>" style="color:white;"> DATENSCHUTZ</a> | <a href="<?php echo $loginadmin ?>" style="color:white;">ADMIN ACCESS</a></strong></p>
-			
 		</div>
 		
 </div>

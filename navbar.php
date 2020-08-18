@@ -86,8 +86,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 			<a class="btn btn-outline-light" href="<?php echo $admincompanies ?>" role="button">Unternehmen bearbeiten</a>
         </div>
         <div class="mr-3 text-white">
+        	<?php echo $userRow['userEmail']; ?>
         	 <a class="btn btn-outline-light" href="<?php echo $logout ?>" role="button">Logout</a>
-            <?php echo $userRow['userEmail']; ?>
         </div>
 
 

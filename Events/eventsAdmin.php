@@ -55,7 +55,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 </head>
 
-<body>
+<body style="background-color: #DEEAE3">
     <!-- <#?php require_once '../header.php'; ?> -->
     
     <!-- <nav class="navbar navbar_admin sticky-top">

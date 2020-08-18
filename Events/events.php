@@ -1,23 +1,30 @@
 <?php
-$urlimage = "../images/logo_entre.png";
-$urlindex = "../index.php";
-$urlsign = "../companies/create.php";
-$urlcompanies = "../companies/index.php";
-$urlevents = "../events/events.php";
-$urlabout = "../aboutus.php";
-$urlfriends = "../friends.php";
-$urlcontact = "../contact.php";
-$urlvideos = "../stories.php";
+$urlimage="../images/logo_entre.png";
+$urlindex="../index.php";
+$urlsign="../companies/create.php";
+$urlcompanies="../companies/index.php";
+$urlevents ="../events/events.php";
+
+$urlfriends="../friends.php";
+$urlcontact="../contact.php";
+$urlvideos="../stories.php";
 
 
-include '../db_connect.php';
-include '../navbar.php' ?>
+
+$urladmin="../login/login.php";
+
+$admincompanies="../companies/admin.php";
+$adminevents="../events/eventsAdmin.php";
+$admincreateevents="../events/create.php";
+$adminRSSfeeds="../events/createRss.php";
+$logout="../Login/logout.php?logout";
+  include '../db_connect.php';
+  include('../navbar.php'); ?>
 
 
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +42,7 @@ include '../navbar.php' ?>
 
 <body>
 
-
+<main style="background-color: #DEEAE3">
 
 
 
@@ -266,7 +273,7 @@ include '../navbar.php' ?>
         <!-- END RSS -->
 
     </div>
-
+</main>
     <?php
 
     $facebookfooter = "../Images/facebook.png";
