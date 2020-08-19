@@ -120,30 +120,36 @@ text-align: center;}
 
 <!----------------- -------------------->
 
+
+
+
   <div id="contactForm">
-<form  action="a_create.php" method= "post" enctype='multipart/form-data'>
+<form  name="create" action="a_create.php" method= "post" enctype='multipart/form-data'>
   
 
   
     <div class="form-group col-md-12">
       <label for="title">Akademischer Titel</label>
-      <input type="text" class="form-control" name="titel" placeholder="Ing. Msc.">
+      <input type="text" class="form-control" name="titel" placeholder="Ing. Msc." required="true">
     </div>
+   
     <div class="form-row col-md-12">
     <div class="form-group required col-md-5 mr-5">
       <label for="vorname">Vorname</label>
       <input type="text" class="form-control" name="vorname" placeholder="Hartmann" required="true">
     </div>
-  
+     <span  class="text-danger" id="vorname"></span>
       <div class="form-group required col-md-5 ml-5">
       <label for="nachname">Nachname</label>
       <input type="text" class="form-control" name="nachname" placeholder="Tina" required="true">
      </div>
+       <span  class="text-danger" id="nachname"></span>
     </div>
   <div class="form-group required col-md-12">
       <label for="email">Emails</label>
       <input type="email" class="form-control" name="email" placeholder="a@a.at" required="true">
     </div>
+     <span  class="text-danger" id="email"></span>
      <div class="form-group required col-md-12">
       <label for="title">Unternehmen</label>
       <input type="text" class="form-control" name="unternehmen" placeholder="Entrepreneurs4future" required="true">
@@ -296,7 +302,7 @@ text-align: center;}
 
 
   <div class="col-md-12">
-  <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="but_upload" style="background-color: #135887; border: #135887;">Unterzeichnen!</button>
+  <button type="submit" class="btn btn-info btn-lg  mr-5 my-2" name="but_upload" onclick="return validateage()" style="background-color: #135887; border: #135887;">Unterzeichnen!</button>
    <a class="btn btn-info btn-lg" href="../index.php" type="button" role="button" style="background-color: #135887; border: #135887;">
     Zurück
   </a>
@@ -305,9 +311,8 @@ text-align: center;}
 </div>
 </div>
 <?php $conn->close(); ?>
-</body>
 
-</html>
+
 
 <?php  
  
@@ -321,4 +326,8 @@ text-align: center;}
     $loginadmin="../login/login.php";
   include('../footer.php');
 
-?> 
+  ?> 
+
+</body>
+
+</html>
