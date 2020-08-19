@@ -48,7 +48,16 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
 <head>
     <title>Add Event</title>
-    <link rel="stylesheet" href="../style_MANUELA.css">
+    <!-- <link rel="stylesheet" href="../style_MANUELA.css"> -->
+    <script src="https://cdn.tiny.cloud/1/zmvdg0nz5rrmxbcvtzfsgb1nmc7iuq8uotrbbxfxt5iu5yol/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        placeholder: "Hier können Sie ihren Beitrag erstellen und formatieren.."
+
+      });
+    </script>
 
     <style>
         body {
@@ -86,23 +95,25 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
            -->
                     <label for="fileInput">Foto hochladen</label>
                     <div id="thumbnail"></div>
-                    <input type="file" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
+                    <input type="file" id="up" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
 
                     <br>
                     <label for="date" class="mt-3" id="lab_time">Datum und Uhrzeit:</label>
                     <input type="datetime-local" id="time" class="form-control" value="<?php echo date('Y-m-d h:i'); ?>"" name=" date" placeholder="event Date" />
 
                     <label for="description" class="mt-3"> Beschreibung bzw. Blogtext</label>
-                    <input type="text" class="form-control mb-3 " name="description" placeholder="event Description" rows="6" />
+                    <textarea class="form-control" id="mytextarea" rows="3" name="description" placeholder="event Description"></textarea>
+
+                    <!-- <input type="text" class="form-control mb-3 " name="description" placeholder="event Description" rows="6" /> -->
 
                     <input type="hidden" name="userID" value="<?php echo $userRow['userID']; ?>" />
                     <br>
                     <div class="d-flex justify-content-center">
                         <div>
-                            <input class="btn btn-outline-info" type="submit" name="but_upload" value="Beitrag erstellen" />
+                            <input class="btn btn-info mr-2" type="submit" name="but_upload" value="Beitrag erstellen" />
                         </div>
                         <div>
-                            <a href="eventsAdmin.php" class="btn btn-block btn-outline-info">Zurück</a>
+                            <a href="eventsAdmin.php" class="btn btn-block btn-info">Zurück</a>
                         </div>
                     </div>
 

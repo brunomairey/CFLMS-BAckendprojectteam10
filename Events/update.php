@@ -1,27 +1,27 @@
-<?php  
-$urlimage="../images/logo_entre.png";
-$urlindex="../index.php";
-$urlsign="../companies/create.php";
-$urlcompanies="../companies/index.php";
-$urlevents ="../events/events.php";
+<?php
+$urlimage = "../images/logo_entre.png";
+$urlindex = "../index.php";
+$urlsign = "../companies/create.php";
+$urlcompanies = "../companies/index.php";
+$urlevents = "../events/events.php";
 
-$urlfriends="../friends.php";
-$urlcontact="../contact.php";
-$urlvideos="../stories.php";
+$urlfriends = "../friends.php";
+$urlcontact = "../contact.php";
+$urlvideos = "../stories.php";
 
 
 
-$urladmin="../login/login.php";
+$urladmin = "../login/login.php";
 
-$admincompanies="../companies/admin.php";
-$adminevents="../events/eventsAdmin.php";
-$admincreateevents="../events/create.php";
-$adminRSSfeeds="../events/createRss.php";
-$logout="../Login/logout.php?logout";
-  include '../db_connect.php';
-  include('../navbar.php');
-    
-  
+$admincompanies = "../companies/admin.php";
+$adminevents = "../events/eventsAdmin.php";
+$admincreateevents = "../events/create.php";
+$adminRSSfeeds = "../events/createRss.php";
+$logout = "../Login/logout.php?logout";
+include '../db_connect.php';
+include('../navbar.php');
+
+
 
 ?>
 
@@ -54,62 +54,52 @@ if ($_GET['id']) {
 
     <head>
         <title>Edit Event</title>
-        <link rel="stylesheet" href="../style_MANUELA.css">
+        <!-- <link rel="stylesheet" href="../style_MANUELA.css"> -->
+        <script src="https://cdn.tiny.cloud/1/zmvdg0nz5rrmxbcvtzfsgb1nmc7iuq8uotrbbxfxt5iu5yol/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#mytextarea'
+
+            });
+        </script>
+        <style>
+            body {
+                background-color: #DEEAE3;
+            }
+        </style>
 
     </head>
 
     <body>
 
-        <nav class="navbar sticky-top navbar-dark bg-dark">
-            <div>
-                <p class="text-white"> <?php echo $userRow['userName']; ?> </p>
-            </div>
-
-            <div class="mx-auto">
-                <a class="btn btn-outline-info" href="eventsAdmin.php" role="button">Home</a>
-                <a class="btn btn-outline-warning" href="create.php" role="button">Beitrag hinzufügen</a>
-                <a class="btn btn-outline-info" href="logout.php?logout" role="button">Logout</a>
-            </div>
-
-            <div class="mr-3 text-white">
-                <?php echo $userRow['userEmail']; ?>
-            </div>
-            <!-- <div class="image">
-            <img class="icon" src="img/icon/<?php echo $userRow['foto']; ?>" />
-        </div> -->
-        </nav>
-
-        <div class="d-flex justify-content-center">
-            <h1 class="text-info">Beitrag aktualisieren </h1>
-        </div>
-
         <div class="d-flex justify-content-center">
             <div class="contactForm">
                 <form action="a_update.php" method="post" enctype='multipart/form-data'>
                     <div class="container font-weight-bold">
-                        
 
 
-                        <div class="form-group">
 
+                        <div class="form-group pl-5 pr-5 rounded formular">
+                            <div class="d-flex justify-content-center">
+                                <h2 class="text-info mt-2 mb-2">Beitrag aktualisieren </h2>
+                            </div>
 
-                        <?php 
-                        $category =  $data['category'];
+                            <?php
+                            $category =  $data['category'];
 
-                         if ($category == 'event'){
-                           echo  "<input type='radio' id='event' name='category' value='event' checked >";
-                           echo " <label for='event' class='mr-5'>Event </label>";
-                           echo " <input type='radio' id='blog' name='category' value='blog'>";
-                           echo " <label for='blog'> Artikel/Blog</label> ";
-                         }
-                         else{
-                            echo  "<input type='radio' id='event' name='category' value='event' >";
-                            echo " <label for='event' class='mr-5'>Event </label>";
-                            echo " <input type='radio' id='blog' name='category' value='blog' checked>";
-                            echo " <label for='blog'> Artikel/Blog</label> ";
-                         }
+                            if ($category == 'event') {
+                                echo  "<input type='radio' id='event' name='category' value='event'  checked >";
+                                echo " <label for='event' class='mr-5'>Event </label>";
+                                echo " <input type='radio' id='blog' name='category' value='blog'>";
+                                echo " <label for='blog'> Artikel/Blog</label> ";
+                            } else {
+                                echo  "<input type='radio' id='event' name='category' value='event' >";
+                                echo " <label for='event' class='mr-5'>Event </label>";
+                                echo " <input type='radio' id='blog' name='category' value='blog' checked>";
+                                echo " <label for='blog'> Artikel/Blog</label> ";
+                            }
 
-                        ?>
+                            ?>
 
 
                             <br>
@@ -123,40 +113,48 @@ if ($_GET['id']) {
                             <input type="text" class="form-control" name="date" value="<?php echo $data['eventDate'] ?>" />
 
                             <label for="description">Beschreibung: </label>
-                            <input type="text" class="form-control" name="description" rows="6" value="<?php echo $data['eventDescription'] ?>" />
+                            <textarea class="form-control" id="mytextarea" rows="3" name="description"><?php echo $data['eventDescription'] ?></textarea>
+                            <br>
+                            <!-- <label for="type">Bild aktualisieren: </label> -->
 
 
-                            <label for="type">Bild aktualisieren: </label>
-                            <div>
-                                <p>aktuelles Bild</p>
-                                <?php
+                            <?php
+                            $picture = $data['image'];
 
-                                if ($data['image'] == "" ){
-                                    echo "<p>kein Bild vorhanden</p>";
-                                }
-                                // else {
-                                //     echo "<img src='($data['image'])'>";
-                                //     echo "<img src= 'deer.jpg'>";
-                                //     //  alt='Event image' width='200px' height='100px' class='rounded'>";
-                                // }
+                            if ($picture == "") {
+                                echo "<span class='mt-2'><p>Bild hinzufügen</p></span>";
+                                // echo "<div id='thumbnail' class='mb-2'></div>";
+                                // echo "<input type='file' name='fileInput' accept='image/*' multiple onChange='fileThumbnail(this.files);' (change)='convertImage($event)'>";
+                            } else {
+                                echo "<p>aktuelles Bild: </p>";
+                                echo "<span><img src= '$picture' alt='Event image' width='100' class='rounded mb-2'></span><br>";
+                                echo  "<input type='radio' id='update' name='todo' value='update' onclick='toggleOptions();' checked >";
+                                echo " <label for='event' class='mr-5'>Bild aktualisieren </label>";
+                                echo " <input type='radio' id='delete' name='todo' onclick='toggleOptions();' value='delete'>";
+                                echo " <label for='blog'> Bild löschen</label> ";
+                            }
 
-                                ?>
-                                <img src='<?= $data['image'] ?>' alt='Event image' width='100' class="rounded mb-2">
-                                <p>neues Bild</p>
-                                <div id="thumbnail"></div>
-                                <input type="file" name="fileInput" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
-                                <!-- <input type="file" class="custom-file" name="file" accept="image/jpeg,image/png" (change)="convertImage($event)" placeholder="image" /> -->
+                            ?>
 
-                                <input type="hidden" name="eventID" value="<?php echo $data['eventID'] ?>" />
+                            <!-- <label for="fileInput">Foto hochladen</label> -->
+                            <br>
+                            <!-- <label for="fileInput">Foto hochladen</label> -->
+                            <div id="thumbnail"></div>
+                            <input type="file" id="up" name="fileInput" id="up" accept="image/*" multiple onChange="fileThumbnail(this.files);" (change)="convertImage($event)">
 
-                            </div>
+                            <input type="hidden" name="eventID" value="<?php echo $data['eventID'] ?>" />
+                 
 
-                            <div class="d-flex justify-content-center">
+
+
+
+
+                            <div class="d-flex justify-content-center mt-3">
                                 <div>
-                                    <input class="btn btn-outline-info" type="submit" name="but_upload" value="Beitrag aktualisieren" />
+                                    <input class="btn btn-info rounded mr-2" type="submit" name="but_upload" value="Beitrag aktualisieren" />
                                 </div>
                                 <div>
-                                    <a href="eventsAdmin.php" class="btn btn-block btn-outline-info">Zurück</a>
+                                    <a href="eventsAdmin.php" class="btn btn-block btn-info rounded">Zurück</a>
                                 </div>
                             </div>
 
@@ -172,34 +170,48 @@ if ($_GET['id']) {
 
 
         <script>
-        //function thumbnails
-        function fileThumbnail(files) {
-            var thumb = document.getElementById("thumbnail");
+            //function thumbnails
+            function fileThumbnail(files) {
+                var thumb = document.getElementById("thumbnail");
 
-            thumb.innerHTML = "";
+                thumb.innerHTML = "";
 
-            if (!files)
-                return;
+                if (!files)
+                    return;
 
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
 
-                if (!file.type.match(/image.*/))
-                    continue;
+                    if (!file.type.match(/image.*/))
+                        continue;
 
-                var img = document.createElement("img");
+                    var img = document.createElement("img");
 
-                img.src = window.URL.createObjectURL(file);
-                img.width = 100;
+                    img.src = window.URL.createObjectURL(file);
+                    img.width = 100;
 
-                img.onload = function(e) {
-                    window.URL.revokeObjectURL(this.src);
-                };
+                    img.onload = function(e) {
+                        window.URL.revokeObjectURL(this.src);
+                    };
 
-                thumb.appendChild(img);
+                    thumb.appendChild(img);
+                }
             }
-        }
-    </script>
+
+            function toggleOptions() {
+                if (document.getElementById('update').checked) {
+                    document.getElementById('up').style.display = '';
+                    document.getElementById('thumbnail').style.display = '';
+                    // document.getElementById('lab_loc').style.display = '';
+                    // document.getElementById('lab_time').style.display = '';
+                } else {
+                    document.getElementById('up').style.display = 'none';
+                    document.getElementById('thumbnail').style.display = 'none';
+                    // document.getElementById('lab_loc').style.display = 'none';
+                    // document.getElementById('lab_time').style.display = 'none';
+                }
+            }
+        </script>
 
     </body>
 
@@ -210,16 +222,16 @@ if ($_GET['id']) {
 ?>
 
 
-<?php  
- 
- $facebookfooter="../Images/facebook.png";
-  $instafooter="../Images/insta.png";
-   $twitterfooter="../Images/twitter.png";
-    $youtubefooter="../Images/youtube.png";
-    $linkedinfooter="../Images/linkedin.png";
-      $impressum="../impressum.php";
-    $datenschutz="../datenschutz.php";
-    $loginadmin="../login/login.php";
-  include('../footer.php');
+<?php
 
-?> 
+$facebookfooter = "../Images/facebook.png";
+$instafooter = "../Images/insta.png";
+$twitterfooter = "../Images/twitter.png";
+$youtubefooter = "../Images/youtube.png";
+$linkedinfooter = "../Images/linkedin.png";
+$impressum = "../impressum.php";
+$datenschutz = "../datenschutz.php";
+$loginadmin = "../login/login.php";
+include('../footer.php');
+
+?>

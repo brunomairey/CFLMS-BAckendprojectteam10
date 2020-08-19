@@ -64,15 +64,22 @@ include('../navbar.php');
          $description = $_POST['description'];
          $date = $_POST['date'];
          $location = $_POST['location'];
+         echo $action = $_POST['todo'];
 
 
-         if ($image == "") {
-            $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID";
-            // echo "sql update ohne image";
-         } else {
-            $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '$image', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID";
-            // echo "sql update mit image";
+         
+         if ($image == "" && $action!= 'delete') {
+         $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID";
+            echo "sql update ohne image";
+         } elseif ($action == 'delete'){
+            $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID";
+            echo "sql update: Image gelöscht";
+         }     
+         else {
+         $sql = "UPDATE events SET eventName = '$name', eventDescription = '$description', `image` = '$image', eventDate = '$date', eventLocation = '$location' WHERE eventID = $eventID";
+            echo "sql update mit image";
          }
+
 
 
 
@@ -87,9 +94,6 @@ include('../navbar.php');
             echo "<center><b>Weiterleitung erfolgt in 2 Sekunden.</b></center>";
             echo "</div>";
 
-            //  echo "Event successfully updated <br> <a href='eventsAdmin.php' type='button' class= 'btn btn-outline-info'>Back to Home</a><br>";
-            //  header ("refresh:2; url=eventsAdmin.php" ); 
-            //  echo "Sie werden in 2 Sekunden weitergeleitet.";
          } else {
             echo "Error while updating record : " . $conn->error;
          }
