@@ -35,14 +35,54 @@ $logout="Login/logout.php?logout";
 }
 
 
-  .contactForm {
+ 
+
+  .social:hover > a {
+  opacity: 0.5}
+
+.social:hover img:hover {
+  opacity: 1; 
+  background: white;
+  width: 100%;
+  margin: 0 auto}
+
+
+
+@media screen and (max-width: 600px) {
+  .big_screen{
+  display: none;
+}
+
+.contactForm {
+  width: 100%;
+    margin: 2vw; 
+    padding: 2vw; 
+     background-color: #d7e1cc;
+    border-radius: 1vw; 
+    box-shadow: 0.5vw 1vw 2vw #888888; }
+
+#contacttitle {
+    background-color: #135887;
+    color: white; 
+    width: 100%;
+    padding: 1vw;
+    margin: 2vw 0;
+    border-radius: 1vw; }
+
+}
+
+@media screen and (min-width: 601px) {
+  .small_screen{
+         display: none;
+  }
+ .contactForm {
     margin: 2vw; 
     padding: 2vw; 
      background-color: #d7e1cc;
     border-radius: 10px; 
     box-shadow: 5px 10px 18px #888888; }
 
-h1 {
+#contacttitle {
     background-color: #135887;
     color: white; 
     width: 100%;
@@ -60,6 +100,10 @@ label {
 input {
     height: 50px;
     font-size: 1.3em; }
+
+
+
+}
 	</style>
 
 <header class="main-header">
@@ -86,6 +130,8 @@ input {
 </ul>
 <p>ein, die Stellungnahme von #EntrepreneursForFuture zu unterschreiben.</p>
 	</div> <!-- closing of jumbotron -->
+
+<div class="big_screen">
 <div class="container-fluid p-5" style="background-color: #D7E1CC">
 <div class="row mb-3">
       <div class="col-3 pt-2">
@@ -111,17 +157,65 @@ echo $row_cnt;
 </div>
 	</div> <!--close of container -->
 
-
 <div class="container-fluid p-5" style="background-color: #135887">
 <div class="row mb-3">
-	   <div class="col-9 py-4">
-	   	<h3 style="color: white">Werden auch Sie Teil der Initiative #EntrepreneursForFuture und unterzeichnen Sie die Stellungnahme:</h3>
-	   </div>
-      <div class="col-3 py-2">	
- 	<a href="<?php echo $urlsign ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Jetzt Unterzeichnen !</button></a>
+     <div class="col-9 py-4">
+      <h3 style="color: white">Werden auch Sie Teil der Initiative #EntrepreneursForFuture und unterzeichnen Sie die Stellungnahme:</h3>
+     </div>
+      <div class="col-3 py-2">  
+  <a href="<?php echo $urlsign ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Jetzt Unterzeichnen !</button></a>
  </div>
 </div>
 </div><!--close of container -->
+
+</div><!--close of bigscreen -->
+
+
+<div class="small_screen">
+<div class="container-fluid" style="background-color: #D7E1CC">
+
+  <h3 class="text-center" style="color: #40B2C3"> <strong> 
+<?php
+           $sql = "SELECT * FROM companies";
+           $result = $conn->query($sql);
+  $row_cnt = $result->num_rows;
+echo $row_cnt;
+// WHILE($row = mysql_fetch_array($result, MYSQL_NUM)) { echo $row; }
+?>
+       </strong>
+</h3>
+
+
+  
+  <h4>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h4>
+
+<div style="display: flex; flex-flow: row wrap; justify-content: center;">
+  <a href="<?php echo $urlcompanies ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Alle Entrepreneure ansehen</button></a>
+</div>
+  </div> <!--close of container -->
+
+<div class="container-fluid" style="background-color: #135887">
+
+      <h4 style="color: white">Werden auch Sie Teil der Initiative #EntrepreneursForFuture und unterzeichnen Sie die Stellungnahme:</h4>
+   <div style="display: flex; flex-flow: row wrap; justify-content: center;">
+  <a href="<?php echo $urlsign ?>"><button type="submit" class="btn btn-info btn-lg  mr-5 my-2"  style="background-color: #40B2C3; border: #135887;">Jetzt Unterzeichnen !</button></a>
+</div>
+</div><!--close of container -->
+
+
+</div><!--close of smallscreen -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php  
 $facebookfooter="Images/facebook.png";
@@ -137,46 +231,53 @@ $facebookfooter="Images/facebook.png";
 ?> 
 
 
-<div class="container-fluid p-5" style="background-color: #DEEAE3">
+<div class="container-fluid p-1" style="background-color: #DEEAE3">
 	<div class="justify-content-center pt-4" >
 	<h3 style="text-align: center; color: #135887">Folgen Sie uns in den Sozialen Medien!</h3>
 	<h4 style="text-align: center; color: #40B2C3">Folgen Sie uns auf:</h4>
 		<div id="socialbuttons" style="display: flex; flex-direction: row; justify-content: center;">
-			<div class="icon m-2">
+			<div class="social icon m-2">
 				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
 					<img style="width:3.25vw; height:3.25vw;" src="<?php echo $facebookfooter ?>">
 				</a>
 			</div>
-			<div class="icon m-2">
+			<div class="social icon m-2">
 				<a href="https://www.instagram.com/entrepeneursforfuture/" title="instagram-icon">
 					<img style="width:3.25vw; height:3.25vw;" src="<?= $instafooter ?>">
 				</a>
 			</div>
-			<div class="icon m-2">
+			<div class="social icon m-2">
 				<a href="https://www.twitter.com/eff_future" title="twitter-icon">
 					<img style="width:3.25vw; height:3.25vw;" src="<?= $twitterfooter ?>">
 				</a>
 			</div>
-			<div class="icon m-2">
+			<div class="social icon m-2">
 				<a href="https://www.youtube.com/channel/UCg9d_0n7Kt16JbBPZKvMacQ" title="youtube-icon">
 					<img style="width:3.25vw; height:3.25vw;" src="<?= $youtubefooter ?>">
 				</a>
 			</div>
-			<div class="icon m-2">
+			<div class="social icon m-2">
 				<a href="https://www.linkedin.com/company/entrepeneurs-for-future/" title="linkedin-icon">
 					<img style="width:3.25vw; height:3.25vw;" src="<?= $linkedinfooter ?>">
 				</a>
 			</div>
 			
 		</div>
-
+</div>
 
  <!--  <div class="container" style="background-color: #D7E1CC"> -->
   <form class="contactForm" action="a_contact.php" method="post">
-      <h1 class="text-center">SIE HABEN FRAGEN ZU <br>
-ENTREPRENEURS FOR FUTURE?</h1>
+    <div class="small_screen">  
+      <h4 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+          ENTREPRENEURS FOR FUTURE?</h4>
+      <h5>Wir freuen uns auf Ihre Anregungen </h5> 
+        </div>
+       <div class="big_screen">
+         <h2 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+          ENTREPRENEURS FOR FUTURE?</h2>
+        <h3>Wir freuen uns auf Ihre Anregungen </h3> 
+      </div>
       <div class="form-group">
-<h2>Wir freuen uns auf Ihre Anregungen </h2>        
           <label>
               Vorname:
               <input type="text" class="form-control" name="vorname" autofocus>

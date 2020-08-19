@@ -10,7 +10,7 @@
 </style>
 <footer  class="mt-0 p-4" style="width:100%; display: flex; flex-direction: column; color:white;background-color: #135887;">
 
-	<div class="main-footer justify-content-center m-4" style="background-color: #135887;">
+	<div class="main-footer justify-content-center" style="background-color: #135887;">
 
 		<div id="socialbuttons" style="display: flex; flex-direction: row; justify-content: center;">
 			<div class="social icon m-2">

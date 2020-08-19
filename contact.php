@@ -31,16 +31,42 @@ $logout="Login/logout.php?logout";
 <head>
   <title>Contact us</title>
   <style type="text/css">
-    
+ 
+@media screen and (max-width: 600px) {
+  .big_screen{
+  display: none;
+}
 
-    .contactForm {
+.contactForm {
+  width: 100%;
+    margin: 2vw; 
+    padding: 2vw; 
+     background-color: #d7e1cc;
+    border-radius: 1vw; 
+    box-shadow: 0.5vw 1vw 2vw #888888; }
+
+#contacttitle {
+    background-color: #135887;
+    color: white; 
+    width: 100%;
+    padding: 1vw;
+    margin: 2vw 0;
+    border-radius: 1vw; }
+
+}
+
+@media screen and (min-width: 601px) {
+  .small_screen{
+         display: none;
+  }
+ .contactForm {
     margin: 2vw; 
     padding: 2vw; 
      background-color: #d7e1cc;
     border-radius: 10px; 
     box-shadow: 5px 10px 18px #888888; }
 
-h1 {
+#contacttitle {
     background-color: #135887;
     color: white; 
     width: 100%;
@@ -59,6 +85,10 @@ input {
     height: 50px;
     font-size: 1.3em; }
 
+
+
+}
+
   </style>
 </head>
 <body>
@@ -68,10 +98,17 @@ input {
 
   <div class="container">
   <form class="contactForm" action="a_contact.php" method="post">
-      <h1 class="text-center">SIE HABEN FRAGEN ZU <br>
-ENTREPRENEURS FOR FUTURE?</h1>
-      <div class="form-group">
-<h2>Wir freuen uns auf Ihre Anregungen </h2>        
+    <div class="small_screen">  
+      <h4 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+          ENTREPRENEURS FOR FUTURE?</h4>
+      <h5>Wir freuen uns auf Ihre Anregungen </h5> 
+        </div>
+       <div class="big_screen">
+         <h2 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+          ENTREPRENEURS FOR FUTURE?</h2>
+        <h3>Wir freuen uns auf Ihre Anregungen </h3> 
+      </div>
+  <div class="form-group">
           <label>
               Vorname:
               <input type="text" class="form-control" name="vorname" autofocus>
