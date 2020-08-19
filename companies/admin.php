@@ -65,7 +65,8 @@ if($result->num_rows > 0) {
                    ?>
       <tr>
       <td scope="row"><?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></td>
-      <td><a href="<?= $row['website_facebook'] ?>"><img src="<?= $row['firmenlogo'] ?>" alt="no image" style="max-width:5vw"><?= $row['unternehmen'] ?></a></td>
+      <td><a href="<?= $row['website_facebook'] ?>"><?= $row['unternehmen'] ?></a></td>
+      <!-- <img src="<?= $row['firmenlogo'] ?>" alt="no image" style="max-width:5vw"> -->
       <td><?= $row['ort'] ?></td>
       <td><?= $row['land'] ?></td>
       <td><?= $row['public'] ?></td>
