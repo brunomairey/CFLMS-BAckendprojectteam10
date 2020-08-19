@@ -30,7 +30,11 @@ $logout="Login/logout.php?logout";
 <html>
 <head>
   <title>Contact us</title>
- 
+ <style>
+  .hovereffect:hover {
+    box-shadow: 0 0 0.5vw 0.5vw #135887;
+    transition: 0.3s; }
+ </style>
 </head>
 <body>
 <main class="p-3" style="background-color: #DEEAE3">

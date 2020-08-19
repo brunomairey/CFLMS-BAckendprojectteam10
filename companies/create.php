@@ -132,21 +132,21 @@ text-align: center;}
     <div class="form-row col-md-12">
     <div class="form-group required col-md-5 mr-5">
       <label for="vorname">Vorname</label>
-      <input type="text" class="form-control" name="vorname" placeholder="Hartmann">
+      <input type="text" class="form-control" name="vorname" placeholder="Hartmann" required="true">
     </div>
   
       <div class="form-group required col-md-5 ml-5">
       <label for="nachname">Nachname</label>
-      <input type="text" class="form-control" name="nachname" placeholder="Tina">
+      <input type="text" class="form-control" name="nachname" placeholder="Tina" required="true">
      </div>
     </div>
   <div class="form-group required col-md-12">
       <label for="email">Emails</label>
-      <input type="email" class="form-control" name="email" placeholder="a@a.at">
+      <input type="email" class="form-control" name="email" placeholder="a@a.at" required="true">
     </div>
      <div class="form-group required col-md-12">
       <label for="title">Unternehmen</label>
-      <input type="text" class="form-control" name="unternehmen" placeholder="Entrepreneurs4future">
+      <input type="text" class="form-control" name="unternehmen" placeholder="Entrepreneurs4future" required="true">
     </div>
 
       <div class="form-group col-md-12">
@@ -155,7 +155,38 @@ text-align: center;}
       <input type="file" accept="image/jpeg,image/png"  formControlName="image" (change)="convertImage($event)" class="form-control-file"  name="file">
       </div>
       </div>
- <div class="form-group col-md-12">
+
+
+   <fieldset class="form-group required col-md-12">
+       <legend class="col-form-label pt-0">Funktion</legend>
+          <div class="form-check">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios1" value="Inhaberin" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Inhaberin/Inhaber
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios2" value="Gesellschafterin">
+          <label class="form-check-label" for="gridRadios2">
+           Gesellschafterin/Gesellschafter
+          </label>
+        </div>
+          <div class="form-check">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios3" value="Geschäftsführerin">
+          <label class="form-check-label" for="gridRadios3">
+            Geschäftsführerin/Geschäftsführer
+          </label>
+        </div>
+          <div class="form-check">
+          <input class="form-check-input" type="radio" name="funktion" id="gridRadios4" value="Prokuristin">
+          <label class="form-check-label" for="gridRadios4">
+            Prokuristin/Prokurist
+          </label>
+        </div>
+     
+  </fieldset> 
+
+<!--  <div class="form-group col-md-12">
       <label for="publisher_size">Funktion</label>
     <select class="form-control" id="exampleFormControlSelect1" name="funktion">
       <option selected>InhaberIn</option>
@@ -163,28 +194,40 @@ text-align: center;}
       <option>GeschäftsführerIn</option>
       <option>ProkuristIn</option>
     </select>
-  </div>
+  </div> -->
 
   <div class="form-group required col-md-12">
     <label for="img">Website/Facebook</label>
-    <input type="text" class="form-control" name="website_facebook" placeholder="Website/Facebook">
+    <input type="text" class="form-control" name="website_facebook" placeholder="Website/Facebook" required="true">
     </div>
 
 
 
 <div class="form-row col-md-12">
-      <div class="form-group col-md-2 mr-5">
+      <div class="form-group required col-md-2 mr-5">
       <label for="plz">Postleitzahl</label>
-      <input type="number" class="form-control" name="plz" placeholder="1000" step="1">
+      <input type="number" class="form-control" name="plz" placeholder="1000" step="1" required="true">
     </div>
 
-     <div class="form-group col-md-4 mr-5">
+     <div class="form-group required col-md-4 mr-5">
        <label for="ort">Stadt/Ort</label>
-      <input type="text" class="form-control" name="ort" placeholder="wien">
+      <input type="text" class="form-control" name="ort" placeholder="wien" required="true">
   </div>
     <div class="form-group required col-md-4">
-     <label for="land">Land</label>
-    <input type="text" class="form-control" name="land" placeholder="Österreich">
+     <label for="land">Bundesland</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="land" required="true">
+        <option value="Burgenland">Burgenland</option>
+      <option value="Niederösterreich">Niederösterreich</option>
+      <option value="Oberösterreich">Oberösterreich</option>
+      <option value="Kärnten">Kärnten</option>
+      <option value="Salzburg">Salzburg</option>
+       <option value="Steiermark">Steiermark</option>
+        <option value="Tirol">Tirol</option>
+         <option value="Voralberg">Voralberg</option>
+          <option value="Wien">Wien</option>
+           <option value="">Andere-Ausland</option>
+    </select>
+   <!--  <input type="text" class="form-control" name="land" placeholder="Österreich"> -->
   </div>
 </div>
 
@@ -196,16 +239,51 @@ text-align: center;}
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
 </div>
 
- <div class="form-group col-md-12">
+<fieldset value="" checked class="form-group required col-md-12">
+       <legend class="col-form-label pt-0">KlimaVersprechen veröffentlichen?</legend>
+       
+          <div class="form-check">
+          <input class="form-check-input" type="radio" name="public" id="gridRadios5" value="ja" checked>
+          <label class="form-check-label" for="gridRadios5">
+            Ja
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="public" id="gridRadios6" value="nein">
+          <label class="form-check-label" for="gridRadios6">
+           Nein
+          </label>
+        </div>
+  </fieldset> 
+
+ <!-- <div class="form-group col-md-12">
       <label for="publisher_size">KlimaVersprechen veröffentlichen?</label>
     <select class="form-control" id="exampleFormControlSelect1" name="public">
       <option selected value="ja">ja</option>
       <option value="nein">nein</option>
     </select>
-  </div>
+  </div> -->
+
+<fieldset value="" checked class="form-group required col-md-12">
+       <legend class="col-form-label pt-0">Kein weiterer Kontakt?  <br> <i>    Möchten Sie weiterhin von uns hören?</i></legend>
+       
+                  <div class="form-check">
+          <input class="form-check-input" type="radio" name="contact" id="gridRadios7" value="nein">
+          <label class="form-check-label" for="gridRadios7">
+          Ich möchte nur unterschreiben und anschließend nicht mehr kontaktiert werden.
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="contact" id="gridRadios8" value="ja" checked>
+          <label class="form-check-label" for="gridRadios8">
+           Halten Sie mich weiterhin auf dem Laufenden über die Initiative.
+          </label>
+        </div>
+  </fieldset> 
 
 
- <div class="form-group col-md-12">
+
+<!--  <div class="form-group col-md-12">
       <label for="publisher_size">Kein weiterer Kontakt?  <br> <i>    Möchten Sie weiterhin von uns hören?</i></label>
         
     <select class="form-control" id="exampleFormControlSelect1" name="contact">
@@ -213,7 +291,7 @@ text-align: center;}
       <option value="nein">Halten Sie mich weiterhin auf dem Laufenden über die Initiative.</option>
     </select>
   </div>
-
+ -->
 
 
 

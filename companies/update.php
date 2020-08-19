@@ -78,21 +78,21 @@ if (isset($_GET['id'])) {
     <div class="form-row col-md-12">
     <div class="form-group required col-md-5 mr-5">
       <label for="vorname">Vorname</label>
-      <input type="text" class="form-control" name="vorname" value="<?php echo $data['vorname'] ?>">
+      <input type="text" class="form-control" name="vorname" value="<?php echo $data['vorname'] ?>" required>
     </div>
   
       <div class="form-group required col-md-5 ml-5">
       <label for="nachname">Nachname</label>
-      <input type="text" class="form-control" name="nachname" value="<?php echo $data['nachname'] ?>">
+      <input type="text" class="form-control" name="nachname" value="<?php echo $data['nachname'] ?>" required>
      </div>
     </div>
   <div class="form-group required col-md-12">
       <label for="email">Emails</label>
-      <input type="email" class="form-control" name="email" value="<?php echo $data['email'] ?>">
+      <input type="email" class="form-control" name="email" value="<?php echo $data['email'] ?>" required>
     </div>
      <div class="form-group required col-md-12">
       <label for="title">Unternehmen</label>
-      <input type="text" class="form-control" name="unternehmen" value="<?php echo $data['unternehmen'] ?>">
+      <input type="text" class="form-control" name="unternehmen" value="<?php echo $data['unternehmen'] ?>" required>
     </div>
 
       <div class="form-group col-md-12">
@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
       </div>
       </div>
        <div class="form-group col-md-12">
-      <label for="publisher_size">Funktion</label>
+      <label for="funktion">Funktion</label>
     <select class="form-control" id="exampleFormControlSelect1" name="funktion">
       <option hidden selected><?php echo $data['funktion'] ?></option>
       <option>InhaberIn</option>
@@ -111,56 +111,28 @@ if (isset($_GET['id'])) {
       <option>ProkuristIn</option>
     </select>
   </div>
-<!-- 
-   <fieldset class="form-group required col-md-12">
-       <legend class="col-form-label pt-0">Funktion</legend>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios1" value="Inhaberin" checked>
-          <label class="form-check-label" for="gridRadios1">
-            Inhaberin/Inhaber
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios2" value="Gesellschafterin">
-          <label class="form-check-label" for="gridRadios2">
-           Gesellschafterin/Gesellschafter
-          </label>
-        </div>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios3" value="Geschäftsführerin">
-          <label class="form-check-label" for="gridRadios3">
-            Geschäftsführerin/Geschäftsführer
-          </label>
-        </div>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="funktion" id="gridRadios4" value="Prokuristin">
-          <label class="form-check-label" for="gridRadios4">
-            Prokuristin/Prokurist
-          </label>
-        </div>
-     
-  </fieldset> -->
+
 
   <div class="form-group required col-md-12">
     <label for="img">Website/Facebook</label>
-    <input type="text" class="form-control" name="website_facebook" value="<?php echo $data['website_facebook'] ?>">
+    <input type="text" class="form-control" name="website_facebook" value="<?php echo $data['website_facebook'] ?>" required>
     </div>
 
 
 
 <div class="form-row col-md-12">
-      <div class="form-group col-md-2 mr-5">
+      <div class="form-group required col-md-2 mr-5">
       <label for="plz">Postleitzahl</label>
-      <input type="number" class="form-control" name="plz" value="<?php echo $data['plz'] ?>" step="1">
+      <input type="number" class="form-control" name="plz" value="<?php echo $data['plz'] ?>" step="1" required>
     </div>
 
-     <div class="form-group col-md-4 mr-5">
+     <div class="form-group required col-md-4 mr-5">
        <label for="ort">Stadt/Ort</label>
-      <input type="text" class="form-control" name="ort" value="<?php echo $data['ort'] ?>">
+      <input type="text" class="form-control" name="ort" value="<?php echo $data['ort'] ?>" required>
   </div>
     <div class="form-group required col-md-4">
      <label for="land">Land</label>
-    <input type="text" class="form-control" name="land" value="<?php echo $data['land'] ?>">
+    <input type="text" class="form-control" name="land" value="<?php echo $data['land'] ?>" required>
   </div>
 </div>
 
@@ -172,27 +144,7 @@ if (isset($_GET['id'])) {
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"><?php echo $data['description'] ?></textarea>
   </div>
 
-<!-- <fieldset value="" checked class="form-group required col-md-12">
-       <legend class="col-form-label pt-0">KlimaVersprechen veröffentlichen?</legend>
-           <div class="form-check">
-          <input hidden class="form-check-input" type="radio" name="public" id="gridRadios1" value="" checked>
-        <label class="form-check-label" for="gridRadios1">
-          
-          </label>    
-        </div>
-          <div class="form-check">
-          <input class="form-check-input" type="radio" name="public" id="gridRadios1" value="ja">
-          <label class="form-check-label" for="gridRadios1">
-            Ja
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="public" id="gridRadios2" value="nein">
-          <label class="form-check-label" for="gridRadios2">
-           Nein
-          </label>
-        </div> -->
-<!--   </fieldset>  -->
+
 
  <div class="form-group col-md-12">
       <label for="publisher_size">KlimaVersprechen veröffentlichen?</label>

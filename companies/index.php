@@ -140,7 +140,8 @@ $rs_result = $conn->query($sql);
 ?> 
 
 <div id="big_screen">
-<table class="table table-info table-striped" style="background-color: #CAf0F8">
+<table class="table table-bordered table-striped">
+<!--   style="background-color: #CAf0F8" -->
   <thead>
     <tr>
       <th scope="col">Unterzeichner</th>
