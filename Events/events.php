@@ -40,38 +40,38 @@ $logout="../Login/logout.php?logout";
 
 </head>
 
-<body>
+<body style="background-color: #DEEAE3">
 
 <main style="background-color: #DEEAE3">
 
 
 
-    <div id="wrapper1" class="mt-2">
-
+    <div id="wrapper1" class="mt-2" style="border:solid blue">
+  
 
 
         <!-- SECTION BLOG START -->
 
 
-        <div class="container_blog row row-cols-1  mx-auto">
-            <h2 class="header_blog">Beiträge</h2>
-            <?php
-            $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
+            <div class="container_blog" style="border:solid green">
+                <h2 class="header_blog">Beiträge</h2>
+                <?php
+                $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
 
 
-            $result = mysqli_query($conn, $sql);
-            // fetch the next row (as long as there are any) into $row
-            while ($row = mysqli_fetch_assoc($result)) {
-                $eventID = $row['eventID'];
-                $eventName = $row['eventName'];
-                $eventDate = $row['eventDate'];
-                $location = $row['eventLocation'];
-                $description = $row['eventDescription'];
-                $image = $row['image'];
-                $author = $row['userName'];
+                $result = mysqli_query($conn, $sql);
+                // fetch the next row (as long as there are any) into $row
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $eventID = $row['eventID'];
+                    $eventName = $row['eventName'];
+                    $eventDate = $row['eventDate'];
+                    $location = $row['eventLocation'];
+                    $description = $row['eventDescription'];
+                    $image = $row['image'];
+                    $author = $row['userName'];
 
 
-            ?>
+                ?>
 
 
 
@@ -106,12 +106,12 @@ $logout="../Login/logout.php?logout";
 
 
 
-        </div>
+            </div>
         <!-- END SECTION BLOG -->
 
         <!-- START SECTION EVENT -->
-        <div class="container_event">
-        <h2 class="header_events">Veranstaltungen</h2>
+        <div class="container_event" style="border:solid pink">
+            <h2 class="header_events">Veranstaltungen</h2>
             
             <div class="row rounded">
            
@@ -179,11 +179,98 @@ $logout="../Login/logout.php?logout";
             </div>
         </div>
 
-
+        
         <!-- END BLOG -->
 
         <!-- START RSS -->
-        <div class="container_rss">
+        <div class="container_rss" style="border:solid orange">
+
+            <h2 class="header_news">News</h2>
+
+            <?php
+            $sql = "SELECT * FROM feeds";
+
+            $result = mysqli_query($conn, $sql);
+            // fetch the next row (as long as there are any) into $row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $feedID = $row['feedID'];
+                $url = $row['url'];
+            ?>
+
+
+                <div class="content">
+
+
+                    <?php
+
+                    $url = $url;
+                    if (isset($_POST['submit'])) {
+                        if ($_POST['feedurl'] != '') {
+                            $url = $_POST['feedurl'];
+                        }
+                    }
+
+                    $invalidurl = false;
+                    if (@simplexml_load_file($url)) {
+                        $feeds = simplexml_load_file($url);
+                    } else {
+                        $invalidurl = true;
+                        echo "<h2>Invalid RSS feed URL.</h2>";
+                    }
+
+
+                    $i = 0;
+                    if (!empty($feeds)) {
+
+                        $site = $feeds->channel->title;
+                        $sitelink = $feeds->channel->link;
+
+                        echo "<div class='color2'><h2>" . $site . "</h2></div>";
+ 
+
+                        foreach ($feeds->channel->item as $item) {
+
+                            $title = $item->title;
+                            $link = $item->link;
+                            $description = $item->description;
+                            $postDate = $item->pubDate;
+                            $pubDate = date('D, d M Y', strtotime($postDate));
+
+
+                            if ($i >= 5) break;
+                    ?>
+                            <div class="post">
+                                <div class="post-head bg-light">
+                                    <h6><a class="feed_title text-info" href="<?php echo $link; ?>"><?php echo $title; ?></a></h6>
+                                    <span><?php echo $pubDate; ?></span>
+                                </div>
+                                <div class="post-content">
+                                    <?php echo implode(' ', array_slice(explode(' ', $description), 0, 20)) . "..."; ?> <a href="<?php echo $link; ?>">Read more</a>
+                                </div>
+                            </div>
+
+                    <?php
+                            $i++;
+                        }
+                    } else {
+                        if (!$invalidurl) {
+                            echo "<h2>No item found</h2>";
+                        }
+                    }
+                    ?>
+                </div>
+            <?php
+            }
+
+           
+            ?>
+
+        </div>
+</div>
+        <!-- END RSS -->
+
+ <!-- RSS Tablet -->
+              <div id="container_rss_tablet">
 
             <h2 class="header_news">News</h2>
 
@@ -270,9 +357,10 @@ $logout="../Login/logout.php?logout";
 
         </div>
 
-        <!-- END RSS -->
 
-    </div>
+
+
+
 </main>
     <?php
 

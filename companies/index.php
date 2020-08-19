@@ -45,7 +45,7 @@ $logout="../Login/logout.php?logout";
             padding: 0;
         }
 
-h1 {
+.titleofcompanies {
     background-color: #135887;
     color: white; 
     width: 100%;
@@ -56,12 +56,12 @@ h1 {
 
 
 @media screen and (max-width: 600px) {
-  #big_screen{
+  .big_screen{
   display: none;
 }
 }
 @media screen and (min-width: 601px) {
-  #small_screen{
+  .small_screen{
          display: none;
   }
 }
@@ -70,21 +70,23 @@ h1 {
 </head>
 <body style="background-color: #DEEAE3">
 
-
-
-<div class="container">
- 
- <h1 class="text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h1>
-  <div class="row mb-3">
-      <div class="col-3 pt-2">
-  <h2 class="text-center" style="color: #40B2C3"> <strong> 
 <?php
            $sql = "SELECT * FROM companies";
            $result = $conn->query($sql);
   $row_cnt = $result->num_rows;
-echo $row_cnt;
-// WHILE($row = mysql_fetch_array($result, MYSQL_NUM)) { echo $row; }
-?>
+  // WHILE($row = mysql_fetch_array($result, MYSQL_NUM)) { echo $row; } ?>
+
+<div class="container">
+ <div class="big_screen">
+ <h1 class="titleofcompanies text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h1>
+
+
+  <div class="row mb-3">
+      <div class="col-3 pt-2">
+  <h2 class="text-center" style="color: #40B2C3"> <strong> 
+
+<?php echo $row_cnt; ?>
+
        </strong>
 </h2>
 </div>
@@ -92,21 +94,41 @@ echo $row_cnt;
 
   
   <h3>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h3>
-</div></div>
+</div></div></div>
+
+<div class="small_screen">
+ <h3 class="titleofcompanies text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h3>
+
+  <h3 class="text-center" style="color: #40B2C3"> <strong> 
+
+<?php echo $row_cnt; ?>
+
+       </strong>
+</h3>
+ 
+  <h4>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h4>
+
+
+</div>
+
+
   <div id="map"></div>
-
+<div class="big_screen">
 <h3 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h3>
-
+</div>
+<div class="small_screen">
+  <h4 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h4>
+</div>
 <!-- pagination -->
-
 <?php
 if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
-$start_from = ($page-1) * $results_per_page;
-$sql = "SELECT * FROM companies WHERE `public`= 'ja' ORDER BY id ASC LIMIT $start_from, ".$results_per_page;
+$start_from = ($page-1) * $results_per_pagemob;
+$sql = "SELECT * FROM companies WHERE `public`= 'ja' ORDER BY id ASC LIMIT $start_from, ".$results_per_pagemob;
 $rs_result = $conn->query($sql);
 // var_dump($rs_result); 
 ?> 
-<div id="small_screen">
+
+<div class="small_screen">
 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
 
 
@@ -129,6 +151,21 @@ $rs_result = $conn->query($sql);
 }; 
 ?> 
 </div>
+
+<?php 
+$sql = "SELECT COUNT(id) AS total FROM companies";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_pages = ceil($row["total"] / $results_per_pagemob); // calculate total pages with results
+  
+for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
+            echo "<a href='index.php?page=".$i."'";
+            if ($i==$page)  echo " class='curPage'";
+            echo ">".$i."</a> "; 
+}; 
+?>
+
+
 </div>
 
 <?php
@@ -139,7 +176,9 @@ $rs_result = $conn->query($sql);
 // var_dump($rs_result); 
 ?> 
 
-<div id="big_screen">
+
+<div class="big_screen">
+
 <table class="table table-bordered table-striped">
 <!--   style="background-color: #CAf0F8" -->
   <thead>
@@ -166,11 +205,6 @@ $rs_result = $conn->query($sql);
  </tbody>
 </table>
 
- </div>
-
-
-
-
 <?php 
 $sql = "SELECT COUNT(id) AS total FROM companies";
 $result = $conn->query($sql);
@@ -183,6 +217,13 @@ for ($i=1; $i<=$total_pages; $i++) {  // print links for all pages
             echo ">".$i."</a> "; 
 }; 
 ?>
+
+ </div>
+
+
+
+
+
 
 <!-- end of pagination -->
 

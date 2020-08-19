@@ -45,7 +45,7 @@ if ($_POST["email"]<>'') {
 ?> 
 
 <?php 
-} else { echo "sent an email at georgeswbush@whitehouse.com"; };
+} else { echo "<p class=\"text-danger\">sent an email at georgeswbush@whitehouse.com"; };
 
 ?>  
 

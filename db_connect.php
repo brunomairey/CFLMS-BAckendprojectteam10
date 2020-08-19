@@ -34,6 +34,7 @@ $username = "root";
 $password = "";
 $dbname = "backendproject_bemm";
 $results_per_page = 50;
+$results_per_pagemob = 10;
 
 // create connection
 $conn = new  mysqli($localhost, $username, $password, $dbname);

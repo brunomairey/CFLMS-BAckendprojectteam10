@@ -53,7 +53,7 @@ $logout="Login/logout.php?logout";
   display: none;
 }
 
-.contactForm {
+#contactForm {
   width: 100%;
     margin: 2vw; 
     padding: 2vw; 
@@ -75,7 +75,7 @@ $logout="Login/logout.php?logout";
   .small_screen{
          display: none;
   }
- .contactForm {
+ #contactForm {
     margin: 2vw; 
     padding: 2vw; 
      background-color: #d7e1cc;
@@ -208,15 +208,6 @@ echo $row_cnt;
 
 
 
-
-
-
-
-
-
-
-
-
 <?php  
 $facebookfooter="Images/facebook.png";
   $instafooter="Images/insta.png";
@@ -264,9 +255,10 @@ $facebookfooter="Images/facebook.png";
 			
 		</div>
 </div>
-
- <!--  <div class="container" style="background-color: #D7E1CC"> -->
-  <form class="contactForm" action="a_contact.php" method="post">
+<div style="display: flex; flex-direction: row; justify-content: center;">
+<div class="container" id="contactForm">
+  <!-- <div class= style="background-color: #D7E1CC"> -->
+  <form action="a_contact.php" method="post">
     <div class="small_screen">  
       <h4 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
           ENTREPRENEURS FOR FUTURE?</h4>
@@ -280,7 +272,8 @@ $facebookfooter="Images/facebook.png";
       <div class="form-group">
           <label>
               Vorname:
-              <input type="text" class="form-control" name="vorname" autofocus>
+              <input type="text" class="form-control" name="vorname">
+              
           </label>
       </div>
      <div class="form-group">
@@ -315,6 +308,7 @@ $facebookfooter="Images/facebook.png";
           <input type="Reset" class="btn btn-info" value="Reset" style="background-color: #135887; border: solid #135887">
       </div> -->
     </form>
+  </div></div></div>
 <!-- </div> -->
 	<!-- <section class="showcase">
 			<div class="container">

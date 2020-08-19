@@ -161,7 +161,7 @@ $errMSG = "Incorrect Credentials, Try again...";
   </nav> -->
 
 
-  <div class="container-fluid">
+  <div class="container-fluid mx-0">
 
     <?php
 

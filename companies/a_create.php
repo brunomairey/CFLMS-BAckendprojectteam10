@@ -72,6 +72,11 @@ if (isset($_POST['but_upload'])) {
        $description = $_POST['description'];
          $public = $_POST['public'];
         $contact = $_POST['contact'];
+$error = false;
+if (empty($email)) {
+$error = true;
+$emailError = "Please enter your email address.";
+} 
 
   
   $sql = "INSERT INTO `companies` (`titel`, `vorname`, `nachname`, `email`, `unternehmen`,  `firmenlogo`, `funktion`, `website_facebook`, `plz`, `ort`,`land`, `description`, `public`, `contact`) 
@@ -84,10 +89,27 @@ if (isset($_POST['but_upload'])) {
        echo "Error " . $sql . ' ' . $conn->connect_error;
    }
 
-   $conn->close();
+ 
 }
 
 ?>
+<?php
+if (isset($_POST['but_upload'])){ 
+    $ToEmail = $_POST["email"]; 
+    $EmailSubject = 'Danke für Ihre Registrierung'; 
+    $mailheader = "From: bruno.mairey@yahoo.fr\r\n"; 
+    $mailheader .= "Reply-To: bruno.mairey@yahoo.fr\r\n"; 
+    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+    $MESSAGE_BODY = "Wir bedanken uns für die Registrierung bei Entrepreneurs for future. Gemeinsam können wir eine bessere Welt schaffen. Wir freuen uns, wenn Sie auch andere Entrepreneurs einladen."; 
+     mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die ("Failure"); 
+     echo "<p class=\"text success mx-5 my-3\" style=\"color: #135887;\">Wir bedanken uns für die Registrierung bei Entrepreneurs for future. Gemeinsam können wir eine bessere Welt schaffen. Wir freuen uns, wenn Sie auch andere Entrepreneurs einladen.</p>" ;
+     header("Refresh: 2; url= index.php");
+?> 
+
+<?php 
+} else { echo "<p class=\"text-danger\">sent an email at georgeswbush@whitehouse.com"; };
+  $conn->close();
+?>  
 </div>
 </body>
 <?php  

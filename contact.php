@@ -111,24 +111,24 @@ input {
   <div class="form-group">
           <label>
               Vorname:
-              <input type="text" class="form-control" name="vorname" autofocus>
+              <input type="text" class="form-control" name="vorname" autofocus required>
           </label>
       </div>
      <div class="form-group">
           <label>
               Nachname:
-              <input type="text" class="form-control" name="nachname">
+              <input type="text" class="form-control" name="nachname" required>
           </label>
       </div>
       <div class="form-group">
           <label>
               Email:
-              <input type="email" class="form-control" name="email">
+              <input type="email" class="form-control" name="email" required>
           </label>
       </div>
       <label>
           Ihre Nachricht:
-          <textarea class="form-control" rows="5" name="comment"></textarea>
+          <textarea class="form-control" rows="5" name="comment" required></textarea>
       </label>
       <br>
      

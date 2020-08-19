@@ -120,9 +120,6 @@ text-align: center;}
 
 <!----------------- -------------------->
 
-
-
-
   <div id="contactForm">
 <form  name="create" action="a_create.php" method= "post" enctype='multipart/form-data'>
   
@@ -130,7 +127,7 @@ text-align: center;}
   
     <div class="form-group col-md-12">
       <label for="title">Akademischer Titel</label>
-      <input type="text" class="form-control" name="titel" placeholder="Ing. Msc." required="true">
+      <input type="text" class="form-control" name="titel" placeholder="Ing. Msc.">
     </div>
    
     <div class="form-row col-md-12">
@@ -148,6 +145,7 @@ text-align: center;}
   <div class="form-group required col-md-12">
       <label for="email">Emails</label>
       <input type="email" class="form-control" name="email" placeholder="a@a.at" required="true">
+
     </div>
      <span  class="text-danger" id="email"></span>
      <div class="form-group required col-md-12">
