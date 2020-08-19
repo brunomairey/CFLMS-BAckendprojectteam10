@@ -34,6 +34,7 @@ if (!isset($_SESSION['admin'])) {
     header("Location: events.php");
     exit;
 }
+
 // select logged-in users details
 $res = mysqli_query($conn, "SELECT * FROM users WHERE userId=" . $_SESSION['admin']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
