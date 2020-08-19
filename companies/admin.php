@@ -40,7 +40,7 @@ $logout="../Login/logout.php?logout";
 
 <div class="container-fluid my-2">
 
-	<table class="table table-striped" style="background-color: #CAf0F8">
+	<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th scope="col">Unterzeichner</th>
