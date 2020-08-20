@@ -16,7 +16,7 @@ include '../navbar.php';
 
 // it will never let you open index(login) page if session is set
 if (isset($_SESSION['user']) != "") {
-header("Location: ../events/events.php");
+header("Location: events.php");
 exit;
 }
 
@@ -64,9 +64,9 @@ if ($count == 1 && $row['userPass'] == $password) {
 if ($row["status"] == 'admin') {
 $_SESSION["admin"] = $row["userID"];
 header("Location: ../Events/eventsAdmin.php");
-// } elseif ($row["status"] == 'superadmin'){
-// $_SESSION['superadmin'] = $row['userID'];
-// header("Location: superadmin.php");
+} elseif ($row["status"] == 'superadmin'){
+$_SESSION['superadmin'] = $row['userID'];
+header("Location: superadmin.php");
 } else {
 $_SESSION['user'] = $row['userID'];
 header("Location: ../Events/events.php");
@@ -117,7 +117,7 @@ $errMSG = "Incorrect Credentials, Try again...";
     .row{
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
     }
 
     .card_parallax:hover {
@@ -129,8 +129,8 @@ $errMSG = "Incorrect Credentials, Try again...";
       padding: 20px 20px 20px 20px;
       transition: all 0.5s;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
-      max-width: 30vw;
-      min-width: 30vw;
+   
+     
 
     }
 
@@ -143,25 +143,17 @@ $errMSG = "Incorrect Credentials, Try again...";
       border: #135887;
     } */
 
+
+
   </style>
 
 </head>
 
 <body>
-  <!-- <#?php require_once '../header.php'; ?> -->
-  <!-- <nav class="navbar sticky-top navbar-light bg-light">
-
-    <div class="mx-auto">
-      <a class="btn btn-outline-success" href="index.php" role="button">Home</a>
-      <a class="btn btn-outline-success" href="login.php" role="button">Login</a>
-      <a class="btn btn-outline-success" href="register.php" role="button">Signup</a>
 
 
-    </div>
-  </nav> -->
 
-
-  <div class="container-fluid mx-0">
+  <div class="container-fluid">
 
     <?php
 
@@ -192,7 +184,7 @@ $errMSG = "Incorrect Credentials, Try again...";
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
 
-              <h2 >Sign In.</h2>
+              <h2 >Log In.</h2>
               <hr />
 
               <?php
@@ -214,7 +206,7 @@ $errMSG = "Incorrect Credentials, Try again...";
 
               <span class="text-danger"><?php echo $passError; ?></span>
               <hr />
-              <button class="btn btn-info btn-lg  mr-5 my-2 button" type="submit" name="btn-login">Sign In</button>
+              <button class="btn btn-info btn-lg  mr-5 my-2 button" type="submit" name="btn-login">Log In</button>
 
 
               <hr />
