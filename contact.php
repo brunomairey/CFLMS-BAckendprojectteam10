@@ -99,12 +99,12 @@ input {
   <div class="container">
   <form class="contactForm" action="a_contact.php" method="post">
     <div class="small_screen">  
-      <h4 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+      <h4 id="contacttitle" class="text-center">HABEN SIE FRAGEN ZU <br>
           ENTREPRENEURS FOR FUTURE?</h4>
       <h5>Wir freuen uns auf Ihre Anregungen </h5> 
         </div>
        <div class="big_screen">
-         <h2 id="contacttitle" class="text-center">SIE HABEN FRAGEN ZU <br>
+         <h2 id="contacttitle" class="text-center">HABEN SIE FRAGEN ZU <br>
           ENTREPRENEURS FOR FUTURE?</h2>
         <h3>Wir freuen uns auf Ihre Anregungen </h3> 
       </div>
