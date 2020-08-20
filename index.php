@@ -37,15 +37,6 @@ $logout="Login/logout.php?logout";
 
  
 
-  .social:hover > a {
-  opacity: 0.5}
-
-.social:hover img:hover {
-  opacity: 1; 
-  background: white;
-  width: 100%;
-  margin: 0 auto}
-
 
 
 @media screen and (max-width: 600px) {
@@ -69,6 +60,9 @@ $logout="Login/logout.php?logout";
     margin: 2vw 0;
     border-radius: 1vw; }
 
+}
+  .footerlink{
+ width:5vh; height:5vh;
 }
 
 @media screen and (min-width: 601px) {
@@ -101,9 +95,23 @@ input {
     height: 50px;
     font-size: 1.3em; }
 
-
+ .footerlink{
+    width:3.25vw;
+    height:3.25vw;
+  }
 
 }
+
+
+  .social:hover > a {
+  opacity: 0.5}
+
+.social:hover img:hover {
+  opacity: 1; 
+  background: white;
+ /* width: 100%;*/
+  margin: 0 auto}
+
 	</style>
 
 <header class="main-header">
@@ -229,27 +237,27 @@ $facebookfooter="Images/facebook.png";
 		<div id="socialbuttons" style="display: flex; flex-direction: row; justify-content: center;">
 			<div class="social icon m-2">
 				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon">
-					<img style="width:3.25vw; height:3.25vw;" src="<?php echo $facebookfooter ?>">
+					<img class="footerlink" src="<?php echo $facebookfooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
 				<a href="https://www.instagram.com/entrepeneursforfuture/" title="instagram-icon">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $instafooter ?>">
+					<img class="footerlink" src="<?= $instafooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
 				<a href="https://www.twitter.com/eff_future" title="twitter-icon">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $twitterfooter ?>">
+					<img class="footerlink" src="<?= $twitterfooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
 				<a href="https://www.youtube.com/channel/UCg9d_0n7Kt16JbBPZKvMacQ" title="youtube-icon">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $youtubefooter ?>">
+					<img class="footerlink" src="<?= $youtubefooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
 				<a href="https://www.linkedin.com/company/entrepeneurs-for-future/" title="linkedin-icon">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $linkedinfooter ?>">
+					<img class="footerlink" src="<?= $linkedinfooter ?>">
 				</a>
 			</div>
 			

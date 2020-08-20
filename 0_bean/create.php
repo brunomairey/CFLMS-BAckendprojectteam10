@@ -124,33 +124,32 @@ $logout="../Login/logout.php?logout";
     <div class="form-row col-md-12">
     <div class="form-group required col-md-5 mr-5">
       <label for="vorname">Vorname</label>
-      <input type="text" class="form-control" name="vorname" placeholder="Hartmann" required="true">
+      <input type="text" class="form-control" name="vorname" placeholder="Hartmann" >
     </div>
      <span  class="text-danger" id="vorname"></span>
       <div class="form-group required col-md-5 ml-5">
       <label for="nachname">Nachname</label>
-      <input type="text" class="form-control" name="nachname" placeholder="Tina" required="true">
+      <input type="text" class="form-control" name="nachname" placeholder="Tina" >
      </div>
        <span  class="text-danger" id="nachname"></span>
     </div>
   <div class="form-group required col-md-12">
       <label for="email">Emails</label>
-      <input type="email" class="form-control" name="email" placeholder="a@a.at" required="true">
-
+      <input type="email" class="form-control" name="email" placeholder="a@a.at" >
+       <span class="text-danger"><?php  echo $emailError; ?></span>
     </div>
      <span  class="text-danger" id="email"></span>
      <div class="form-group required col-md-12">
       <label for="title">Unternehmen</label>
-      <input type="text" class="form-control" name="unternehmen" placeholder="Entrepreneurs4future" required="true">
+      <input type="text" class="form-control" name="unternehmen" placeholder="Entrepreneurs4future">
     </div>
 
-         <div class="form-group col-md-12">
-          ' <label for="firmenlogo">Firmenlogo</label>
-          <div id="thumbnail"></div>
-          <div class="custom-file mt-1">
-            <input type="file" accept="image/jpeg,image/png" formControlName="image" (change)="convertImage($event)" multiple onChange="fileThumbnail(this.files);" class="form-control-file" name="fileInput">
-          </div>'
-        </div>
+      <div class="form-group col-md-12">
+        <label for="firmenlogo">Firmenlogo</label>
+      <div class="custom-file">
+      <input type="file" accept="image/jpeg,image/png"  formControlName="image" (change)="convertImage($event)" class="form-control-file"  name="file">
+      </div>
+      </div>
 
 
    <fieldset class="form-group required col-md-12">
@@ -194,7 +193,7 @@ $logout="../Login/logout.php?logout";
 
   <div class="form-group required col-md-12">
     <label for="img">Website/Facebook</label>
-    <input type="text" class="form-control" name="website_facebook" placeholder="Website/Facebook" required="true">
+    <input type="text" class="form-control" name="website_facebook" placeholder="Website/Facebook">
     </div>
 
 
@@ -202,16 +201,16 @@ $logout="../Login/logout.php?logout";
 <div class="form-row col-md-12">
       <div class="form-group required col-md-2 mr-5">
       <label for="plz">Postleitzahl</label>
-      <input type="number" class="form-control" name="plz" placeholder="1000" step="1" required="true">
+      <input type="number" class="form-control" name="plz" placeholder="1000" step="1">
     </div>
 
      <div class="form-group required col-md-4 mr-5">
        <label for="ort">Stadt/Ort</label>
-      <input type="text" class="form-control" name="ort" placeholder="wien" required="true">
+      <input type="text" class="form-control" name="ort" placeholder="wien">
   </div>
     <div class="form-group required col-md-4">
      <label for="land">Bundesland</label>
-      <select class="form-control" id="exampleFormControlSelect1" name="land" required="true">
+      <select class="form-control" id="exampleFormControlSelect1" name="land" >
         <option value="Burgenland">Burgenland</option>
       <option value="Niederösterreich">Niederösterreich</option>
       <option value="Oberösterreich">Oberösterreich</option>
@@ -317,41 +316,6 @@ $logout="../Login/logout.php?logout";
   include('../footer.php');
 
   ?> 
-
-<script>
-        //function thumbnails
-        function fileThumbnail(files) {
-            var thumb = document.getElementById("thumbnail");
-
-            thumb.innerHTML = "";
-
-            if (!files)
-                return;
-
-            for (var i = 0; i < files.length; i++) {
-                var file = files[i];
-
-                if (!file.type.match(/image.*/))
-                    continue;
-
-                var img = document.createElement("img");
-
-                img.src = window.URL.createObjectURL(file);
-                img.width = 100;
-
-                img.onload = function(e) {
-                    window.URL.revokeObjectURL(this.src);
-                };
-
-                thumb.appendChild(img);
-            }
-        }
-
-       
-    </script>
-
-
-
 
 </body>
 

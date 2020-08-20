@@ -40,9 +40,9 @@ require_once '../db_connect.php';
 
 if (isset($_POST['but_upload'])) {
 
-  $name = $_FILES['fileInput']['name'];
+  $name = $_FILES['file']['name'];
   $target_dir = "upload/";
-  $target_file = $target_dir . basename($_FILES["fileInput"]["name"]);
+  $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
   // Select file type
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -53,7 +53,7 @@ if (isset($_POST['but_upload'])) {
   // Check extension
   if( in_array($imageFileType,$extensions_arr) ){
      // Convert to base64 
-    $image_base64 = base64_encode(file_get_contents($_FILES['fileInput']['tmp_name']) );
+    $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
     $image = 'data:image/'.$imageFileType.';base64,'.$image_base64;
     
 }
@@ -73,6 +73,7 @@ if (isset($_POST['but_upload'])) {
          $public = $_POST['public'];
         $contact = $_POST['contact'];
 
+
   
   $sql = "INSERT INTO `companies` (`titel`, `vorname`, `nachname`, `email`, `unternehmen`,  `firmenlogo`, `funktion`, `website_facebook`, `plz`, `ort`,`land`, `description`, `public`, `contact`) 
   VALUES ('$titel', '$vorname', '$nachname', '$email', '$unternehmen',  '$image', '$funktion', '$website_facebook', $plz, '$ort', '$land', '$description', '$public', '$contact')";
@@ -84,11 +85,10 @@ if (isset($_POST['but_upload'])) {
        echo "Error " . $sql . ' ' . $conn->connect_error;
    }
 
+ 
 }
 
 ?>
-
-
 <?php
 if (isset($_POST['but_upload'])){ 
     $ToEmail = $_POST["email"]; 

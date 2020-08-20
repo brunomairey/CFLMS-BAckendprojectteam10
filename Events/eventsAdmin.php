@@ -85,7 +85,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <!-- SECTION BLOG START -->
 
 
-        <div class="container_blog row row-cols-1  mx-auto">
+        <div id="container_blog" class="row row-cols-1  mx-auto">
             <h1 class="header_blog">Beiträge</h1>
             <?php
             $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
@@ -146,7 +146,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <!-- END SECTION BLOG -->
 
         <!-- START SECTION EVENT -->
-        <div class="container_event">
+        <div id="container_event">
         <h1 class="header_events">Veranstaltungen</h1>
             <div class="row rounded">
                 <div class="[ row-cols-1  ]">
@@ -222,7 +222,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
         <!-- END BLOG -->
 
         <!-- START RSS -->
-        <div class="container_rss">
+        <div id="container_rss">
 
             <h1 class="header_news">News</h1>
 

@@ -46,14 +46,18 @@ $logout="../Login/logout.php?logout";
 
 
 
-    <div id="wrapper1" class="mt-2" style="border:solid blue">
-  
+    <div id="wrapper1" class="mt-2">
+  <div id="menumobile" class="mb-2">
+   <a href="#container_blog"><button type="button" class="btn btn-info" style="background-color: #135887; border: #135887;">Beiträge</button></a>
+      <a href="#container_event"><button type="button" class="btn btn-info" style="background-color: #135887; border: #135887;">Veranstaltungen</button></a>
+         <a href="#container_rss"><button type="button" class="btn btn-info" style="background-color: #135887; border: #135887;">News</button></a>
+  </div>
 
 
         <!-- SECTION BLOG START -->
 
 
-            <div class="container_blog" style="border:solid green">
+            <div id="container_blog">
                 <h2 class="header_blog">Beiträge</h2>
                 <?php
                 $sql = "SELECT * FROM events inner join users on users.userID = events.userID where category = 'blog' ORDER by eventDate DESC";
@@ -110,7 +114,7 @@ $logout="../Login/logout.php?logout";
         <!-- END SECTION BLOG -->
 
         <!-- START SECTION EVENT -->
-        <div class="container_event" style="border:solid pink">
+        <div id="container_event">
             <h2 class="header_events">Veranstaltungen</h2>
             
             <div class="row rounded">
@@ -183,7 +187,7 @@ $logout="../Login/logout.php?logout";
         <!-- END BLOG -->
 
         <!-- START RSS -->
-        <div class="container_rss" style="border:solid orange">
+        <div id="container_rss">
 
             <h2 class="header_news">News</h2>
 
@@ -273,7 +277,7 @@ $logout="../Login/logout.php?logout";
               <div id="container_rss_tablet">
 
             <h2 class="header_news">News</h2>
-
+<div class="content">
             <?php
             $sql = "SELECT * FROM feeds";
 
@@ -285,7 +289,7 @@ $logout="../Login/logout.php?logout";
             ?>
 
 
-                <div class="content">
+                
 
 
                     <?php
@@ -313,7 +317,7 @@ $logout="../Login/logout.php?logout";
                         $sitelink = $feeds->channel->link;
 
                         echo "<div class='color2'><h2>" . $site . "</h2></div>";
- 
+                        echo "<div id='articlefortablets' class='mb-3'>";
 
                         foreach ($feeds->channel->item as $item) {
 
@@ -326,7 +330,7 @@ $logout="../Login/logout.php?logout";
 
                             if ($i >= 5) break;
                     ?>
-                            <div class="post">
+                            <div class="post mx-1">
                                 <div class="post-head bg-light">
                                     <h6><a class="feed_title text-info" href="<?php echo $link; ?>"><?php echo $title; ?></a></h6>
                                     <span><?php echo $pubDate; ?></span>
@@ -347,14 +351,14 @@ $logout="../Login/logout.php?logout";
                     ?>
                 </div>
             <?php
-            }
+            } 
 
             // Free result set
             mysqli_free_result($result);
             // Close connection
             mysqli_close($conn);
             ?>
-
+</div>
         </div>
 
 

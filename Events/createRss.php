@@ -54,7 +54,7 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 </head>
 
 <body style="background-color: #DEEAE3">
-
+   <div style="height: 65vh">
     <div class='d-flex justify-content-center'>
         <h1 class="text-info mt-2 mb-2">RSS-Feed erstellen</h1>
     </div>
@@ -79,22 +79,25 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
                             <a href="eventsAdmin.php" class="btn btn-block btn-info">Zurück</a>
                         </div>
                     </div>
-
+            </div>
             </form>
         </div>
     </div>
-    </div>
+<!--    <div class='d-flex justify-content-center'>
+        <h1 class="text-info mt-2 mb-2">RSS-Feed verwalten</h1>
 
     </div>
+  
+      
 
-
+ -->
     <?php
     // }
 
     // Close connection
     echo mysqli_close($conn);
     ?>
-
+</div>
 </body>
 
 </html>

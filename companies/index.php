@@ -141,10 +141,10 @@ $rs_result = $conn->query($sql);
 
 <div class="card-deck m-1">
   <ul class="list-group list-group-flush" >
-    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Unterzeichner: </b> <?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></li>
-    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Unternehmen: </b> <a href="<?= $row['website_facebook'] ?>"><?= $row['unternehmen'] ?></a></li>
-    <li class="list-group-item" style="background-color: #CAf0F8;"><b>Stadt/Ort: </b><?= $row['ort'] ?></li>
-      <li class="list-group-item" style="background-color: #CAf0F8;"><b>Land: </b><?= $row['land'] ?></li>
+    <li class="list-group-item" style="background-color: #DEEAE3;"><b>Unterzeichner: </b> <?= $row['titel']. " " .$row['vorname'] ." ". $row['nachname'] ?></li>
+    <li class="list-group-item" style="background-color: #DEEAE3;"><b>Unternehmen: </b> <a href="<?= $row['website_facebook'] ?>"><?= $row['unternehmen'] ?></a></li>
+    <li class="list-group-item" style="background-color: #DEEAE3;"><b>Stadt/Ort: </b><?= $row['ort'] ?></li>
+      <li class="list-group-item" style="background-color: #DEEAE3;"><b>Land: </b><?= $row['land'] ?></li>
   </ul>
 </div>
 <?php 

@@ -84,6 +84,8 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
            
 			<a class="btn btn-outline-light" href="<?php echo $adminRSSfeeds ?>" role="button">RSS-Feeds verwalten</a>
 			<a class="btn btn-outline-light" href="<?php echo $admincompanies ?>" role="button">Unternehmen bearbeiten</a>
+		<!-- 	<button type="button" onclick="aktivieren()" class="btn btn-info" style="background-color: #135887; border: #135887;">RSS-Feeds aktivieren</button>
+      <button type="button" onclick="deaktivieren()" class="btn btn-info" style="background-color: #135887; border: #135887;">RSS-Feeds deaktivieren</button> -->
         </div>
         <div class="mr-3 text-white">
         	<?php echo $userRow['userEmail']; ?>
@@ -94,3 +96,20 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     </nav>
 
       <?php ;} else {"";} ?>
+
+ <!--      <script>
+function aktivieren() {
+  var container_rss = document.getElementById("container_rss");
+  var container_rss_tablet = document.getElementById("container_rss_tablet");
+  container_rss_tablet.style.display = "block";
+  container_rss.style.display = "block"
+}
+function deaktivieren() {
+  var container_rss = document.getElementById("container_rss");
+  var container_rss_tablet = document.getElementById("container_rss_tablet");
+  container_rss_tablet.style.display = "none";
+  container_rss.style.display = "none"
+}
+
+
+</script> -->

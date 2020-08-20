@@ -1,12 +1,26 @@
 <style>
-	.social:hover > a {
+	
+
+@media screen and (max-width: 600px) {
+  .footerlink{
+ width:5vh; height:5vh;
+}
+}
+@media screen and (min-width: 601px) {
+  .footerlink{
+    width:3.25vw;
+    height:3.25vw;
+  }
+}
+.social:hover > a {
   opacity: 0.5}
 
 .social:hover img:hover {
   opacity: 1; 
   background: white;
-  width: 100%;
+  /*width: 100%;*/
   margin: 0 auto}
+
 </style>
 <footer  class="mt-0 p-4" style="width:100%; display: flex; flex-direction: column; color:white;background-color: #135887;">
 
@@ -15,27 +29,27 @@
 		<div id="socialbuttons" style="display: flex; flex-direction: row; justify-content: center;">
 			<div class="social icon m-2">
 				<a href="https://www.facebook.com/entrepeneursforfuture" title="facebook-icon" >
-					<img style="width:3.25vw; height:3.25vw;" src="<?php echo $facebookfooter ?>" class="footerlink">
+					<img src="<?php echo $facebookfooter ?>" class="footerlink">
 				</a>
 			</div>
 			<div class="social icon m-2">
 				<a href="https://www.instagram.com/entrepeneursforfuture/" title="instagram-icon" >
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $instafooter ?>" class="footerlink">
+					<img src="<?= $instafooter ?>" class="footerlink">
 				</a>
 			</div>
 			<div class="social icon m-2">
-				<a href="https://www.twitter.com/eff_future" title="twitter-icon" class="footerlink">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $twitterfooter ?>">
+				<a href="https://www.twitter.com/eff_future" title="twitter-icon" >
+					<img class="footerlink" src="<?= $twitterfooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
-				<a href="https://www.youtube.com/channel/UCg9d_0n7Kt16JbBPZKvMacQ" title="youtube-icon" class="footerlink">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $youtubefooter ?>">
+				<a href="https://www.youtube.com/channel/UCg9d_0n7Kt16JbBPZKvMacQ" title="youtube-icon" >
+					<img class="footerlink" src="<?= $youtubefooter ?>">
 				</a>
 			</div>
 			<div class="social icon m-2">
-				<a href="https://www.linkedin.com/company/entrepeneurs-for-future/" title="linkedin-icon" class="footerlink">
-					<img style="width:3.25vw; height:3.25vw;" src="<?= $linkedinfooter ?>">
+				<a href="https://www.linkedin.com/company/entrepeneurs-for-future/" title="linkedin-icon" >
+					<img class="footerlink" src="<?= $linkedinfooter ?>">
 				</a>
 			</div>
 		</div>
