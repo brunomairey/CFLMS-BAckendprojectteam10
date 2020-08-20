@@ -78,7 +78,7 @@ $logout="../Login/logout.php?logout";
 
 <div class="container">
  <div class="big_screen">
- <h1 class="titleofcompanies text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h1>
+ <h1 class="titleofcompanies text-center">DIESE ENTREPRENEURS FOR FUTURE HABEN BEREITS UNTERZEICHNET:</h1>
 
 
   <div class="row mb-3">
@@ -93,11 +93,11 @@ $logout="../Login/logout.php?logout";
     <div class="col-9">
 
   
-  <h3>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h3>
+  <h3>Diese UnternehmerInnen haben die Stellungnahme bereits unterzeichnet.</h3>
 </div></div></div>
 
 <div class="small_screen">
- <h3 class="titleofcompanies text-center">ENTREPRENEURS FOR FUTURE HABEN UNTERZEICHNET:</h3>
+ <h3 class="titleofcompanies text-center">DIESE ENTREPRENEURS FOR FUTURE HABEN BEREITS UNTERZEICHNET:</h3>
 
   <h3 class="text-center" style="color: #40B2C3"> <strong> 
 
@@ -106,7 +106,7 @@ $logout="../Login/logout.php?logout";
        </strong>
 </h3>
  
-  <h4>Unternehmerinnen & Unternehmer haben die Stellungnahme bereits unterzeichnet.</h4>
+  <h4>Diese UnternehmerInnen haben die Stellungnahme bereits unterzeichnet.</h4>
 
 
 </div>
@@ -114,10 +114,10 @@ $logout="../Login/logout.php?logout";
 
   <div id="map"></div>
 <div class="big_screen">
-<h3 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h3>
+<h3 class="my-3">Diese UnternehmerInnen sind bereits Teil von #EntrepreneursForFuture:</h3>
 </div>
 <div class="small_screen">
-  <h4 class="my-3">Diese Unternehmerinnen & Unternehmer sind bereits Teil von #EntrepreneursForFuture:</h4>
+  <h4 class="my-3">Diese UnternehmerInnen sind bereits Teil von #EntrepreneursForFuture:</h4>
 </div>
 <!-- pagination -->
 <?php
